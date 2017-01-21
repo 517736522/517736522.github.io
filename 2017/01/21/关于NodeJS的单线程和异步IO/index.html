@@ -1,0 +1,428 @@
+
+ <!DOCTYPE HTML>
+<html  xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>关于NodeJS的单线程和异步IO | 永恒の刹那&#39;s Blog |信息安全与管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" itemprop="description" content="通过现实有趣的例子讲明了NodeJS的单线程和异步IO原理。">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="永恒の刹那&#39;s Blog |信息安全与管理" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="永恒の刹那&#39;s Blog |信息安全与管理">永恒の刹那&#39;s Blog |信息安全与管理</a></h1>
+				<h2 class="blog-motto">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">文章</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+						<li><a href="/atom.xml">RSS订阅</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="Search" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/01/21/关于NodeJS的单线程和异步IO/" title="关于NodeJS的单线程和异步IO" itemprop="url">关于NodeJS的单线程和异步IO</a>
+  </h1>
+  <!-- 显示作者
+  <p class="article-author">By
+    
+      <a href="https://517736522.github.io" title="John Doe">John Doe</a>
+    </p>
+  -->  
+  <p class="article-time">
+    <time datetime="2017-01-21T09:30:16.000Z" itemprop="datePublished">2017-01-21</time>
+    Updated:<time datetime="2017-01-21T14:42:31.810Z" itemprop="dateModified">2017-01-21</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用文-摘自-IBM-刘欣-个人公众号：码农翻身"><span class="toc-number">1.</span> <span class="toc-text">引用文  摘自 IBM 刘欣 个人公众号：码农翻身</span></a></li></ol>
+		</div>
+		
+		<h5 id="引用文-摘自-IBM-刘欣-个人公众号：码农翻身"><a href="#引用文-摘自-IBM-刘欣-个人公众号：码农翻身" class="headerlink" title="引用文  摘自 IBM 刘欣 个人公众号：码农翻身"></a>引用文  摘自 IBM 刘欣 个人公众号：码农翻身</h5><p>美丽的七侠镇上有一条美食街，很多著名的饭店都开在这里，有老字号的Apache, PHP, 最近几年火热的Ruby on Rail , 还有那些重量级的餐饮集团Websphere, Weblogic 等。</p>
+<p>这些饭店老板根据自己的实力，或多或少的雇佣了一些店小二来招待来客，这些小二干活都非常殷勤，没有一个偷懒耍滑，把顾客招待的舒舒服服， 所以平日里饭馆运转的还不错，相安无事。</p>
+<p>但是随着《武林外传》的拍摄和播放， 七侠镇旅游业大爆发，游客像潮水一样蜂拥而至， 现有的店小二招待不过来了， 到了饭点，每家的门前都排起了长队，游客们吃不上饭，个个怨声载道。</p>
+<p>看到这种情况，有些老板咬了咬牙，在人工费不断上涨的情况下， 多雇了一些小二来帮忙， 无奈总是赶不上顾客增长的速度。</p>
+<p>某一天有个美国老外来到七侠镇上旅游， 也看到了吃不上饭的问题，他仔细分析了一番后发现了一个秘密： 原来这些店都采用了同一套叫做“全程贴心服务”的模式， 这个模式很有意思：</p>
+<p>客人来了以后，马上有个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二就在客人的旁边等着。</p>
+<p>后厨一摇铃铛，大喊一声：上菜，店小二马上端到客人面前， 然后站在一边等着客人吃完</p>
+<p>客人说：结账，小二收钱，找钱，送客， 迎接下一位。</p>
+<p>通常这个时候门口都排成了好几百人了！</p>
+<p>这个VIP服务实在是太贴心了！ 导致的结果很明显，饭店有几个店小二，就只能同时接待几个顾客。<br>(当然，现实中是没有饭店是这么做的，否则就等着关门吧)</p>
+<p>老外一声不吭的回去了。<br>过了几个月， 美食一条街上出现了一个巨火无比的饭馆： Node.js<br>虽然这个饭店中人满为患， 可门口竟然没有排队的！<br>更让人吃惊的是，这个店里声称： 我只需要一个店小二！</p>
+<p>Node.js这个美国老外开的饭店确实只用了一个店小二， 只不过这个小二干活的方式与众不同，他把所有的工作分为两类：<br>(1) 马上就能干完的，例如迎客，点菜，找座，下单 等等<br>(2) 需要等待别人干完才能干的活，例如上菜，结账等<br>对(1) 这个小二马上干活<br>对(2) 店小二不会等待，他只是告诉别人说，你弄完了告诉我一声，我会接着干， 然后马上去做第一类工作</p>
+<p>客人来了以后，这个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二闪电般的离开，去干别的活了，可能是迎客，点菜，找座等，总之是那些不用等待，迅速干完的活。<br>后厨大喊一声：上菜，这个小二马上端到客人面前，然后离开，干其他活。<br>客人说：结账，小二收钱，找钱，然后还是迅速闪人，干其他活。</p>
+<p>这个唯一的店小二的能力被发挥到了极致，一刻不停，闪电般的在饭店里跑来跑去，因为老板明确的告诉他： 不要等！</p>
+<p>Node.js饭店的基础设施很强大，一旦那些耗时的操作完成，店小二立刻就能知道，飞奔过来马上接着干，如果遇到新的耗时的操作，小二毫不留情的离开。<br>就这么简单， Node.js饭店火了，它同时接待客人的数量大大增加，而服务质量保持基本不变。</p>
+<p>这是我杜撰出来的一个不成熟的故事，帮助我来理解Node.js的特点：只用一个线程来处理所有请求，事件驱动编程</p>
+<p>如果我们回过头来再以计算机的视角看一下会更加清楚：<br>店小二： 线程<br>顾客：http请求<br>第一类工作(迎客，找座，下单) : 在服务器端的代码，能够快速执行<br>后厨做菜，客人吃饭： 耗时的I/O 操作<br>后厨大喊一声：上菜 ： 这是一个长时间I/O 操作完成的后所发出的事件<br>客人说：结账： 另外一个长时间I/O 操作完成的后所发出的事件<br>第二类工作(上菜，结账) : 同样是能快速执行的代码，但是他们需要等待那些耗时的I/O 操作完成才能开始，确切的来说，收到了系统发出的事件以后才开始执行。在Node.js中实际上是在回调函数中来执行的</p>
+<pre><code>下面是Node.js服务模式的伪代码：  
+1. 迎客();  
+2.   
+3. 找座();  
+4. 
+5. 下单();  
+6. 
+7. 后厨处理(&quot;做菜完成事件&quot;， function(){  
+8. 
+9.    上菜处理()；  
+10. 
+11. 客人吃饭(&quot;吃饭完成事件&quot;，function(){  
+12. 
+13.     结账处理();  
+14. 
+15.    送客();  
+16. 
+17. });  
+18. 
+19. });  
+20. 
+</code></pre><p>需要引起注意的是：</p>
+<ol>
+<li><p>后厨处理（）这个函数接受两个参数，一个是事件名，另外一个是匿名的回调函数，事件发生，回调函数才会执行。<br>客人吃饭（）函数也是类似。<br>Node.js 使用的JavaScript作为服务器端的编程语言，这种回调的方式对于javascript程序员来说，是非常自然的事情，同时从代码的角度来讲，也显得非常清晰。<br>另外Node.js使用Chrome的V8引擎来执行javascript,效率非常高</p>
+<p> 我们能不能把代码写成这样？  </p>
+<ol>
+<li>迎客();  </li>
+<li></li>
+<li>找座();  </li>
+<li></li>
+<li>下单();  </li>
+<li></li>
+<li>后厨处理(“做菜完成事件”， function(){  </li>
+<li></li>
+<li>上菜处理()；      </li>
+<li></li>
+<li>});  </li>
+<li></li>
+<li>客人吃饭(“吃饭完成事件”，function(){  </li>
+<li></li>
+<li>结账处理();  </li>
+<li></li>
+<li>});  </li>
+<li></li>
+<li>送客();   </li>
+<li></li>
+</ol>
+</li>
+</ol>
+<p>肯定不行！， 因为Node.js执行”后厨处理()”函数时，只是安插了一个匿名的回调函数在那里，并不会等待（非阻塞I/O），反而马上 会执行“客人吃饭()”函数，所以上述的写法会引起逻辑上的错误:还没上菜就开始吃饭了！<br>所以写惯了”顺序阻塞I/O“的我们需要改变一下思维方式，进入到事件驱动的世界中来。</p>
+<p>如果某个操作例如“上菜处理” 是个CPU密集型的计算任务，Node.js那个唯一的线程就会忙于执行这个计算任务而被阻塞住，就无法响应其他的请求了，带来的后果很严重，整个服务器都无法响应了！  这个时候，需要考虑把这样的代码进行异步处理，也变成node.js所擅长的事件驱动的方式。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-share" id="share">
+
+  
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone"></a>
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_renren"></a>
+    <a href="http://www.jiathis.com/share?uid=1987046" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1987046" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+
+</div>
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/web开发/">web开发</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/NodeJS/">NodeJS</a><a href="/tags/单线程/">单线程</a><a href="/tags/异步IO/">异步IO</a>
+  </div>
+
+
+</footer>   	       
+	</article>
+	
+	<!-- 多说-->
+
+<section class="comment">
+<div class="ds-thread" data-thread-key="post-关于NodeJS的单线程和异步IO" data-title="关于NodeJS的单线程和异步IO" data-url="https://517736522.github.io/2017/01/21/关于NodeJS的单线程和异步IO/"></div>
+</section>
+<!-- disqus-->
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  <p class="asidetitle">关注</p>
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/NodeJS/" title="NodeJS">NodeJS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/单线程/" title="单线程">单线程<sup>1</sup></a></li>
+		
+			<li><a href="/tags/异步IO/" title="异步IO">异步IO<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+      <li><a href="http://blog.csdn.net/517736522" target="_blank" title="517736522 csdn">CSDN</a></li>
+      <li><a href="https://github.com/517736522" target="_blank" title="517736522 github">github</a></li>
+      <li><a href="http://www.douban.com" target="_blank" title="豆瓣">豆瓣</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> 没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生！ <br/>
+			再长的路，一步步也能走完，再短的路，不迈开双脚也无法到达，平凡的脚步也可以走完伟大的行程！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3055282675" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/517736522" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="pacman">pacman</a> © 2017 
+		
+		<a href="https://517736522.github.io" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yonghengcngithubblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77edef7e6931022edbd2322ec66456e1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script type="text/javascript">
+	(function($) { 
+		// When to show the scroll link
+		// higher number = scroll link appears further down the page   
+		var upperLimit = 300;
+		
+		// Our scroll link element
+		var scrollElem = $('#totop');
+	   
+		// Scroll to top speed
+		var scrollSpeed = 800;
+	   
+		// Show and hide the scroll to top link based on scroll position   
+		scrollElem.hide();
+		$(window).scroll(function () {            
+			var scrollTop = $(document).scrollTop();       
+			if ( scrollTop > upperLimit ) {
+				$(scrollElem).stop().fadeTo(300, 1); // fade back in           
+			}else{       
+				$(scrollElem).stop().fadeTo(300, 0); // fade out
+			}
+		});
+		// Scroll to top animation on click
+		$(scrollElem).click(function(){
+			$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+		});
+	})(jQuery);
+</script>
+
+
+  </body>
+</html>
+
