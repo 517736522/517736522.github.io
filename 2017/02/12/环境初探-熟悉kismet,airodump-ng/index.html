@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>关于NodeJS的单线程和异步IO | 永恒の刹那&#39;s Blog |信息安全与管理</title>
+    <title>环境初探-熟悉kismet、airdump-ng | 永恒の刹那&#39;s Blog |信息安全与管理</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" itemprop="description" content="通过现实有趣的例子讲明了NodeJS的单线程和异步IO原理。">
+    <meta name="description" content="kismetkismet为kali内置工具–扫描附近无线网络现将网卡置为监听模式airmon-ng start wlan0出现wlan0mon网卡输入kismet回车一路回车出现这个界面时输入网卡名称-add出现主界面sort排序出现的网卡为可选的，双击可查看详细信息type：Beacon（adve">
     
     
     
@@ -67,7 +67,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/01/21/关于NodeJS的单线程和异步IO/" title="关于NodeJS的单线程和异步IO" itemprop="url">关于NodeJS的单线程和异步IO</a>
+      <a href="/2017/02/12/环境初探-熟悉kismet,airodump-ng/" title="环境初探-熟悉kismet、airdump-ng" itemprop="url">环境初探-熟悉kismet、airdump-ng</a>
   </h1>
   <!-- 显示作者
   <p class="article-author">By
@@ -76,8 +76,8 @@
     </p>
   -->  
   <p class="article-time">
-    <time datetime="2017-01-21T09:30:16.000Z" itemprop="datePublished">2017-01-21</time>
-    Updated:<time datetime="2017-01-21T14:42:31.810Z" itemprop="dateModified">2017-01-21</time>
+    <time datetime="2017-02-12T06:43:21.000Z" itemprop="datePublished">2017-02-12</time>
+    Updated:<time datetime="2017-02-12T18:05:58.398Z" itemprop="dateModified">2017-02-13</time>
     
   </p>
 </header>
@@ -87,77 +87,14 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#引用文-摘自-IBM-刘欣-个人公众号：码农翻身"><span class="toc-number">1.</span> <span class="toc-text">引用文  摘自 IBM 刘欣 个人公众号：码农翻身</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kismet"><span class="toc-number">1.</span> <span class="toc-text">kismet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#airodump-ng"><span class="toc-number">2.</span> <span class="toc-text">airodump-ng</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊讲解："><span class="toc-number">2.1.</span> <span class="toc-text">特殊讲解：</span></a></li></ol></li></ol>
 		</div>
 		
-		<h5 id="引用文-摘自-IBM-刘欣-个人公众号：码农翻身"><a href="#引用文-摘自-IBM-刘欣-个人公众号：码农翻身" class="headerlink" title="引用文  摘自 IBM 刘欣 个人公众号：码农翻身"></a>引用文  摘自 IBM 刘欣 个人公众号：码农翻身</h5><p>美丽的七侠镇上有一条美食街，很多著名的饭店都开在这里，有老字号的Apache, PHP, 最近几年火热的Ruby on Rail , 还有那些重量级的餐饮集团Websphere, Weblogic 等。</p>
-<p>这些饭店老板根据自己的实力，或多或少的雇佣了一些店小二来招待来客，这些小二干活都非常殷勤，没有一个偷懒耍滑，把顾客招待的舒舒服服， 所以平日里饭馆运转的还不错，相安无事。</p>
-<p>但是随着《武林外传》的拍摄和播放， 七侠镇旅游业大爆发，游客像潮水一样蜂拥而至， 现有的店小二招待不过来了， 到了饭点，每家的门前都排起了长队，游客们吃不上饭，个个怨声载道。</p>
-<p>看到这种情况，有些老板咬了咬牙，在人工费不断上涨的情况下， 多雇了一些小二来帮忙， 无奈总是赶不上顾客增长的速度。</p>
-<p>某一天有个美国老外来到七侠镇上旅游， 也看到了吃不上饭的问题，他仔细分析了一番后发现了一个秘密： 原来这些店都采用了同一套叫做“全程贴心服务”的模式， 这个模式很有意思：</p>
-<p>客人来了以后，马上有个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二就在客人的旁边等着。</p>
-<p>后厨一摇铃铛，大喊一声：上菜，店小二马上端到客人面前， 然后站在一边等着客人吃完</p>
-<p>客人说：结账，小二收钱，找钱，送客， 迎接下一位。</p>
-<p>通常这个时候门口都排成了好几百人了！</p>
-<p>这个VIP服务实在是太贴心了！ 导致的结果很明显，饭店有几个店小二，就只能同时接待几个顾客。<br>(当然，现实中是没有饭店是这么做的，否则就等着关门吧)</p>
-<p>老外一声不吭的回去了。<br>过了几个月， 美食一条街上出现了一个巨火无比的饭馆： Node.js<br>虽然这个饭店中人满为患， 可门口竟然没有排队的！<br>更让人吃惊的是，这个店里声称： 我只需要一个店小二！</p>
-<p>Node.js这个美国老外开的饭店确实只用了一个店小二， 只不过这个小二干活的方式与众不同，他把所有的工作分为两类：<br>(1) 马上就能干完的，例如迎客，点菜，找座，下单 等等<br>(2) 需要等待别人干完才能干的活，例如上菜，结账等<br>对(1) 这个小二马上干活<br>对(2) 店小二不会等待，他只是告诉别人说，你弄完了告诉我一声，我会接着干， 然后马上去做第一类工作</p>
-<p>客人来了以后，这个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二闪电般的离开，去干别的活了，可能是迎客，点菜，找座等，总之是那些不用等待，迅速干完的活。<br>后厨大喊一声：上菜，这个小二马上端到客人面前，然后离开，干其他活。<br>客人说：结账，小二收钱，找钱，然后还是迅速闪人，干其他活。</p>
-<p>这个唯一的店小二的能力被发挥到了极致，一刻不停，闪电般的在饭店里跑来跑去，因为老板明确的告诉他： 不要等！</p>
-<p>Node.js饭店的基础设施很强大，一旦那些耗时的操作完成，店小二立刻就能知道，飞奔过来马上接着干，如果遇到新的耗时的操作，小二毫不留情的离开。<br>就这么简单， Node.js饭店火了，它同时接待客人的数量大大增加，而服务质量保持基本不变。</p>
-<p>这是我杜撰出来的一个不成熟的故事，帮助我来理解Node.js的特点：只用一个线程来处理所有请求，事件驱动编程</p>
-<p>如果我们回过头来再以计算机的视角看一下会更加清楚：<br>店小二： 线程<br>顾客：http请求<br>第一类工作(迎客，找座，下单) : 在服务器端的代码，能够快速执行<br>后厨做菜，客人吃饭： 耗时的I/O 操作<br>后厨大喊一声：上菜 ： 这是一个长时间I/O 操作完成的后所发出的事件<br>客人说：结账： 另外一个长时间I/O 操作完成的后所发出的事件<br>第二类工作(上菜，结账) : 同样是能快速执行的代码，但是他们需要等待那些耗时的I/O 操作完成才能开始，确切的来说，收到了系统发出的事件以后才开始执行。在Node.js中实际上是在回调函数中来执行的</p>
-<pre><code>下面是Node.js服务模式的伪代码：  
-1. 迎客();  
-2.   
-3. 找座();  
-4. 
-5. 下单();  
-6. 
-7. 后厨处理(&quot;做菜完成事件&quot;， function(){  
-8. 
-9.    上菜处理()；  
-10. 
-11. 客人吃饭(&quot;吃饭完成事件&quot;，function(){  
-12. 
-13.     结账处理();  
-14. 
-15.    送客();  
-16. 
-17. });  
-18. 
-19. });  
-20. 
-</code></pre><p>需要引起注意的是：</p>
-<ol>
-<li><p>后厨处理（）这个函数接受两个参数，一个是事件名，另外一个是匿名的回调函数，事件发生，回调函数才会执行。<br>客人吃饭（）函数也是类似。<br>Node.js 使用的JavaScript作为服务器端的编程语言，这种回调的方式对于javascript程序员来说，是非常自然的事情，同时从代码的角度来讲，也显得非常清晰。<br>另外Node.js使用Chrome的V8引擎来执行javascript,效率非常高</p>
-<p> 我们能不能把代码写成这样？  </p>
-<ol>
-<li>迎客();  </li>
-<li></li>
-<li>找座();  </li>
-<li></li>
-<li>下单();  </li>
-<li></li>
-<li>后厨处理(“做菜完成事件”， function(){  </li>
-<li></li>
-<li>上菜处理()；      </li>
-<li></li>
-<li>});  </li>
-<li></li>
-<li>客人吃饭(“吃饭完成事件”，function(){  </li>
-<li></li>
-<li>结账处理();  </li>
-<li></li>
-<li>});  </li>
-<li></li>
-<li>送客();   </li>
-<li></li>
-</ol>
-</li>
-</ol>
-<p>肯定不行！， 因为Node.js执行”后厨处理()”函数时，只是安插了一个匿名的回调函数在那里，并不会等待（非阻塞I/O），反而马上 会执行“客人吃饭()”函数，所以上述的写法会引起逻辑上的错误:还没上菜就开始吃饭了！<br>所以写惯了”顺序阻塞I/O“的我们需要改变一下思维方式，进入到事件驱动的世界中来。</p>
-<p>如果某个操作例如“上菜处理” 是个CPU密集型的计算任务，Node.js那个唯一的线程就会忙于执行这个计算任务而被阻塞住，就无法响应其他的请求了，带来的后果很严重，整个服务器都无法响应了！  这个时候，需要考虑把这样的代码进行异步处理，也变成node.js所擅长的事件驱动的方式。</p>
+		<h1 id="kismet"><a href="#kismet" class="headerlink" title="kismet"></a>kismet</h1><p>kismet为kali内置工具–扫描附近无线网络<br>现将网卡置为监听模式<br>airmon-ng start wlan0<br>出现wlan0mon网卡<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/1.jpg" alt="1"><br>输入kismet回车<br>一路回车<br>出现这个界面时<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/2.jpg" alt="2"><br>输入网卡名称-add<br>出现主界面<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/3.jpg" alt="3"><br>sort排序<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/4.jpg" alt="4"><br>出现的网卡为可选的，双击可查看详细信息<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/5.jpg" alt="5"><br>type：Beacon（advertising AP)<br>信标帧Beacon分为probe request和probe relay<br>主动探测为发送request 寻找附近AP ,AP 就回复relay  </p>
+<h1 id="airodump-ng"><a href="#airodump-ng" class="headerlink" title="airodump-ng"></a>airodump-ng</h1><p>airodump-ng为kali内置工具—抓包（握手包）<br>现将网卡置为监听模式（monitor mode)<br>airmon-ng start wlan0<br>kali1.0可以直接使用airodump-ng wlan0 抓包<br>kali2.0直接使用airodump-ng wlan0mon会出现问题<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/6.jpg" alt="6"><br>需要先把wlan0mon down掉<br>ifconfig wlan0mon down再抓包就行了<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/7.jpg" alt="7">  </p>
+<p>airodump有几个选项<br>-w 输出文件<br>–ivs 只保存ivs<br>-c 信道<br>–bssid mac<br>–essid 名称<br>airodump-ng -w /root/桌面/1  -c 1 wlan0mon  </p>
+<p>BSSID ap的mac<br>PWR 信号强度<br>Beacons 无线ap发的通告，周期发送（定期发送信标帧，“我在着呢！”）<br>#Data 抓到的数据包<br>ch 信道<br>MB 数字表示最大传输速率（网络标准),e表示802.11e,”.”表示短前导码。<br>注意：前导码是数据包的一组比特组，用来让接受者同步并准备接受实际的数据。<br>ENC 加密方式<br>CIPHER 加密算法，WPA-TKIP WPA2-CCMP<br>AUTH 认证 MGT PSK OPN开放 pre-shared key(域共享秘钥）<br>ESSID 通俗指wifi名字 <length:8>这样表示未广播<br>Station 客户端<br>RATE 传输速率比如300M无线路由器<br>Lost 最近的10秒内丢包数seq tcp<br>Frames 来自客户端的数据frame<br>Probe 主动探测  </length:8></p>
+<h2 id="特殊讲解："><a href="#特殊讲解：" class="headerlink" title="特殊讲解："></a>特殊讲解：</h2><p><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/8.jpg" alt="8"><br>not associated 表示未关联，是因为客户端发出信标帧，未与AP连接<br>有时候channel会显示-1 应不予理会也可加选项–ignore-negative-one<br>抓到握手包会在界面右上角显示hand-shark字样  </p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -187,13 +124,13 @@ var jiathis_config = {data_track_clickback:'true'};
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/web开发/">web开发</a>
+  <a class="article-category-link" href="/categories/无线渗透/">无线渗透</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/NodeJS/">NodeJS</a><a href="/tags/单线程/">单线程</a><a href="/tags/异步IO/">异步IO</a>
+  <span></span> <a href="/tags/无线/">无线</a><a href="/tags/渗透/">渗透</a><a href="/tags/kismet/">kismet</a><a href="/tags/airodump-ng/">airodump-ng</a>
   </div>
 
 
@@ -203,20 +140,28 @@ var jiathis_config = {data_track_clickback:'true'};
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/02/12/环境初探-熟悉kismet,airodump-ng/" title="环境初探-熟悉kismet、airdump-ng">
+ <a href="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/" title="WEP破解-aircrack-ng破解WEP加密">
   <strong>Prev:</strong><br/>
   <span>
-  环境初探-熟悉kismet、airdump-ng</span>
+  WEP破解-aircrack-ng破解WEP加密</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2017/01/21/关于NodeJS的单线程和异步IO/"  title="关于NodeJS的单线程和异步IO">
+ <strong>Next:</strong><br/> 
+ <span>关于NodeJS的单线程和异步IO
+</span>
+</a>
+</div>
 
 </nav>
 
 	<!-- 多说-->
 
 <section class="comment">
-<div class="ds-thread" data-thread-key="post-关于NodeJS的单线程和异步IO" data-title="关于NodeJS的单线程和异步IO" data-url="https://517736522.github.io/2017/01/21/关于NodeJS的单线程和异步IO/"></div>
+<div class="ds-thread" data-thread-key="post-环境初探-熟悉kismet、airdump-ng" data-title="环境初探-熟悉kismet、airdump-ng" data-url="https://517736522.github.io/2017/02/12/环境初探-熟悉kismet,airodump-ng/"></div>
 </section>
 <!-- disqus-->
 

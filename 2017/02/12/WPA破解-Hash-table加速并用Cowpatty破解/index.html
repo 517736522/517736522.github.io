@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>永恒の刹那&#39;s Blog |信息安全与管理</title>
+    <title>WPA破解-Hash-table加速并用Cowpatty破解 | 永恒の刹那&#39;s Blog |信息安全与管理</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="发了特里投入到法国！">
+    <meta name="description" content="cowpatty也是一款跑包工具可直接用字典，和aircrack-ng一样：cowpatty -f 字典 -r [捕获的报文] -s [ssid]   
+####最好的方式用hash-table破解先创建hash-tablegenpmk -f 字典 -d 生成到哪 -s ssid生成hash-tab">
     
     
     
@@ -61,164 +62,110 @@
 </div>
 
     </header>
-    
-
     <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/" title="WPA破解-pyrit:batch-table加速——attack_db模块加速" itemprop="url">
-  
-    <h1 itemprop="name">WPA破解-pyrit:batch-table加速——attack_db模块加速</h1>
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-           <p itemprop="description" >http://xiao106347.blog.163.com/blog/static/215992078201311851838无线密码破解5：使用GPU加速工具PYRIT极速破解无线密码  
-###pyrit为kali下的工具，支持GPU加速  
-单纯字典跑包pyrit -r </p>
-        
+      <a href="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/" title="WPA破解-Hash-table加速并用Cowpatty破解" itemprop="url">WPA破解-Hash-table加速并用Cowpatty破解</a>
+  </h1>
+  <!-- 显示作者
+  <p class="article-author">By
     
-    <time datetime="2017-02-12T16:01:25.000Z" itemprop="datePublished">2017-02-13</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WPA破解-windows下GPU跑包加速/" title="WPA破解-windows下GPU跑包加速" itemprop="url">
-  
-    <h1 itemprop="name">WPA破解-windows下GPU跑包加速</h1>
-    
-     
-           <p itemprop="description" >本文用到的工具为ewsa,为windows环境下的工具此工具支持GPU加速  
-破解流程：1.选项–CPU选项2.选项–GPU选项3.选项–攻击选项–新增字典（默认目录下会携带英德俄三文的字典）4.文件–导入tcpdump文件–选择已抓到握手包的cap文件–选择ssid5.开始测</p>
-        
-    
-    <time datetime="2017-02-12T15:39:19.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WPA破解-自动化破解WPA加密/" title="WPA破解-自动化破解WPA加密" itemprop="url">
-  
-    <h1 itemprop="name">WPA破解-自动化破解WPA加密</h1>
-    
-     
-           <p itemprop="description" >利用的是wifite自动化工具  airmon-ng start wlan0进入monitor modewifite -dict 字典一定要等到有CLIENT才能更容易的破解如果路由器开了WPS则会先尝试枚举wps的PIN码(新版wifite会先调用pixiwps秒破，失败继续r</p>
-        
-    
-    <time datetime="2017-02-12T15:04:13.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/" title="WPA破解-Hash-table加速并用Cowpatty破解" itemprop="url">
-  
-    <h1 itemprop="name">WPA破解-Hash-table加速并用Cowpatty破解</h1>
-    
-     
-           <p itemprop="description" >cowpatty也是一款跑包工具可直接用字典，和aircrack-ng一样：cowpatty -f 字典 -r [捕获的报文] -s [ssid]   
-####最好的方式用hash-table破解先创建hash-tablegenpmk -f 字典 -d 生成到哪 -s ssid</p>
-        
-    
+      <a href="https://517736522.github.io" title="John Doe">John Doe</a>
+    </p>
+  -->  
+  <p class="article-time">
     <time datetime="2017-02-12T14:42:13.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
+    Updated:<time datetime="2017-02-12T18:16:12.788Z" itemprop="dateModified">2017-02-13</time>
+    
+  </p>
+</header>
 
-  <section class="post" itemscope itemprop="blogPost">
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+		</div>
+		
+		<p>cowpatty也是一款跑包工具<br>可直接用字典，和aircrack-ng一样：<br>cowpatty -f 字典 -r [捕获的报文] -s [ssid]<br><img src="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/1.jpg" alt="1">   </p>
+<p>####最好的方式用hash-table破解<br>先创建hash-table<br>genpmk -f 字典 -d 生成到哪 -s ssid<br><img src="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/2.jpg" alt="2"><br>生成hash-table时速度为180个每秒，生成较慢  </p>
+<p>但是用hash-table跑包时，速度达4W每秒<br>cowpatty -d [hash-table] -r [捕获的报文] -s [ssid]<br><img src="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/3.jpg" alt="3">  </p>
   
-    <a href="/2017/02/12/WPA破解-hashcat跑包破解/" title="WPA破解-hashcat跑包破解" itemprop="url">
-  
-    <h1 itemprop="name">WPA破解-hashcat跑包破解</h1>
-    
-     
-           <p itemprop="description" >hashcat工具和aircrack-ng差不多，但是hashcat能破解多种类型的密文  
-aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的文件名为xxx.hccap   
-运行hashcat发现版本太老解决方法：把时间调到2012</p>
-        
-    
-    <time datetime="2017-02-12T14:16:12.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-share" id="share">
 
-  <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/" title="WPA破解-aircrack-ng破解WPA加密" itemprop="url">
-  
-    <h1 itemprop="name">WPA破解-aircrack-ng破解WPA加密</h1>
-    
-     
-           <p itemprop="description" >WPA基本上都是暴力破解，如果开启了WPS,应优先WPS网卡进入监听模式并抓包airodump wlan0mon确认目标信息airodump wlan0mon -w /root/1这个不指定清楚，比较难抓包，要看无线网卡的功率。推荐这个：airodump-ng -w /root/</p>
-        
-    
-    <time datetime="2017-02-12T13:41:38.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WEP破解-破解WEP新思路-Hirte/" title="WEP破解-破解WEP新思路--Hirte" itemprop="url">
-  
-    <h1 itemprop="name">WEP破解-破解WEP新思路--Hirte</h1>
-    
-     
-           <p itemprop="description" >转自安全客有一点推荐：修改伪IPMAC为目标Ap的MAC使用macchanger -m 02:BD:11:11:11:11 wlan0(修改前先down掉)</p>
-        
-    
-    <time datetime="2017-02-12T12:55:50.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WEP破解-wifite自动化破解WEP加密/" title="WEP破解-wifite自动化破解WEP加密" itemprop="url">
-  
-    <h1 itemprop="name">WEP破解-wifite自动化破解WEP加密</h1>
-    
-     
-           <p itemprop="description" >wifite工具为kali自带，此工具自动使用各种攻击方式进行抓包选择有client的会比较容易破解，有client的会自动采用ARP重放攻击等方式容易收集ivsctrl+c然后选择AP num等到特定数目时，会自动使用Crack破解不成功会继续收集ivs直到成功为止。</p>
-        
-    
-    <time datetime="2017-02-12T12:29:50.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WEP破解-Gerix-wifi-cracker自动化破解WEP加密/" title="WEP破解-Gerix-wifi-cracker自动化破解WEP加密" itemprop="url">
-  
-    <h1 itemprop="name">WEP破解-Gerix-wifi-cracker自动化破解WEP加密</h1>
-    
-     
-           <p itemprop="description" >Gerix这个工具原先在BT5有，到kali就没了直接运行python gerix.py出现图形化界面在configuration界面选择网卡，单击网卡名称即可（mon0)选择下方的Rescan networks扫描附近网络再单击目标Essid即可此次选择的是wep加密方式的AP</p>
-        
-    
-    <time datetime="2017-02-12T11:58:15.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/" title="WEP破解-aircrack-ng破解WEP加密" itemprop="url">
-  
-    <h1 itemprop="name">WEP破解-aircrack-ng破解WEP加密</h1>
-    
-     
-           <p itemprop="description" >wep加密方式已经不常见了，因为wep加密很脆弱，几分钟就可破解。家用路由器环境  
-在此讲一下Aircrack-ng工具包：aircrack-ng 破解airmon-ng 改变网卡工作模式airodump-ng 捕获报文aireplay-ng 提供各种攻击（例如arp注入攻击）</p>
-        
-    
-    <time datetime="2017-02-12T09:01:27.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone"></a>
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_renren"></a>
+    <a href="http://www.jiathis.com/share?uid=1987046" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1987046" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
 
-  <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-  </nav>
 
 </div>
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/无线渗透/">无线渗透</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/无线/">无线</a><a href="/tags/渗透/">渗透</a><a href="/tags/WPA/">WPA</a><a href="/tags/cowpatty/">cowpatty</a>
+  </div>
+
+
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/02/12/WPA破解-自动化破解WPA加密/" title="WPA破解-自动化破解WPA加密">
+  <strong>Prev:</strong><br/>
+  <span>
+  WPA破解-自动化破解WPA加密</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/02/12/WPA破解-hashcat跑包破解/"  title="WPA破解-hashcat跑包破解">
+ <strong>Next:</strong><br/> 
+ <span>WPA破解-hashcat跑包破解
+</span>
+</a>
+</div>
+
+</nav>
+
+	<!-- 多说-->
+
+<section class="comment">
+<div class="ds-thread" data-thread-key="post-WPA破解-Hash-table加速并用Cowpatty破解" data-title="WPA破解-Hash-table加速并用Cowpatty破解" data-url="https://517736522.github.io/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/"></div>
+</section>
+<!-- disqus-->
+
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
@@ -374,7 +321,51 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yonghengcngithubblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
@@ -422,5 +413,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
 
   </body>
- </html>
+</html>
 
