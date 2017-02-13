@@ -1,0 +1,437 @@
+
+ <!DOCTYPE HTML>
+<html  xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>WPS-reaver工具穷举pin码 | 永恒の刹那&#39;s Blog |信息安全与管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="reaver工具，具有历史丰碑性，一般破解WPS高级工具都以这个为底层  
+只要路由器开启了WPS功能，都是在几小时内能够破解的  
+如何知道哪些无线Ap开了WPS呢？airodump-ng wlan0mon只要MB处54e后带点.的都是开启WPS功能  
+wash -i wlan0mon -C有W">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="永恒の刹那&#39;s Blog |信息安全与管理" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="永恒の刹那&#39;s Blog |信息安全与管理">永恒の刹那&#39;s Blog |信息安全与管理</a></h1>
+				<h2 class="blog-motto">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">文章</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+						<li><a href="/atom.xml">RSS订阅</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="Search" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/02/13/WPS破解-reaver工具穷举pin码/" title="WPS-reaver工具穷举pin码" itemprop="url">WPS-reaver工具穷举pin码</a>
+  </h1>
+  <!-- 显示作者
+  <p class="article-author">By
+    
+      <a href="https://517736522.github.io" title="John Doe">John Doe</a>
+    </p>
+  -->  
+  <p class="article-time">
+    <time datetime="2017-02-13T07:29:59.000Z" itemprop="datePublished">2017-02-13</time>
+    Updated:<time datetime="2017-02-13T17:31:19.420Z" itemprop="dateModified">2017-02-14</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pin码破解原理："><span class="toc-number">1.</span> <span class="toc-text">pin码破解原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reaver工具参数："><span class="toc-number">2.</span> <span class="toc-text">reaver工具参数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过PIN来获取预共享秘钥"><span class="toc-number">3.</span> <span class="toc-text">通过PIN来获取预共享秘钥:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进度文件-mac-wpc"><span class="toc-number">4.</span> <span class="toc-text">进度文件[mac].wpc:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指定位置开始破解："><span class="toc-number">5.</span> <span class="toc-text">指定位置开始破解：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pixiewps快速破解："><span class="toc-number"></span> <span class="toc-text">pixiewps快速破解：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#wifite自动化工具："><span class="toc-number"></span> <span class="toc-text">wifite自动化工具：</span></a>
+		</div>
+		
+		<p>reaver工具，具有历史丰碑性，一般破解WPS高级工具都以这个为底层  </p>
+<p>只要路由器开启了WPS功能，都是在几小时内能够破解的<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/1.jpg" alt="1">  </p>
+<p>如何知道哪些无线Ap开了WPS呢？<br>airodump-ng wlan0mon<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/2.jpg" alt="2"><br>只要MB处54e后带点.的都是开启WPS功能  </p>
+<p>wash -i wlan0mon -C<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/3.jpg" alt="3"><br>有WPS功能都会出现  </p>
+<p>接下来运行下面的命令进行破解<br>reaver -i wlan0mon -b [BSSID] [-v -a -S -d 0 -t 1 -c 1]<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/5.jpg" alt="5">  </p>
+<p>###注意：如果出现了WARNING：Failed to associate with XX:XX:XX:XX:XX:XX (ESSID:XXX) 表示不支持wps  </p>
+<h2 id="pin码破解原理："><a href="#pin码破解原理：" class="headerlink" title="pin码破解原理："></a>pin码破解原理：</h2><p>1234 567 8<br>前4位 10^4 先跑前4位，跑准了就会固定，再跑后3位<br>后3位 10^3<br>最后1位为检验位<br>一共11000种可能，最快2s/个pin<br>最快时长为6.11小时  </p>
+<h2 id="reaver工具参数："><a href="#reaver工具参数：" class="headerlink" title="reaver工具参数："></a>reaver工具参数：</h2><p>-i 网卡名mon0<br>-b BSSID 即ap的mac<br>-c 信道<br>-e ESSID<br>-S 使用最小Diffie-Hellman keys<br>-a 自动检测目标AP最佳配置<br>-t 穷举的超时时间<br>-d 每穷举一次的闲置时间预设为1秒（信号越好RSSI SNR dBm，delay越小）<br>-n Target AP always sends a NACK [Auto] 可以防止漏码（保证每个穷举）<br>-p 加已知的4位或者8位密码<br>-w 详细信息<br>-o 输出<br>-m 指定本机的mac地址<br>-l wps lock后的等待时间 默认60<br>-x 多少次错误后的延迟 默认0<br>-g 最多pin多少次  </p>
+<h2 id="通过PIN来获取预共享秘钥"><a href="#通过PIN来获取预共享秘钥" class="headerlink" title="通过PIN来获取预共享秘钥:"></a>通过PIN来获取预共享秘钥:</h2><p>-p pin码<br>只要知道Pin码，那么即使改了密码也能知道<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/4.jpg" alt="4">  </p>
+<h2 id="进度文件-mac-wpc"><a href="#进度文件-mac-wpc" class="headerlink" title="进度文件[mac].wpc:"></a>进度文件[mac].wpc:</h2><p>有两个位置：/usr/local/etc/reaver<br>/etc/reaver<br>新一次跑的Ap都会创建进度文件。<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/6.jpg" alt="6">  </p>
+<p>第一行 前四位跑到的位置<br>第二行 后三位跑到的位置<br>第三行 0：全部不确定 1：已确定前四 2： 前四后三确定了  </p>
+<p>前四：<br>第4行开始才是穷举字典<br>后三：<br>第10004开始才是后三位的字典<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/7.jpg" alt="7">  </p>
+<h2 id="指定位置开始破解："><a href="#指定位置开始破解：" class="headerlink" title="指定位置开始破解："></a>指定位置开始破解：</h2><p>假设需要从9000开始：<br>第9005行才是9000<br>9005-4=9001<br>之后把前三改成：<br>9001<br>0<br>0  </p>
+<h1 id="pixiewps快速破解："><a href="#pixiewps快速破解：" class="headerlink" title="pixiewps快速破解："></a>pixiewps快速破解：</h1><p>pixiewps，kali下有工具<br>但是reaver1.5集成了-K </p>
+<p>reaver -i wlan0mon -c 1 -b [BSSID] -v -S -K 1<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/8.jpg" alt="8"><br>但是要使用较老的雷凌，博通，瑞日立芯片才能实现快速破解<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/9.jpg" alt="9">  </p>
+<h1 id="wifite自动化工具："><a href="#wifite自动化工具：" class="headerlink" title="wifite自动化工具："></a>wifite自动化工具：</h1><p>选择wPS目标，会先pixiwps，再穷举wps，不行就暴力破解握手包<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/10.jpg" alt="10">  </p>
+<p>作者使用了6个多小时破解处理，而且是1开头的PIN<br>如果PIN是9开头也许需要50多个小时了  </p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-share" id="share">
+
+  
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone"></a>
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_renren"></a>
+    <a href="http://www.jiathis.com/share?uid=1987046" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1987046" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+
+</div>
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/无线渗透/">无线渗透</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/无线/">无线</a><a href="/tags/渗透/">渗透</a><a href="/tags/reaver/">reaver</a><a href="/tags/WPS/">WPS</a><a href="/tags/pixiewps/">pixiewps</a>
+  </div>
+
+
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/02/13/机制突破-突破Mac-address-filter/" title="机制突破-突破Mac-address-filter">
+  <strong>Prev:</strong><br/>
+  <span>
+  机制突破-突破Mac-address-filter</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/"  title="WPA破解-使用airolib-ng创建彩虹表加速">
+ <strong>Next:</strong><br/> 
+ <span>WPA破解-使用airolib-ng创建彩虹表加速
+</span>
+</a>
+</div>
+
+</nav>
+
+	<!-- 多说-->
+
+<section class="comment">
+<div class="ds-thread" data-thread-key="post-WPS-reaver工具穷举pin码" data-title="WPS-reaver工具穷举pin码" data-url="https://517736522.github.io/2017/02/13/WPS破解-reaver工具穷举pin码/"></div>
+</section>
+<!-- disqus-->
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  <p class="asidetitle">关注</p>
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>22</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/CDP/" title="CDP">CDP<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Gerix/" title="Gerix">Gerix<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hirte/" title="Hirte">Hirte<sup>1</sup></a></li>
+		
+			<li><a href="/tags/NodeJS/" title="NodeJS">NodeJS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/WEP/" title="WEP">WEP<sup>4</sup></a></li>
+		
+			<li><a href="/tags/WPA/" title="WPA">WPA<sup>7</sup></a></li>
+		
+			<li><a href="/tags/WPS/" title="WPS">WPS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Yersinia/" title="Yersinia">Yersinia<sup>1</sup></a></li>
+		
+			<li><a href="/tags/aircrack-ng/" title="aircrack-ng">aircrack-ng<sup>2</sup></a></li>
+		
+			<li><a href="/tags/airodump-ng/" title="airodump-ng">airodump-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/airolib-ng/" title="airolib-ng">airolib-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/arpspoof/" title="arpspoof">arpspoof<sup>1</sup></a></li>
+		
+			<li><a href="/tags/cowpatty/" title="cowpatty">cowpatty<sup>1</sup></a></li>
+		
+			<li><a href="/tags/deauth/" title="deauth">deauth<sup>1</sup></a></li>
+		
+			<li><a href="/tags/driftnet/" title="driftnet">driftnet<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ettercap/" title="ettercap">ettercap<sup>2</sup></a></li>
+		
+			<li><a href="/tags/ewsa/" title="ewsa">ewsa<sup>1</sup></a></li>
+		
+			<li><a href="/tags/hashcat/" title="hashcat">hashcat<sup>1</sup></a></li>
+		
+			<li><a href="/tags/kismet/" title="kismet">kismet<sup>1</sup></a></li>
+		
+			<li><a href="/tags/macchanger/" title="macchanger">macchanger<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+      <li><a href="http://blog.csdn.net/517736522" target="_blank" title="517736522 csdn">CSDN</a></li>
+      <li><a href="https://github.com/517736522" target="_blank" title="517736522 github">github</a></li>
+      <li><a href="http://www.douban.com" target="_blank" title="豆瓣">豆瓣</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> 没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生！ <br/>
+			再长的路，一步步也能走完，再短的路，不迈开双脚也无法到达，平凡的脚步也可以走完伟大的行程！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3055282675" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/517736522" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="pacman">pacman</a> © 2017 
+		
+		<a href="https://517736522.github.io" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yonghengcngithubblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77edef7e6931022edbd2322ec66456e1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script type="text/javascript">
+	(function($) { 
+		// When to show the scroll link
+		// higher number = scroll link appears further down the page   
+		var upperLimit = 300;
+		
+		// Our scroll link element
+		var scrollElem = $('#totop');
+	   
+		// Scroll to top speed
+		var scrollSpeed = 800;
+	   
+		// Show and hide the scroll to top link based on scroll position   
+		scrollElem.hide();
+		$(window).scroll(function () {            
+			var scrollTop = $(document).scrollTop();       
+			if ( scrollTop > upperLimit ) {
+				$(scrollElem).stop().fadeTo(300, 1); // fade back in           
+			}else{       
+				$(scrollElem).stop().fadeTo(300, 0); // fade out
+			}
+		});
+		// Scroll to top animation on click
+		$(scrollElem).click(function(){
+			$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+		});
+	})(jQuery);
+</script>
+
+
+  </body>
+</html>
+

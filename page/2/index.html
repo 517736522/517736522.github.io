@@ -68,35 +68,155 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/环境初探-熟悉kismet,airodump-ng/" title="环境初探-熟悉kismet、airdump-ng" itemprop="url">
+    <a href="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/" title="WPA破解-使用airolib-ng创建彩虹表加速" itemprop="url">
   
-    <h1 itemprop="name">环境初探-熟悉kismet、airdump-ng</h1>
+    <h1 itemprop="name">WPA破解-使用airolib-ng创建彩虹表加速</h1>
     
      
-           <p itemprop="description" >kismetkismet为kali内置工具–扫描附近无线网络现将网卡置为监听模式airmon-ng start wlan0出现wlan0mon网卡输入kismet回车一路回车出现这个界面时输入网卡名称-add出现主界面sort排序出现的网卡为可选的，双击可查看详细信息type：B</p>
+           <p itemprop="description" >使用airolib-ng可以提升一百倍的速度，13万左右1.airolib-ng [数据库名] –import essid [写了一个或多个ssid的txt]  
+2.airolib-ng [数据库名] –import passwd [字典]  
+3.airolib-ng [数据</p>
         
     
-    <time datetime="2017-02-12T06:43:21.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T05:34:14.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/01/21/关于NodeJS的单线程和异步IO/" title="关于NodeJS的单线程和异步IO" itemprop="url">
+    <a href="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/" title="WPA破解-pyrit:batch-table加速——attack_db模块加速" itemprop="url">
   
-    <h1 itemprop="name">关于NodeJS的单线程和异步IO</h1>
+    <h1 itemprop="name">WPA破解-pyrit:batch-table加速——attack_db模块加速</h1>
     
      
-      <p itemprop="description" >通过现实有趣的例子讲明了NodeJS的单线程和异步IO原理。</p>
-      
+           <p itemprop="description" >http://xiao106347.blog.163.com/blog/static/215992078201311851838无线密码破解5：使用GPU加速工具PYRIT极速破解无线密码  
+###pyrit为kali下的工具，支持GPU加速  
+单纯字典跑包pyrit -r </p>
+        
     
-    <time datetime="2017-01-21T09:30:16.000Z" itemprop="datePublished">2017-01-21</time>
+    <time datetime="2017-02-12T16:01:25.000Z" itemprop="datePublished">2017-02-13</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WPA破解-windows下GPU跑包加速/" title="WPA破解-windows下GPU跑包加速" itemprop="url">
+  
+    <h1 itemprop="name">WPA破解-windows下GPU跑包加速</h1>
+    
+     
+           <p itemprop="description" >本文用到的工具为ewsa,为windows环境下的工具此工具支持GPU加速  
+破解流程：1.选项–CPU选项2.选项–GPU选项3.选项–攻击选项–新增字典（默认目录下会携带英德俄三文的字典）4.文件–导入tcpdump文件–选择已抓到握手包的cap文件–选择ssid5.开始测</p>
+        
+    
+    <time datetime="2017-02-12T15:39:19.000Z" itemprop="datePublished">2017-02-12</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WPA破解-自动化破解WPA加密/" title="WPA破解-自动化破解WPA加密" itemprop="url">
+  
+    <h1 itemprop="name">WPA破解-自动化破解WPA加密</h1>
+    
+     
+           <p itemprop="description" >利用的是wifite自动化工具  airmon-ng start wlan0进入monitor modewifite -dict 字典一定要等到有CLIENT才能更容易的破解如果路由器开了WPS则会先尝试枚举wps的PIN码(新版wifite会先调用pixiwps秒破，失败继续r</p>
+        
+    
+    <time datetime="2017-02-12T15:04:13.000Z" itemprop="datePublished">2017-02-12</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/" title="WPA破解-Hash-table加速并用Cowpatty破解" itemprop="url">
+  
+    <h1 itemprop="name">WPA破解-Hash-table加速并用Cowpatty破解</h1>
+    
+     
+           <p itemprop="description" >cowpatty也是一款跑包工具可直接用字典，和aircrack-ng一样：cowpatty -f 字典 -r [捕获的报文] -s [ssid]   
+####最好的方式用hash-table破解先创建hash-tablegenpmk -f 字典 -d 生成到哪 -s ssid</p>
+        
+    
+    <time datetime="2017-02-12T14:42:13.000Z" itemprop="datePublished">2017-02-12</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WPA破解-hashcat跑包破解/" title="WPA破解-hashcat跑包破解" itemprop="url">
+  
+    <h1 itemprop="name">WPA破解-hashcat跑包破解</h1>
+    
+     
+           <p itemprop="description" >hashcat工具和aircrack-ng差不多，但是hashcat能破解多种类型的密文  
+aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的文件名为xxx.hccap   
+运行hashcat发现版本太老解决方法：把时间调到2012</p>
+        
+    
+    <time datetime="2017-02-12T14:16:12.000Z" itemprop="datePublished">2017-02-12</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/" title="WPA破解-aircrack-ng破解WPA加密" itemprop="url">
+  
+    <h1 itemprop="name">WPA破解-aircrack-ng破解WPA加密</h1>
+    
+     
+           <p itemprop="description" >WPA基本上都是暴力破解，如果开启了WPS,应优先WPS网卡进入监听模式并抓包airodump wlan0mon确认目标信息airodump wlan0mon -w /root/1这个不指定清楚，比较难抓包，要看无线网卡的功率。推荐这个：airodump-ng -w /root/</p>
+        
+    
+    <time datetime="2017-02-12T13:41:38.000Z" itemprop="datePublished">2017-02-12</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WEP破解-破解WEP新思路-Hirte/" title="WEP破解-破解WEP新思路--Hirte" itemprop="url">
+  
+    <h1 itemprop="name">WEP破解-破解WEP新思路--Hirte</h1>
+    
+     
+           <p itemprop="description" >转自安全客有一点推荐：修改伪IPMAC为目标Ap的MAC使用macchanger -m 02:BD:11:11:11:11 wlan0(修改前先down掉)</p>
+        
+    
+    <time datetime="2017-02-12T12:55:50.000Z" itemprop="datePublished">2017-02-12</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WEP破解-wifite自动化破解WEP加密/" title="WEP破解-wifite自动化破解WEP加密" itemprop="url">
+  
+    <h1 itemprop="name">WEP破解-wifite自动化破解WEP加密</h1>
+    
+     
+           <p itemprop="description" >wifite工具为kali自带，此工具自动使用各种攻击方式进行抓包选择有client的会比较容易破解，有client的会自动采用ARP重放攻击等方式容易收集ivsctrl+c然后选择AP num等到特定数目时，会自动使用Crack破解不成功会继续收集ivs直到成功为止。</p>
+        
+    
+    <time datetime="2017-02-12T12:29:50.000Z" itemprop="datePublished">2017-02-12</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/12/WEP破解-Gerix-wifi-cracker自动化破解WEP加密/" title="WEP破解-Gerix-wifi-cracker自动化破解WEP加密" itemprop="url">
+  
+    <h1 itemprop="name">WEP破解-Gerix-wifi-cracker自动化破解WEP加密</h1>
+    
+     
+           <p itemprop="description" >Gerix这个工具原先在BT5有，到kali就没了直接运行python gerix.py出现图形化界面在configuration界面选择网卡，单击网卡名称即可（mon0)选择下方的Rescan networks扫描附近网络再单击目标Essid即可此次选择的是wep加密方式的AP</p>
+        
+    
+    <time datetime="2017-02-12T11:58:15.000Z" itemprop="datePublished">2017-02-12</time>
   </a>
 </section>
 
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
   </nav>
 
 </div>
@@ -116,7 +236,7 @@
 		
 			<li><a href="/categories/web开发/" title="web开发">web开发<sup>1</sup></a></li>
 		
-			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>11</sup></a></li>
+			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>22</sup></a></li>
 		
 		</ul>
 </div>
@@ -127,6 +247,8 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
+			<li><a href="/tags/CDP/" title="CDP">CDP<sup>1</sup></a></li>
+		
 			<li><a href="/tags/Gerix/" title="Gerix">Gerix<sup>1</sup></a></li>
 		
 			<li><a href="/tags/Hirte/" title="Hirte">Hirte<sup>1</sup></a></li>
@@ -135,13 +257,27 @@
 		
 			<li><a href="/tags/WEP/" title="WEP">WEP<sup>4</sup></a></li>
 		
-			<li><a href="/tags/WPA/" title="WPA">WPA<sup>6</sup></a></li>
+			<li><a href="/tags/WPA/" title="WPA">WPA<sup>7</sup></a></li>
+		
+			<li><a href="/tags/WPS/" title="WPS">WPS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Yersinia/" title="Yersinia">Yersinia<sup>1</sup></a></li>
 		
 			<li><a href="/tags/aircrack-ng/" title="aircrack-ng">aircrack-ng<sup>2</sup></a></li>
 		
 			<li><a href="/tags/airodump-ng/" title="airodump-ng">airodump-ng<sup>1</sup></a></li>
 		
+			<li><a href="/tags/airolib-ng/" title="airolib-ng">airolib-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/arpspoof/" title="arpspoof">arpspoof<sup>1</sup></a></li>
+		
 			<li><a href="/tags/cowpatty/" title="cowpatty">cowpatty<sup>1</sup></a></li>
+		
+			<li><a href="/tags/deauth/" title="deauth">deauth<sup>1</sup></a></li>
+		
+			<li><a href="/tags/driftnet/" title="driftnet">driftnet<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ettercap/" title="ettercap">ettercap<sup>2</sup></a></li>
 		
 			<li><a href="/tags/ewsa/" title="ewsa">ewsa<sup>1</sup></a></li>
 		
@@ -149,19 +285,7 @@
 		
 			<li><a href="/tags/kismet/" title="kismet">kismet<sup>1</sup></a></li>
 		
-			<li><a href="/tags/macchanger/" title="macchanger">macchanger<sup>1</sup></a></li>
-		
-			<li><a href="/tags/pyrit/" title="pyrit">pyrit<sup>1</sup></a></li>
-		
-			<li><a href="/tags/wifite/" title="wifite">wifite<sup>2</sup></a></li>
-		
-			<li><a href="/tags/单线程/" title="单线程">单线程<sup>1</sup></a></li>
-		
-			<li><a href="/tags/异步IO/" title="异步IO">异步IO<sup>1</sup></a></li>
-		
-			<li><a href="/tags/无线/" title="无线">无线<sup>11</sup></a></li>
-		
-			<li><a href="/tags/渗透/" title="渗透">渗透<sup>11</sup></a></li>
+			<li><a href="/tags/macchanger/" title="macchanger">macchanger<sup>2</sup></a></li>
 		
 		</ul>
 </div>

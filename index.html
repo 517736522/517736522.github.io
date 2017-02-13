@@ -68,154 +68,166 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/" title="WPA破解-pyrit:batch-table加速——attack_db模块加速" itemprop="url">
+    <a href="/2017/02/14/干扰通讯-Deauth-Flood攻击/" title="干扰通讯-Deauth-Flood攻击" itemprop="url">
   
-    <h1 itemprop="name">WPA破解-pyrit:batch-table加速——attack_db模块加速</h1>
+    <h1 itemprop="name">干扰通讯-Deauth-Flood攻击</h1>
     
      
-           <p itemprop="description" >http://xiao106347.blog.163.com/blog/static/215992078201311851838无线密码破解5：使用GPU加速工具PYRIT极速破解无线密码  
-###pyrit为kali下的工具，支持GPU加速  
-单纯字典跑包pyrit -r </p>
+           <p itemprop="description" >mdk3工具内置选项攻击这个攻击跟aireplay-ng -0 一样aireplay-ng -0 10 -a [BSSID] wlan0mon –ignore-w 白名单文件-b 黑名单文件-s 速率-c 信道  
+先要抓包  
+mdk3 wlan0mon d针对全网的断网攻击F</p>
         
     
-    <time datetime="2017-02-12T16:01:25.000Z" itemprop="datePublished">2017-02-13</time>
+    <time datetime="2017-02-13T17:18:13.000Z" itemprop="datePublished">2017-02-14</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WPA破解-windows下GPU跑包加速/" title="WPA破解-windows下GPU跑包加速" itemprop="url">
+    <a href="/2017/02/14/干扰通讯-Authen泛洪攻击/" title="干扰通讯-Authen泛洪攻击" itemprop="url">
   
-    <h1 itemprop="name">WPA破解-windows下GPU跑包加速</h1>
+    <h1 itemprop="name">干扰通讯-Authen泛洪攻击</h1>
     
      
-           <p itemprop="description" >本文用到的工具为ewsa,为windows环境下的工具此工具支持GPU加速  
-破解流程：1.选项–CPU选项2.选项–GPU选项3.选项–攻击选项–新增字典（默认目录下会携带英德俄三文的字典）4.文件–导入tcpdump文件–选择已抓到握手包的cap文件–选择ssid5.开始测</p>
+           <p itemprop="description" >authentication洪水攻击mdk3伪装大量的client去连接AP,无法有没密码是否错误，AP都得作出回应，并形成半连接状态。AP是有最大连接数的，会响应不过来。如果合法主机需要连接这个被攻击AP上，是无法连接的。  
+-a 指定mac地址，不指定则为所有-m 使用合法</p>
         
     
-    <time datetime="2017-02-12T15:39:19.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T17:03:43.000Z" itemprop="datePublished">2017-02-14</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WPA破解-自动化破解WPA加密/" title="WPA破解-自动化破解WPA加密" itemprop="url">
+    <a href="/2017/02/13/干扰通讯-创建恶意无线热点/" title="干扰通讯-创建恶意无线热点" itemprop="url">
   
-    <h1 itemprop="name">WPA破解-自动化破解WPA加密</h1>
+    <h1 itemprop="name">干扰通讯-创建恶意无线热点</h1>
     
      
-           <p itemprop="description" >利用的是wifite自动化工具  airmon-ng start wlan0进入monitor modewifite -dict 字典一定要等到有CLIENT才能更容易的破解如果路由器开了WPS则会先尝试枚举wps的PIN码(新版wifite会先调用pixiwps秒破，失败继续r</p>
+           <p itemprop="description" >beacon泛洪攻击：信标帧标识一个AP,通过伪造多个beacon,创建多个AP  
+MDK3工具（很牛逼） wireless DOS tool  
+  
+–fullhelp 查看更详细的帮助这个是今天的主角-n 指定单一SSID名称如果不指定，会随机生成乱码名称-f 指定多个名</p>
         
     
-    <time datetime="2017-02-12T15:04:13.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T15:39:43.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/" title="WPA破解-Hash-table加速并用Cowpatty破解" itemprop="url">
+    <a href="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/" title="内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击" itemprop="url">
   
-    <h1 itemprop="name">WPA破解-Hash-table加速并用Cowpatty破解</h1>
+    <h1 itemprop="name">内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击</h1>
     
      
-           <p itemprop="description" >cowpatty也是一款跑包工具可直接用字典，和aircrack-ng一样：cowpatty -f 字典 -r [捕获的报文] -s [ssid]   
-####最好的方式用hash-table破解先创建hash-tablegenpmk -f 字典 -d 生成到哪 -s ssid</p>
+           <p itemprop="description" >mac地址表泛洪攻击交换机中的mac地址表是有限的，默认300秒超时时间，但是macof工具3秒钟即可填满，使得交换机无法再学习主机的MAC地址，任何经过交换机的数据包会因为找不到映射而引起单播泛洪即广播整个内网，这个时候就可以抓包查看其它用户的流量。  
+macof -i et</p>
         
     
-    <time datetime="2017-02-12T14:42:13.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T14:35:05.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WPA破解-hashcat跑包破解/" title="WPA破解-hashcat跑包破解" itemprop="url">
+    <a href="/2017/02/13/内网渗透-Ettercap实现DNS欺骗/" title="内网渗透-Ettercap实现DNS欺骗" itemprop="url">
   
-    <h1 itemprop="name">WPA破解-hashcat跑包破解</h1>
+    <h1 itemprop="name">内网渗透-Ettercap实现DNS欺骗</h1>
     
      
-           <p itemprop="description" >hashcat工具和aircrack-ng差不多，但是hashcat能破解多种类型的密文  
-aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的文件名为xxx.hccap   
-运行hashcat发现版本太老解决方法：把时间调到2012</p>
+           <p itemprop="description" >使用Ettercap的插件dns_spoof即可实现将同一内网的用户用特定的规则将网页解析到自己的欺骗网站上。首先编辑etter.dns文件vim /etc/ettercap/etter.dns* A 14.114.124.231把受害者的浏览器全都解析到此IP  
+*.qq.c</p>
         
     
-    <time datetime="2017-02-12T14:16:12.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T14:04:23.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/" title="WPA破解-aircrack-ng破解WPA加密" itemprop="url">
+    <a href="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/" title="内网渗透-ARP欺骗攻击-使用Arpspoof" itemprop="url">
   
-    <h1 itemprop="name">WPA破解-aircrack-ng破解WPA加密</h1>
+    <h1 itemprop="name">内网渗透-ARP欺骗攻击-使用Arpspoof</h1>
     
      
-           <p itemprop="description" >WPA基本上都是暴力破解，如果开启了WPS,应优先WPS网卡进入监听模式并抓包airodump wlan0mon确认目标信息airodump wlan0mon -w /root/1这个不指定清楚，比较难抓包，要看无线网卡的功率。推荐这个：airodump-ng -w /root/</p>
+           <p itemprop="description" >ARP欺骗攻击：通过发送带有攻击者的mac的免费ARP报文让受害者更新自带的ARP高数缓存表，使得受害者的流量转向到攻击者。  
+首先开启ip流量转发功能echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward  
+然后发送arp免费报文欺骗主机arps</p>
         
     
-    <time datetime="2017-02-12T13:41:38.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T12:24:36.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WEP破解-破解WEP新思路-Hirte/" title="WEP破解-破解WEP新思路--Hirte" itemprop="url">
+    <a href="/2017/02/13/内网渗透-网络探测与扫描/" title="内网渗透-网络探测与扫描" itemprop="url">
   
-    <h1 itemprop="name">WEP破解-破解WEP新思路--Hirte</h1>
+    <h1 itemprop="name">内网渗透-网络探测与扫描</h1>
     
      
-           <p itemprop="description" >转自安全客有一点推荐：修改伪IPMAC为目标Ap的MAC使用macchanger -m 02:BD:11:11:11:11 wlan0(修改前先down掉)</p>
+           <p itemprop="description" >当看到网段不是192.168.0.0/24或192.168.1.0/24,那么十有八九不是家庭用路由器。  
+1.判断网络中存活主机nmap -sP 10.1.1.0/24  
+2.判断网络结构traceroute qq.com  
+3.判断网络上的设备  nmap -sT IP</p>
         
     
-    <time datetime="2017-02-12T12:55:50.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T12:12:44.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WEP破解-wifite自动化破解WEP加密/" title="WEP破解-wifite自动化破解WEP加密" itemprop="url">
+    <a href="/2017/02/13/机制突破-成功获取未广播的SSID/" title="机制突破-成功获取未广播的SSID" itemprop="url">
   
-    <h1 itemprop="name">WEP破解-wifite自动化破解WEP加密</h1>
+    <h1 itemprop="name">机制突破-成功获取未广播的SSID</h1>
     
      
-           <p itemprop="description" >wifite工具为kali自带，此工具自动使用各种攻击方式进行抓包选择有client的会比较容易破解，有client的会自动采用ARP重放攻击等方式容易收集ivsctrl+c然后选择AP num等到特定数目时，会自动使用Crack破解不成功会继续收集ivs直到成功为止。</p>
+           <p itemprop="description" >未广播的SSID为隐藏网络，不将SSID带入到beacon帧里。airodump-ng wlan0mon  
+1.静静等待等待别人连接。SSID会携带到probe request frame里自动在ESSID栏中显示  
+2.deauth重连攻击主动让别人断开连接，重新连接。ai</p>
         
     
-    <time datetime="2017-02-12T12:29:50.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T11:11:09.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WEP破解-Gerix-wifi-cracker自动化破解WEP加密/" title="WEP破解-Gerix-wifi-cracker自动化破解WEP加密" itemprop="url">
+    <a href="/2017/02/13/机制突破-突破Mac-address-filter/" title="机制突破-突破Mac-address-filter" itemprop="url">
   
-    <h1 itemprop="name">WEP破解-Gerix-wifi-cracker自动化破解WEP加密</h1>
+    <h1 itemprop="name">机制突破-突破Mac-address-filter</h1>
     
      
-           <p itemprop="description" >Gerix这个工具原先在BT5有，到kali就没了直接运行python gerix.py出现图形化界面在configuration界面选择网卡，单击网卡名称即可（mon0)选择下方的Rescan networks扫描附近网络再单击目标Essid即可此次选择的是wep加密方式的AP</p>
+           <p itemprop="description" >mac地址过滤是家庭用路由器都支持的一种无线安全策略，分为黑名单，白名单。  
+当我们知道了密码时，我们也是无法通过过滤机制的。可以知道客户端的mac是可以通过的那么就可以更改我们的网卡mac绕过过滤。macchanger wlan0 -m xx:xx:xx:xx:xx:xx更改</p>
         
     
-    <time datetime="2017-02-12T11:58:15.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T10:57:11.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/" title="WEP破解-aircrack-ng破解WEP加密" itemprop="url">
+    <a href="/2017/02/13/WPS破解-reaver工具穷举pin码/" title="WPS-reaver工具穷举pin码" itemprop="url">
   
-    <h1 itemprop="name">WEP破解-aircrack-ng破解WEP加密</h1>
+    <h1 itemprop="name">WPS-reaver工具穷举pin码</h1>
     
      
-           <p itemprop="description" >wep加密方式已经不常见了，因为wep加密很脆弱，几分钟就可破解。家用路由器环境  
-在此讲一下Aircrack-ng工具包：aircrack-ng 破解airmon-ng 改变网卡工作模式airodump-ng 捕获报文aireplay-ng 提供各种攻击（例如arp注入攻击）</p>
+           <p itemprop="description" >reaver工具，具有历史丰碑性，一般破解WPS高级工具都以这个为底层  
+只要路由器开启了WPS功能，都是在几小时内能够破解的  
+如何知道哪些无线Ap开了WPS呢？airodump-ng wlan0mon只要MB处54e后带点.的都是开启WPS功能  
+wash -i wla</p>
         
     
-    <time datetime="2017-02-12T09:01:27.000Z" itemprop="datePublished">2017-02-12</time>
+    <time datetime="2017-02-13T07:29:59.000Z" itemprop="datePublished">2017-02-13</time>
   </a>
 </section>
 
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
   </nav>
 
 </div>
@@ -235,7 +247,7 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 		
 			<li><a href="/categories/web开发/" title="web开发">web开发<sup>1</sup></a></li>
 		
-			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>11</sup></a></li>
+			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>22</sup></a></li>
 		
 		</ul>
 </div>
@@ -246,6 +258,8 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
+			<li><a href="/tags/CDP/" title="CDP">CDP<sup>1</sup></a></li>
+		
 			<li><a href="/tags/Gerix/" title="Gerix">Gerix<sup>1</sup></a></li>
 		
 			<li><a href="/tags/Hirte/" title="Hirte">Hirte<sup>1</sup></a></li>
@@ -254,13 +268,27 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 		
 			<li><a href="/tags/WEP/" title="WEP">WEP<sup>4</sup></a></li>
 		
-			<li><a href="/tags/WPA/" title="WPA">WPA<sup>6</sup></a></li>
+			<li><a href="/tags/WPA/" title="WPA">WPA<sup>7</sup></a></li>
+		
+			<li><a href="/tags/WPS/" title="WPS">WPS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Yersinia/" title="Yersinia">Yersinia<sup>1</sup></a></li>
 		
 			<li><a href="/tags/aircrack-ng/" title="aircrack-ng">aircrack-ng<sup>2</sup></a></li>
 		
 			<li><a href="/tags/airodump-ng/" title="airodump-ng">airodump-ng<sup>1</sup></a></li>
 		
+			<li><a href="/tags/airolib-ng/" title="airolib-ng">airolib-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/arpspoof/" title="arpspoof">arpspoof<sup>1</sup></a></li>
+		
 			<li><a href="/tags/cowpatty/" title="cowpatty">cowpatty<sup>1</sup></a></li>
+		
+			<li><a href="/tags/deauth/" title="deauth">deauth<sup>1</sup></a></li>
+		
+			<li><a href="/tags/driftnet/" title="driftnet">driftnet<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ettercap/" title="ettercap">ettercap<sup>2</sup></a></li>
 		
 			<li><a href="/tags/ewsa/" title="ewsa">ewsa<sup>1</sup></a></li>
 		
@@ -268,19 +296,7 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 		
 			<li><a href="/tags/kismet/" title="kismet">kismet<sup>1</sup></a></li>
 		
-			<li><a href="/tags/macchanger/" title="macchanger">macchanger<sup>1</sup></a></li>
-		
-			<li><a href="/tags/pyrit/" title="pyrit">pyrit<sup>1</sup></a></li>
-		
-			<li><a href="/tags/wifite/" title="wifite">wifite<sup>2</sup></a></li>
-		
-			<li><a href="/tags/单线程/" title="单线程">单线程<sup>1</sup></a></li>
-		
-			<li><a href="/tags/异步IO/" title="异步IO">异步IO<sup>1</sup></a></li>
-		
-			<li><a href="/tags/无线/" title="无线">无线<sup>11</sup></a></li>
-		
-			<li><a href="/tags/渗透/" title="渗透">渗透<sup>11</sup></a></li>
+			<li><a href="/tags/macchanger/" title="macchanger">macchanger<sup>2</sup></a></li>
 		
 		</ul>
 </div>
