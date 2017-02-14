@@ -68,6 +68,71 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
+    <a href="/2017/02/13/内网渗透-网络探测与扫描/" title="内网渗透-网络探测与扫描" itemprop="url">
+  
+    <h1 itemprop="name">内网渗透-网络探测与扫描</h1>
+    
+     
+           <p itemprop="description" >当看到网段不是192.168.0.0/24或192.168.1.0/24,那么十有八九不是家庭用路由器。  
+1.判断网络中存活主机nmap -sP 10.1.1.0/24  
+2.判断网络结构traceroute qq.com  
+3.判断网络上的设备  nmap -sT IP</p>
+        
+    
+    <time datetime="2017-02-13T12:12:44.000Z" itemprop="datePublished">2017-02-13</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/13/机制突破-成功获取未广播的SSID/" title="机制突破-成功获取未广播的SSID" itemprop="url">
+  
+    <h1 itemprop="name">机制突破-成功获取未广播的SSID</h1>
+    
+     
+           <p itemprop="description" >未广播的SSID为隐藏网络，不将SSID带入到beacon帧里。airodump-ng wlan0mon  
+1.静静等待等待别人连接。SSID会携带到probe request frame里自动在ESSID栏中显示  
+2.deauth重连攻击主动让别人断开连接，重新连接。ai</p>
+        
+    
+    <time datetime="2017-02-13T11:11:09.000Z" itemprop="datePublished">2017-02-13</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/13/机制突破-突破Mac-address-filter/" title="机制突破-突破Mac-address-filter" itemprop="url">
+  
+    <h1 itemprop="name">机制突破-突破Mac-address-filter</h1>
+    
+     
+           <p itemprop="description" >mac地址过滤是家庭用路由器都支持的一种无线安全策略，分为黑名单，白名单。  
+当我们知道了密码时，我们也是无法通过过滤机制的。可以知道客户端的mac是可以通过的那么就可以更改我们的网卡mac绕过过滤。macchanger wlan0 -m xx:xx:xx:xx:xx:xx更改</p>
+        
+    
+    <time datetime="2017-02-13T10:57:11.000Z" itemprop="datePublished">2017-02-13</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/13/WPS破解-reaver工具穷举pin码/" title="WPS-reaver工具穷举pin码" itemprop="url">
+  
+    <h1 itemprop="name">WPS-reaver工具穷举pin码</h1>
+    
+     
+           <p itemprop="description" >reaver工具，具有历史丰碑性，一般破解WPS高级工具都以这个为底层  
+只要路由器开启了WPS功能，都是在几小时内能够破解的  
+如何知道哪些无线Ap开了WPS呢？airodump-ng wlan0mon只要MB处54e后带点.的都是开启WPS功能  
+wash -i wla</p>
+        
+    
+    <time datetime="2017-02-13T07:29:59.000Z" itemprop="datePublished">2017-02-13</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
     <a href="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/" title="WPA破解-使用airolib-ng创建彩虹表加速" itemprop="url">
   
     <h1 itemprop="name">WPA破解-使用airolib-ng创建彩虹表加速</h1>
@@ -158,62 +223,6 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
   </a>
 </section>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/" title="WPA破解-aircrack-ng破解WPA加密" itemprop="url">
-  
-    <h1 itemprop="name">WPA破解-aircrack-ng破解WPA加密</h1>
-    
-     
-           <p itemprop="description" >WPA基本上都是暴力破解，如果开启了WPS,应优先WPS网卡进入监听模式并抓包airodump wlan0mon确认目标信息airodump wlan0mon -w /root/1这个不指定清楚，比较难抓包，要看无线网卡的功率。推荐这个：airodump-ng -w /root/</p>
-        
-    
-    <time datetime="2017-02-12T13:41:38.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WEP破解-破解WEP新思路-Hirte/" title="WEP破解-破解WEP新思路--Hirte" itemprop="url">
-  
-    <h1 itemprop="name">WEP破解-破解WEP新思路--Hirte</h1>
-    
-     
-           <p itemprop="description" >转自安全客有一点推荐：修改伪IPMAC为目标Ap的MAC使用macchanger -m 02:BD:11:11:11:11 wlan0(修改前先down掉)</p>
-        
-    
-    <time datetime="2017-02-12T12:55:50.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WEP破解-wifite自动化破解WEP加密/" title="WEP破解-wifite自动化破解WEP加密" itemprop="url">
-  
-    <h1 itemprop="name">WEP破解-wifite自动化破解WEP加密</h1>
-    
-     
-           <p itemprop="description" >wifite工具为kali自带，此工具自动使用各种攻击方式进行抓包选择有client的会比较容易破解，有client的会自动采用ARP重放攻击等方式容易收集ivsctrl+c然后选择AP num等到特定数目时，会自动使用Crack破解不成功会继续收集ivs直到成功为止。</p>
-        
-    
-    <time datetime="2017-02-12T12:29:50.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/12/WEP破解-Gerix-wifi-cracker自动化破解WEP加密/" title="WEP破解-Gerix-wifi-cracker自动化破解WEP加密" itemprop="url">
-  
-    <h1 itemprop="name">WEP破解-Gerix-wifi-cracker自动化破解WEP加密</h1>
-    
-     
-           <p itemprop="description" >Gerix这个工具原先在BT5有，到kali就没了直接运行python gerix.py出现图形化界面在configuration界面选择网卡，单击网卡名称即可（mon0)选择下方的Rescan networks扫描附近网络再单击目标Essid即可此次选择的是wep加密方式的AP</p>
-        
-    
-    <time datetime="2017-02-12T11:58:15.000Z" itemprop="datePublished">2017-02-12</time>
-  </a>
-</section>
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
@@ -236,7 +245,7 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 		
 			<li><a href="/categories/web开发/" title="web开发">web开发<sup>1</sup></a></li>
 		
-			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>22</sup></a></li>
+			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>26</sup></a></li>
 		
 		</ul>
 </div>
@@ -248,6 +257,8 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 		<ul class="clearfix">
 		
 			<li><a href="/tags/CDP/" title="CDP">CDP<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Cain/" title="Cain">Cain<sup>1</sup></a></li>
 		
 			<li><a href="/tags/Gerix/" title="Gerix">Gerix<sup>1</sup></a></li>
 		
@@ -264,6 +275,8 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 			<li><a href="/tags/Yersinia/" title="Yersinia">Yersinia<sup>1</sup></a></li>
 		
 			<li><a href="/tags/aircrack-ng/" title="aircrack-ng">aircrack-ng<sup>2</sup></a></li>
+		
+			<li><a href="/tags/airdrop-ng/" title="airdrop-ng">airdrop-ng<sup>1</sup></a></li>
 		
 			<li><a href="/tags/airodump-ng/" title="airodump-ng">airodump-ng<sup>1</sup></a></li>
 		
@@ -282,10 +295,6 @@ aircrack-ng [抓到的cap] -J xxx选择需要破解的AP就生成hccap格式的�
 			<li><a href="/tags/ewsa/" title="ewsa">ewsa<sup>1</sup></a></li>
 		
 			<li><a href="/tags/hashcat/" title="hashcat">hashcat<sup>1</sup></a></li>
-		
-			<li><a href="/tags/kismet/" title="kismet">kismet<sup>1</sup></a></li>
-		
-			<li><a href="/tags/macchanger/" title="macchanger">macchanger<sup>2</sup></a></li>
 		
 		</ul>
 </div>
