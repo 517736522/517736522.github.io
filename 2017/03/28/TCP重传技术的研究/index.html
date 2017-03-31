@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
+
+<meta name="description" content=发了特里投入到法国！/>
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>TCP重传技术的研究 | Parker&#39;s Blog |信息安全与管理</title>
+
+<link rel="alternate" href="/atom.xml" title="Parker&#39;s Blog |信息安全与管理" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+    <!--script-->
+
+
+
+<script src="http://cdn1.lncld.net/static/js/2.1.0/av-min.js"></script>
+<script>
+    var appId = "uFijq1grJ17m6g9mxXustFdl-gzGzoHsz";
+    var appKey = "LbAV7dXpr848HV6uFeNK87CI";
+    var region = 'null';
+    AV.init({
+        appId: appId,
+        appKey: appKey,
+        region: region
+    });
+</script>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+    
+</head>
+
+<body>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">Parker&#39;s Blog |信息安全与管理</h1>
+        </a>
+        
+        <h2 class="subtitle">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>信息安全与管理的一枚学渣</p>
+    </div>
+</li>
+
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">分类</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Metasploit系列教程/"><i class="fa" aria-hidden="true">Metasploit系列教程</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/"><i class="fa" aria-hidden="true">python开发</i></a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python入门/"><i class="fa" aria-hidden="true">python入门</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python安全/"><i class="fa" aria-hidden="true">python安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python爬虫/"><i class="fa" aria-hidden="true">python爬虫</i></a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/"><i class="fa" aria-hidden="true">web开发</i></a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/NodeJS/"><i class="fa" aria-hidden="true">NodeJS</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/"><i class="fa" aria-hidden="true">信息安全</i></a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/asp安全/"><i class="fa" aria-hidden="true">asp安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/burpsuite/"><i class="fa" aria-hidden="true">burpsuite</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/sqlmap/"><i class="fa" aria-hidden="true">sqlmap</i></a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/"><i class="fa" aria-hidden="true">无线渗透</i></a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WEP破解/"><i class="fa" aria-hidden="true">WEP破解</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPA破解/"><i class="fa" aria-hidden="true">WPA破解</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPS破解/"><i class="fa" aria-hidden="true">WPS破解</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/内网渗透/"><i class="fa" aria-hidden="true">内网渗透</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/安卓渗透/"><i class="fa" aria-hidden="true">安卓渗透</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/干扰通讯/"><i class="fa" aria-hidden="true">干扰通讯</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/报文处理/"><i class="fa" aria-hidden="true">报文处理</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/机制突破/"><i class="fa" aria-hidden="true">机制突破</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/权限提升/"><i class="fa" aria-hidden="true">权限提升</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/环境初探/"><i class="fa" aria-hidden="true">环境初探</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/维持访问/"><i class="fa" aria-hidden="true">维持访问</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/"><i class="fa" aria-hidden="true">网络数据包分析实战</i></a><span class="category-list-count">40</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/协议篇/"><i class="fa" aria-hidden="true">协议篇</i></a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/基础篇/"><i class="fa" aria-hidden="true">基础篇</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/安全篇/"><i class="fa" aria-hidden="true">安全篇</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/排错篇/"><i class="fa" aria-hidden="true">排错篇</i></a><span class="category-list-count">6</span></li></ul></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">March 2017</i></a><span class="archive-list-count">68</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">February 2017</i></a><span class="archive-list-count">33</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">January 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">标签云</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/跑包建议/" style="font-size: 0.14rem; color: #4682b4">跑包建议</a> <a href="/tags/无线/" style="font-size: 0.2rem; color: #3cb371">无线</a> <a href="/tags/Hirte/" style="font-size: 0.14rem; color: #4682b4">Hirte</a> <a href="/tags/macchanger/" style="font-size: 0.15rem; color: #448ca7">macchanger</a> <a href="/tags/WEP/" style="font-size: 0.18rem; color: #409f8c">WEP</a> <a href="/tags/wifite/" style="font-size: 0.15rem; color: #448ca7">wifite</a> <a href="/tags/aircrack-ng/" style="font-size: 0.15rem; color: #448ca7">aircrack-ng</a> <a href="/tags/cowpatty/" style="font-size: 0.14rem; color: #4682b4">cowpatty</a> <a href="/tags/WPA/" style="font-size: 0.19rem; color: #3ea97e">WPA</a> <a href="/tags/hashcat/" style="font-size: 0.14rem; color: #4682b4">hashcat</a> <a href="/tags/Gerix/" style="font-size: 0.14rem; color: #4682b4">Gerix</a> <a href="/tags/NodeJS/" style="font-size: 0.15rem; color: #448ca7">NodeJS</a> <a href="/tags/单线程/" style="font-size: 0.15rem; color: #448ca7">单线程</a> <a href="/tags/异步IO/" style="font-size: 0.15rem; color: #448ca7">异步IO</a> <a href="/tags/pyrit/" style="font-size: 0.14rem; color: #4682b4">pyrit</a> <a href="/tags/ewsa/" style="font-size: 0.14rem; color: #4682b4">ewsa</a> <a href="/tags/reaver/" style="font-size: 0.14rem; color: #4682b4">reaver</a> <a href="/tags/WPS/" style="font-size: 0.14rem; color: #4682b4">WPS</a> <a href="/tags/pixiewps/" style="font-size: 0.14rem; color: #4682b4">pixiewps</a> <a href="/tags/arpspoof/" style="font-size: 0.14rem; color: #4682b4">arpspoof</a> <a href="/tags/ettercap/" style="font-size: 0.15rem; color: #448ca7">ettercap</a> <a href="/tags/driftnet/" style="font-size: 0.14rem; color: #4682b4">driftnet</a> <a href="/tags/内网渗透/" style="font-size: 0.18rem; color: #409f8c">内网渗透</a> <a href="/tags/airolib-ng/" style="font-size: 0.14rem; color: #4682b4">airolib-ng</a> <a href="/tags/渗透/" style="font-size: 0.2rem; color: #3cb371">渗透</a> <a href="/tags/nmap/" style="font-size: 0.14rem; color: #4682b4">nmap</a> <a href="/tags/CDP/" style="font-size: 0.14rem; color: #4682b4">CDP</a> <a href="/tags/Yersinia/" style="font-size: 0.14rem; color: #4682b4">Yersinia</a> <a href="/tags/macof/" style="font-size: 0.14rem; color: #4682b4">macof</a> <a href="/tags/lanmitm/" style="font-size: 0.14rem; color: #4682b4">lanmitm</a> <a href="/tags/幻影PIN/" style="font-size: 0.14rem; color: #4682b4">幻影PIN</a> <a href="/tags/zanti/" style="font-size: 0.14rem; color: #4682b4">zanti</a> <a href="/tags/安卓渗透/" style="font-size: 0.14rem; color: #4682b4">安卓渗透</a> <a href="/tags/mdk3/" style="font-size: 0.16rem; color: #429699">mdk3</a> <a href="/tags/干扰通讯/" style="font-size: 0.18rem; color: #409f8c">干扰通讯</a> <a href="/tags/airdrop-ng/" style="font-size: 0.14rem; color: #4682b4">airdrop-ng</a> <a href="/tags/airdecap-ng/" style="font-size: 0.14rem; color: #4682b4">airdecap-ng</a> <a href="/tags/报文处理/" style="font-size: 0.18rem; color: #409f8c">报文处理</a> <a href="/tags/wireshark/" style="font-size: 0.14rem; color: #4682b4">wireshark</a> <a href="/tags/Cain/" style="font-size: 0.14rem; color: #4682b4">Cain</a> <a href="/tags/ivstool/" style="font-size: 0.14rem; color: #4682b4">ivstool</a> <a href="/tags/deauth/" style="font-size: 0.14rem; color: #4682b4">deauth</a> <a href="/tags/机制突破/" style="font-size: 0.15rem; color: #448ca7">机制突破</a> <a href="/tags/hydra/" style="font-size: 0.15rem; color: #448ca7">hydra</a> <a href="/tags/medusa/" style="font-size: 0.14rem; color: #4682b4">medusa</a> <a href="/tags/权限提升/" style="font-size: 0.16rem; color: #429699">权限提升</a> <a href="/tags/kismet/" style="font-size: 0.14rem; color: #4682b4">kismet</a> <a href="/tags/airodump-ng/" style="font-size: 0.14rem; color: #4682b4">airodump-ng</a> <a href="/tags/维持访问/" style="font-size: 0.14rem; color: #4682b4">维持访问</a>
+  </div>
+</li>
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">友链</h3><br/>
+
+    
+        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题作者</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="TCP重传技术的研究">
+                
+                TCP重传技术的研究
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>协议篇</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            null
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/03/28</span>
+    </span>
+    
+    <span  class=" fa-wrap">
+        <i class="fa fa-comment-o"></i>
+        <span id="comments-count" class="comments-meta disqus-comment-count ds-thread-count comments" data-disqus-url="https://517736522.github.io/2017/03/28/TCP重传技术的研究/" data-thread-key="/2017/03/28/TCP重传技术的研究/"
+           data-count-type="comments"></span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="TCP重传技术的研究"
+              data-leadcloud-url="/2017/03/28/TCP重传技术的研究/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <p>##TCP重传的原理<br>在TCP重传的理论中，重传计时器是用于决定是否有必要进行数据包重传的一个主要机制。重传计时器维护着一个叫做重传超时（Retransmission timeout，RTO）的值。在使用TCP进行数据包的传送时，重传计时器就会被启动。当收到数据包的ACK，也就是确认数据包时，计时器就会停止。从发送数据包到接收到确认数据包的时间，被称作往返时间（Round-trip time，RTT）。我们将若干个往返时间求和并计算平均值，就可以得出最终的RTO值。</p>
+<p>但是在最终计算出RTO值之前，数据的传输操作将会一直依赖于默认的RTT值。这个设置用于主机之间的初始通信，并基于接收到的数据包的RTT进行调整，从而形成真正的RTO值。</p>
+<p>一旦RTO值被确定下来，重传计时器就被应用于每个传输的数据包，从而确定数据包是否丢失，如下图所示：<br><img src="/2017/03/28/TCP重传技术的研究/1.jpg" alt="1"><br>当数据包发送出去，但是接收方没有发送TCP ACK数据包时，发送方就假设原来发送的数据包并没有发送到目标主机，认为它丢失了，于是就进行重传。重传之后，RTO的值翻倍；如果在到达极限值之前依旧没有收到ACK数据包，那么就会进行第二次重传。如果还是没有收到ACK，那么RTO的值就会再次翻倍。那么每次的重传，都会导致RTO的值翻倍，直至收到ACK数据包，或者发送方达到配置的最大重传次数为止。当然我这里所说的每次进行翻倍，是为了便于大家的理解，实际上在计算RTO的时候，是需要几个公式的，这里不做深入研究。一般来说，Windows操作系统会重传5次，而Linux则为15次。这个次数是可以进行修改的。</p>
+<p>下面我们来研究一下Lab10-1.pcap这个实验文件，这个文件中包含了TCP重传的情况。可以看到，第一个数据包是一个正常的TCP PSH/ACK数据包，其中的PSH表示Push操作，也就是指当数据包到达接收端后，立刻传送给应用程序，而不是在缓冲区中排队。那么接下来，在正常的情况下，当接收端接收到第一个数据包之后，往往很快就可以看到用于响应的TCP ACK数据包。但是这里的第二个数据包却是一个TCP Retransmission数据包，表明这是一个重传：<br><img src="/2017/03/28/TCP重传技术的研究/2.jpg" alt="2"><br>而且接下来的几个数据包也都是重传数据包。这里请大家注意的是，重传数据包和第一个数据包相比，它们的Data区段，也就是所传输数据的主体内容，是完全一致的。如果我们展开查看Packet Details面板中的TCP，还可以发现相应的RTO的值等信息，并且这个RTO与每个数据包的发送时间是相吻合的，呈指数增长。  </p>
+<p>##TCP的快速重传<br>如果接收方接收到了乱序的数据包，就发送重复的TCP ACK数据包。TCP在其头部使用序号和确认字段，以确保数据被可靠接收并以发送的顺序进行重组。我们上次课说过，Seq序列号可以帮助数据进行有序的传输。</p>
+<p>如果接收方遇到不符合顺序的序列号，就知道数据包丢失了。那么为了正确地重组数据，接收方必须要得到丢失的数据包，因此接收方会发送一个包含丢失数据包序列号的ACK数据包，这样发送方就可以知道应该发送哪一个数据包了。以下图为例：<br><img src="/2017/03/28/TCP重传技术的研究/3.jpg" alt="3"><br>如果发送方收到3个来自接收方的重复ACK时，发送方就会假设这个数据包确实在传输的过程中丢失了，于是就立刻发起快速重传的机制。一旦触发了快速重传，其它所有正在传输的数据包都要先暂停发送，直到把丢失的数据包发送出去为止。为什么要规定凑满三个重复ACK数据包呢？我的理解是，网络数据包有些时候在传输的过程中会出现乱序的情况，乱序的数据包一样会触发重复ACK数据包，但是由于出现乱序而重传没有必要。由于一般的乱序的距离不会相差太大，比如3号数据包也许会到5号数据包的后面，但是不太可能跑到7号数据包的后面，所以限定成3个或者以上，就可以在很大的程度上避免由于乱序而导致的快速重传。</p>
+<p>这里我们分析一下实验文件Lab10-2.pcap：<br><img src="/2017/03/28/TCP重传技术的研究/4.jpg" alt="4"><br>我们首先看一下第一个数据包，这个TCP ACK数据包是从数据的接收方发往数据的发送方的，是对前一个数据包的确认。从Ack的值可以知道，接收方目前已经收到了1之前的所有数据，而这个值也应当是接收的下一个数据包的Seq号。然后看一下第二个数据包：<br><img src="/2017/03/28/TCP重传技术的研究/5.jpg" alt="5"><br>可以发现，这个数据包的Seq的值是10945，并不是我们希望看到的1，这就说明了数据在传输的过程中出现了丢包的情况。当接收方发现这个问题之后，就会向发送方发送一个重复的ACK数据包：<br><img src="/2017/03/28/TCP重传技术的研究/6.jpg" alt="6"><br>接下来的第4个数据包依旧是发送方所发送的数据，并且依旧是错误的Seq号，于是接收方发送第二个重复ACK数据包，接下来发送方又发送了一个错误的数据包，于是接收方再回复一个重复ACK数据包。</p>
+<p>由于发送方收到了三个重复的ACK数据包，那么就会停止所有数据的发送工作，并重新发送丢失的数据包，也就是第8个数据包的内容：<br><img src="/2017/03/28/TCP重传技术的研究/7.jpg" alt="7"><br>可以看到，这里已经标出了这个数据包就是一个快速重传数据包，其大小为1368。那么下一个数据包就是对这个快速重传数据包的回应，从Ack=1369可以知道，已经接收到了1369之前的所有数据。  </p>
+<p>##多个数据包丢失的情况<br>最后我们再讨论一个比较复杂的情况，也就是丢失了多个数据包的情况。假设发送方一共发送了8个数据包，但是其中的2号和3号数据包丢失了，而1、4、5、6、7、8号数据包都抵达了接收方，并且触发了Ack 2，也就是通知发送方，没收到2号数据包。对于发送方来说，只能通过Ack 2知道2号数据包丢失了，但是并不知道还有哪些数据包丢失了。那么在重传了2号数据包之后，接下来应该传哪一个呢？有以下三种方案： 方案1：把3、4、5、6、7、8号数据包重传一次。这是最简单直接的办法，但是这个丢包的后果导致了多个数据包被重传，效率是非常低的。其实早期的TCP协议就是这样处理的。 方案2：接收方收到重传过来的2号包之后，会回复一个Ack 3，这样发送方就可以知道3号数据包也丢失了，于是传送3号包。这样当接收方收到重新传送过来的3号包之后，由于所有的数据包都收到了，就回复一个Ack 9，那么发送方就可以从9号数据包开始发送数据了。这个方案被称为NewReno，在RFC2582和RFC3782中被定义。NewReno的方法虽然说比较完善，但是在丢包量很大的时候，就需要花费多个往返时间来重传所有丢失的数据包。 方案3：接收方在请求重传2号包的时候，顺便把收到的数据包号告诉发送方。所以网络上数据的传输过程因该是这样的： 在收到4号数据包时，告诉发送方已经收到4号，但是2号没收到。 在收到5号数据包时，告诉发送方已经收到4、5号，但是2号没收到…… 这样一来，发送方就可以对丢包的细节了如指掌，在快速重传了2号数据包之后，它可以接着传3号，然后再传9号数据包。这种方案被称为SACK，在RFC2018中被定义。</p>
+<p>这里我们依旧看一下实验文件Lab10-2.pcap，查看一下它的第3个重复的ACK数据包，在Packet Detail面板中，展开TCP中的Options，查看一下SACK的内容：<br><img src="/2017/03/28/TCP重传技术的研究/8.jpg" alt="8"><br>可以看到，SACK后面的值为5473-15049，表示序列号为5473到15049的数据已经接收到了，结合Ack=1，那么发送方就知道序列号为1到5472的数据没收到，于是接下来就发送这些数据。  </p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>作者:
+                    
+                    <a href="/about.html">Parker</a>
+                </li>
+                <li>发表日期: <span>2017-03-28  03:48:54</span></li>
+                
+                <li>最后编辑日期: <span>2017-03-30  12:15:18</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                    <a href="/categories/网络数据包分析实战/">网络数据包分析实战</a>
+                    
+                    <a href="/categories/网络数据包分析实战/协议篇/">协议篇</a>
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="支付宝付款" class="donate-img">
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2017/03/28/asp木马简介/" class="pre-post fa fa-caret-left">asp小马界面</a>
+        
+        
+        <a href="/2017/03/28/burpsuite功能详解/" class="next-post fa">burpsuite功能详解</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<section id="duoshuo_comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="/2017/03/28/TCP重传技术的研究/" data-title="TCP重传技术的研究" data-url="https://517736522.github.io/2017/03/28/TCP重传技术的研究/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'517736522'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Parker</a>&copy;2015 - 2017.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_pv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
+    
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-spin"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+    <script src="/js/highsong.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '欢迎转载 © Parker';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?260f22cfac85b1bf261e9e152a9ac8f8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body>
+</html>

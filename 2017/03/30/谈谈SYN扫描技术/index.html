@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
+
+<meta name="description" content=发了特里投入到法国！/>
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>谈谈SYN扫描技术 | Parker&#39;s Blog |信息安全与管理</title>
+
+<link rel="alternate" href="/atom.xml" title="Parker&#39;s Blog |信息安全与管理" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+    <!--script-->
+
+
+
+<script src="http://cdn1.lncld.net/static/js/2.1.0/av-min.js"></script>
+<script>
+    var appId = "uFijq1grJ17m6g9mxXustFdl-gzGzoHsz";
+    var appKey = "LbAV7dXpr848HV6uFeNK87CI";
+    var region = 'null';
+    AV.init({
+        appId: appId,
+        appKey: appKey,
+        region: region
+    });
+</script>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+    
+</head>
+
+<body>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">Parker&#39;s Blog |信息安全与管理</h1>
+        </a>
+        
+        <h2 class="subtitle">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>信息安全与管理的一枚学渣</p>
+    </div>
+</li>
+
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">分类</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Metasploit系列教程/"><i class="fa" aria-hidden="true">Metasploit系列教程</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/"><i class="fa" aria-hidden="true">python开发</i></a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python入门/"><i class="fa" aria-hidden="true">python入门</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python安全/"><i class="fa" aria-hidden="true">python安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python爬虫/"><i class="fa" aria-hidden="true">python爬虫</i></a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/"><i class="fa" aria-hidden="true">web开发</i></a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/NodeJS/"><i class="fa" aria-hidden="true">NodeJS</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/"><i class="fa" aria-hidden="true">信息安全</i></a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/asp安全/"><i class="fa" aria-hidden="true">asp安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/burpsuite/"><i class="fa" aria-hidden="true">burpsuite</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/sqlmap/"><i class="fa" aria-hidden="true">sqlmap</i></a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/"><i class="fa" aria-hidden="true">无线渗透</i></a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WEP破解/"><i class="fa" aria-hidden="true">WEP破解</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPA破解/"><i class="fa" aria-hidden="true">WPA破解</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPS破解/"><i class="fa" aria-hidden="true">WPS破解</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/内网渗透/"><i class="fa" aria-hidden="true">内网渗透</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/安卓渗透/"><i class="fa" aria-hidden="true">安卓渗透</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/干扰通讯/"><i class="fa" aria-hidden="true">干扰通讯</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/报文处理/"><i class="fa" aria-hidden="true">报文处理</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/机制突破/"><i class="fa" aria-hidden="true">机制突破</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/权限提升/"><i class="fa" aria-hidden="true">权限提升</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/环境初探/"><i class="fa" aria-hidden="true">环境初探</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/维持访问/"><i class="fa" aria-hidden="true">维持访问</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/"><i class="fa" aria-hidden="true">网络数据包分析实战</i></a><span class="category-list-count">40</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/协议篇/"><i class="fa" aria-hidden="true">协议篇</i></a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/基础篇/"><i class="fa" aria-hidden="true">基础篇</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/安全篇/"><i class="fa" aria-hidden="true">安全篇</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/排错篇/"><i class="fa" aria-hidden="true">排错篇</i></a><span class="category-list-count">6</span></li></ul></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">March 2017</i></a><span class="archive-list-count">68</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">February 2017</i></a><span class="archive-list-count">33</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">January 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">标签云</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/跑包建议/" style="font-size: 0.14rem; color: #4682b4">跑包建议</a> <a href="/tags/无线/" style="font-size: 0.2rem; color: #3cb371">无线</a> <a href="/tags/Hirte/" style="font-size: 0.14rem; color: #4682b4">Hirte</a> <a href="/tags/macchanger/" style="font-size: 0.15rem; color: #448ca7">macchanger</a> <a href="/tags/WEP/" style="font-size: 0.18rem; color: #409f8c">WEP</a> <a href="/tags/wifite/" style="font-size: 0.15rem; color: #448ca7">wifite</a> <a href="/tags/aircrack-ng/" style="font-size: 0.15rem; color: #448ca7">aircrack-ng</a> <a href="/tags/cowpatty/" style="font-size: 0.14rem; color: #4682b4">cowpatty</a> <a href="/tags/WPA/" style="font-size: 0.19rem; color: #3ea97e">WPA</a> <a href="/tags/hashcat/" style="font-size: 0.14rem; color: #4682b4">hashcat</a> <a href="/tags/Gerix/" style="font-size: 0.14rem; color: #4682b4">Gerix</a> <a href="/tags/NodeJS/" style="font-size: 0.15rem; color: #448ca7">NodeJS</a> <a href="/tags/单线程/" style="font-size: 0.15rem; color: #448ca7">单线程</a> <a href="/tags/异步IO/" style="font-size: 0.15rem; color: #448ca7">异步IO</a> <a href="/tags/pyrit/" style="font-size: 0.14rem; color: #4682b4">pyrit</a> <a href="/tags/ewsa/" style="font-size: 0.14rem; color: #4682b4">ewsa</a> <a href="/tags/reaver/" style="font-size: 0.14rem; color: #4682b4">reaver</a> <a href="/tags/WPS/" style="font-size: 0.14rem; color: #4682b4">WPS</a> <a href="/tags/pixiewps/" style="font-size: 0.14rem; color: #4682b4">pixiewps</a> <a href="/tags/arpspoof/" style="font-size: 0.14rem; color: #4682b4">arpspoof</a> <a href="/tags/ettercap/" style="font-size: 0.15rem; color: #448ca7">ettercap</a> <a href="/tags/driftnet/" style="font-size: 0.14rem; color: #4682b4">driftnet</a> <a href="/tags/内网渗透/" style="font-size: 0.18rem; color: #409f8c">内网渗透</a> <a href="/tags/airolib-ng/" style="font-size: 0.14rem; color: #4682b4">airolib-ng</a> <a href="/tags/渗透/" style="font-size: 0.2rem; color: #3cb371">渗透</a> <a href="/tags/nmap/" style="font-size: 0.14rem; color: #4682b4">nmap</a> <a href="/tags/CDP/" style="font-size: 0.14rem; color: #4682b4">CDP</a> <a href="/tags/Yersinia/" style="font-size: 0.14rem; color: #4682b4">Yersinia</a> <a href="/tags/macof/" style="font-size: 0.14rem; color: #4682b4">macof</a> <a href="/tags/lanmitm/" style="font-size: 0.14rem; color: #4682b4">lanmitm</a> <a href="/tags/幻影PIN/" style="font-size: 0.14rem; color: #4682b4">幻影PIN</a> <a href="/tags/zanti/" style="font-size: 0.14rem; color: #4682b4">zanti</a> <a href="/tags/安卓渗透/" style="font-size: 0.14rem; color: #4682b4">安卓渗透</a> <a href="/tags/mdk3/" style="font-size: 0.16rem; color: #429699">mdk3</a> <a href="/tags/干扰通讯/" style="font-size: 0.18rem; color: #409f8c">干扰通讯</a> <a href="/tags/airdrop-ng/" style="font-size: 0.14rem; color: #4682b4">airdrop-ng</a> <a href="/tags/airdecap-ng/" style="font-size: 0.14rem; color: #4682b4">airdecap-ng</a> <a href="/tags/报文处理/" style="font-size: 0.18rem; color: #409f8c">报文处理</a> <a href="/tags/wireshark/" style="font-size: 0.14rem; color: #4682b4">wireshark</a> <a href="/tags/Cain/" style="font-size: 0.14rem; color: #4682b4">Cain</a> <a href="/tags/ivstool/" style="font-size: 0.14rem; color: #4682b4">ivstool</a> <a href="/tags/deauth/" style="font-size: 0.14rem; color: #4682b4">deauth</a> <a href="/tags/机制突破/" style="font-size: 0.15rem; color: #448ca7">机制突破</a> <a href="/tags/hydra/" style="font-size: 0.15rem; color: #448ca7">hydra</a> <a href="/tags/medusa/" style="font-size: 0.14rem; color: #4682b4">medusa</a> <a href="/tags/权限提升/" style="font-size: 0.16rem; color: #429699">权限提升</a> <a href="/tags/kismet/" style="font-size: 0.14rem; color: #4682b4">kismet</a> <a href="/tags/airodump-ng/" style="font-size: 0.14rem; color: #4682b4">airodump-ng</a> <a href="/tags/维持访问/" style="font-size: 0.14rem; color: #4682b4">维持访问</a>
+  </div>
+</li>
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">友链</h3><br/>
+
+    
+        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题作者</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="谈谈SYN扫描技术">
+                
+                谈谈SYN扫描技术
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>安全篇</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            null
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/03/30</span>
+    </span>
+    
+    <span  class=" fa-wrap">
+        <i class="fa fa-comment-o"></i>
+        <span id="comments-count" class="comments-meta disqus-comment-count ds-thread-count comments" data-disqus-url="https://517736522.github.io/2017/03/30/谈谈SYN扫描技术/" data-thread-key="/2017/03/30/谈谈SYN扫描技术/"
+           data-count-type="comments"></span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="谈谈SYN扫描技术"
+              data-leadcloud-url="/2017/03/30/谈谈SYN扫描技术/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <p>##谈谈SYN扫描技术<br>黑客往往会对目标系统进行TCP SYN扫描，这又被称为隐秘扫描或者半开扫描。SYN扫描是最常见的类型，主要有以下几个原因： 1、快速可靠。 2、在所有平台上都很准确，与TCP协议栈的实现无关。 3、比其他扫描技术更加安静，不容易被发现。</p>
+<p>TCP SYN扫描依赖于TCP的三次握手过程，可以确定目标主机的哪些端口是开放的。黑客发送TCP SYN数据包到目标主机的一个范围的端口上，就如同要在这些端口上建立用于正常通信的连接一样。如下图所示，一旦目标主机收到这个数据包，就可能会产生一系列的反应：<br><img src="/2017/03/30/谈谈SYN扫描技术/1.jpg" alt="1"><br>如果目标计算机上某个服务正在监听的端口收到了SYN数据包，它将向黑客回复一个TCP SYN/ACK数据包，也就是TCP握手的第二个步骤。这样黑客就可以知道这个端口是开放的，并且有一个服务在上面监听。正常情况下会发送一个TCP ACK数据包以完成连接握手，但是这个时候黑客并不想这样，因为他还不想与主机通信。所以黑客并不打算完成TCP握手。</p>
+<p>如果没有服务在被扫描的端口上处于接听状态，那么攻击者就不会收到TCP SYN/ACK数据包。按照目标计算机系统的不同配置，黑客可能会收到响应的RST数据包，表示该端口处于关闭的状态。或者黑客接收不到任何的响应。这就意味着这个端口被某个中间设备过滤了，比如防火墙或者主机本身。另一方面，也有可能是因为响应数据包在传输的过程中丢失了。这个结果通常表明端口是关闭的，但是证据并不充分。</p>
+<p>实验文件Lab35-1.pcap所提供的是使用Nmap工具进行SYN扫描的例子。在这个样本中，大约包含有2000个数据包，这就说明了该扫描具有一定的规模。确定这个扫描范围大小的最好的办法就是查看Conversations窗口，该窗口可以在Statistics菜单中选择查看，如下图所示：<br><img src="/2017/03/30/谈谈SYN扫描技术/2.jpg" alt="2"><br>在这里可以看到，攻击者（172.16.0.8）和受害者（64.13.134.52）之间只有一个IPv4会话，有1994个TCP会话，并且在通信的过程中，基本上是每一个端口对应着一个新的会话，那么这就是很典型的端口扫描的情况。</p>
+<p>扫描是在极短的时间内完成的，因此如果在这两千多个数据包中通过直接观察的方法来寻找我们想要的数据包，无疑是大海捞针，那么这里就需要利用筛选器来帮助我们进行分析。  </p>
+<p>##筛选出合适的数据包<br>这里我给大家讲解一个简单的筛选的例子。首先看一下第一个数据包。这个数据包是黑客发往目标计算机的443端口（HTTPS）的SYN数据包。为了查看目标主机是否对这个数据包做出了响应，我们就可以创建一个筛选器，以显示所有源端口或目标端口为443的网络流量。快速设置的方法如下： 1、在捕获文件中选择第一个数据包。 2、在Packet Details面板中展开TCP的头部。 3、右键点击Destination Port域，选择Prepare as Filter，再单击Selected。 4、这样就会自动生成一个筛选器，针对所有目标端口为443的数据包。由于我们想筛选端口号为443的所有数据包，所以可以删除筛选器中的dst部分。当然如果大家对于筛选公式非常熟悉的话，也可以不使用这种方法，而是直接将筛选条件写入筛选框中。</p>
+<p>那么筛选器最终筛选出了2个数据包，可以发现，这两个数据包都是黑客发往目标计算机的TCP SYN数据包，而这两个数据包都没有得到响应，说明网络通信数据包被目标主机或者中间设备过滤掉了，或者目标主机的443号端口就是处于关闭的状态。但是总的来说，目标计算机的443号端口的状况是不确定的。</p>
+<p>下面我们可以使用同样的技术来分析其它的数据包，查看一下有没有不同的结果。由于我们刚才使用了筛选器，那么此时应当先单击筛选器右边的Clear按钮来清空筛选器，然后可以选中第9号数据包。这个数据包的目标端口号为53，一般与DNS有关。那么我们可以使用刚才的方法，创建一个基于目标端口的筛选器，那么此时只有一个数据包，然后删除dst部分，出现了5个数据包：<br><img src="/2017/03/30/谈谈SYN扫描技术/3.jpg" alt="3"><br>首先第1个是9号数据包，就是我们在捕获最开始的时候选择的SYN数据包。下一个数据包是来自目标计算机的响应，这是一个TCP SYN/ACK数据包，也就是TCP三次握手中的第二次的响应数据包。而如果通信正常，那么下一个数据包应当是TCP握手的最后一步，也就是由黑客发送的ACK确认数据包。但是在这里我们发现，黑客显然并不想真的创建TCP连接，所以并没有发送响应数据包。而目标计算机由于没有收到ACK数据包，就会认为自己发送的SYN/ACK数据包出现了丢失的情况，于是接下来又重传了三次SYN/ACK数据包，在最后依旧没有收到响应的情况下，才放弃了TCP连接。由于黑客尝试与目标计算机的53号端口通信的时候收到了SYN/ACK的响应，所以可以确定对方有服务正在监听这个端口。</p>
+<p>接下来我们再次清空筛选器，在13号数据包上重复上述过程。这个数据包的目标端口号为113，这个端口通常与Ident协议有关，通常用于IRC的身份识别和验证服务。我们使用之前的方法来分析，则可以找到4个数据包：<br><img src="/2017/03/30/谈谈SYN扫描技术/4.jpg" alt="4"><br>第一个数据包（13号数据包）是TCP握手的第一步SYN数据包，接着就是来自目标计算机的RST响应，表明目标计算机的相应端口不接受连接，那么也就说明，这个端口上很可能并没有服务。  </p>
+<p>##识别端口的状态<br>当我们理解了SYN扫描能够引起不同类型的响应之后，那么我们当然就想知道有没有一个方法可以快速识别端口的状态。我们需要再次回到Conversation窗口。在这里，我们可以通过数据包编号来对TCP会话进行排序，比如单击Packet列两次就可以实现从高到低进行排序：<br><img src="/2017/03/30/谈谈SYN扫描技术/5.jpg" alt="5"><br>可以发现前三个被扫描的端口在各自的会话中都包含有5个数据包，所以可以知道这三个端口是开放的，因为经过刚才的分析可以知道，这5个数据包分别表示TCP的初次握手SYN、目标计算机的回应SYN/ACK以及来自目标计算机的三次重传SYN/ACK。 接下来有5个端口只包含有两个数据包，那么这两个数据包中的第一个是初始SYN，而第二个则是来自目标计算机的RST，表明这5个端口是处于关闭的状态。</p>
+<p>余下的端口只包含有一个数据包，说明目标计算机并没有响应初始SYN数据包，说明这些端口的状态我们难以确定。  </p>
+<p>#小结<br>通过这次的课程可以发现，利用TCP的握手原理就可以轻易嗅探到目标计算机的端口状态，这也就说明了，网络安全的实际应用，其实就是建立在基本的协议原理知识的基础上，所以可以这么说，我们整个课程系列，之前所讲的协议篇绝对是重中之重，是需要大家多次学习，慢慢体会的。  </p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>作者:
+                    
+                    <a href="/about.html">Parker</a>
+                </li>
+                <li>发表日期: <span>2017-03-30  04:58:54</span></li>
+                
+                <li>最后编辑日期: <span>2017-03-30  11:16:49</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                    <a href="/categories/网络数据包分析实战/">网络数据包分析实战</a>
+                    
+                    <a href="/categories/网络数据包分析实战/安全篇/">安全篇</a>
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="支付宝付款" class="donate-img">
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        
+        <a href="/2017/03/30/木马程序其实并不可怕/" class="next-post fa">木马程序其实并不可怕</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<section id="duoshuo_comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="/2017/03/30/谈谈SYN扫描技术/" data-title="谈谈SYN扫描技术" data-url="https://517736522.github.io/2017/03/30/谈谈SYN扫描技术/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'517736522'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Parker</a>&copy;2015 - 2017.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_pv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
+    
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-spin"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+    <script src="/js/highsong.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '欢迎转载 © Parker';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?260f22cfac85b1bf261e9e152a9ac8f8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body>
+</html>

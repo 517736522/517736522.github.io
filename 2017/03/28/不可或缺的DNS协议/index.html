@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
+
+<meta name="description" content=发了特里投入到法国！/>
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>不可或缺的DNS协议 | Parker&#39;s Blog |信息安全与管理</title>
+
+<link rel="alternate" href="/atom.xml" title="Parker&#39;s Blog |信息安全与管理" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+    <!--script-->
+
+
+
+<script src="http://cdn1.lncld.net/static/js/2.1.0/av-min.js"></script>
+<script>
+    var appId = "uFijq1grJ17m6g9mxXustFdl-gzGzoHsz";
+    var appKey = "LbAV7dXpr848HV6uFeNK87CI";
+    var region = 'null';
+    AV.init({
+        appId: appId,
+        appKey: appKey,
+        region: region
+    });
+</script>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+    
+</head>
+
+<body>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">Parker&#39;s Blog |信息安全与管理</h1>
+        </a>
+        
+        <h2 class="subtitle">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>信息安全与管理的一枚学渣</p>
+    </div>
+</li>
+
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">分类</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Metasploit系列教程/"><i class="fa" aria-hidden="true">Metasploit系列教程</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/"><i class="fa" aria-hidden="true">python开发</i></a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python入门/"><i class="fa" aria-hidden="true">python入门</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python安全/"><i class="fa" aria-hidden="true">python安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python爬虫/"><i class="fa" aria-hidden="true">python爬虫</i></a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/"><i class="fa" aria-hidden="true">web开发</i></a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/NodeJS/"><i class="fa" aria-hidden="true">NodeJS</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/"><i class="fa" aria-hidden="true">信息安全</i></a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/asp安全/"><i class="fa" aria-hidden="true">asp安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/burpsuite/"><i class="fa" aria-hidden="true">burpsuite</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/sqlmap/"><i class="fa" aria-hidden="true">sqlmap</i></a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/"><i class="fa" aria-hidden="true">无线渗透</i></a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WEP破解/"><i class="fa" aria-hidden="true">WEP破解</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPA破解/"><i class="fa" aria-hidden="true">WPA破解</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPS破解/"><i class="fa" aria-hidden="true">WPS破解</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/内网渗透/"><i class="fa" aria-hidden="true">内网渗透</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/安卓渗透/"><i class="fa" aria-hidden="true">安卓渗透</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/干扰通讯/"><i class="fa" aria-hidden="true">干扰通讯</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/报文处理/"><i class="fa" aria-hidden="true">报文处理</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/机制突破/"><i class="fa" aria-hidden="true">机制突破</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/权限提升/"><i class="fa" aria-hidden="true">权限提升</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/环境初探/"><i class="fa" aria-hidden="true">环境初探</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/维持访问/"><i class="fa" aria-hidden="true">维持访问</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/"><i class="fa" aria-hidden="true">网络数据包分析实战</i></a><span class="category-list-count">40</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/协议篇/"><i class="fa" aria-hidden="true">协议篇</i></a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/基础篇/"><i class="fa" aria-hidden="true">基础篇</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/安全篇/"><i class="fa" aria-hidden="true">安全篇</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/排错篇/"><i class="fa" aria-hidden="true">排错篇</i></a><span class="category-list-count">6</span></li></ul></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">March 2017</i></a><span class="archive-list-count">68</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">February 2017</i></a><span class="archive-list-count">33</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">January 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">标签云</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/跑包建议/" style="font-size: 0.14rem; color: #4682b4">跑包建议</a> <a href="/tags/无线/" style="font-size: 0.2rem; color: #3cb371">无线</a> <a href="/tags/Hirte/" style="font-size: 0.14rem; color: #4682b4">Hirte</a> <a href="/tags/macchanger/" style="font-size: 0.15rem; color: #448ca7">macchanger</a> <a href="/tags/WEP/" style="font-size: 0.18rem; color: #409f8c">WEP</a> <a href="/tags/wifite/" style="font-size: 0.15rem; color: #448ca7">wifite</a> <a href="/tags/aircrack-ng/" style="font-size: 0.15rem; color: #448ca7">aircrack-ng</a> <a href="/tags/cowpatty/" style="font-size: 0.14rem; color: #4682b4">cowpatty</a> <a href="/tags/WPA/" style="font-size: 0.19rem; color: #3ea97e">WPA</a> <a href="/tags/hashcat/" style="font-size: 0.14rem; color: #4682b4">hashcat</a> <a href="/tags/Gerix/" style="font-size: 0.14rem; color: #4682b4">Gerix</a> <a href="/tags/NodeJS/" style="font-size: 0.15rem; color: #448ca7">NodeJS</a> <a href="/tags/单线程/" style="font-size: 0.15rem; color: #448ca7">单线程</a> <a href="/tags/异步IO/" style="font-size: 0.15rem; color: #448ca7">异步IO</a> <a href="/tags/pyrit/" style="font-size: 0.14rem; color: #4682b4">pyrit</a> <a href="/tags/ewsa/" style="font-size: 0.14rem; color: #4682b4">ewsa</a> <a href="/tags/reaver/" style="font-size: 0.14rem; color: #4682b4">reaver</a> <a href="/tags/WPS/" style="font-size: 0.14rem; color: #4682b4">WPS</a> <a href="/tags/pixiewps/" style="font-size: 0.14rem; color: #4682b4">pixiewps</a> <a href="/tags/arpspoof/" style="font-size: 0.14rem; color: #4682b4">arpspoof</a> <a href="/tags/ettercap/" style="font-size: 0.15rem; color: #448ca7">ettercap</a> <a href="/tags/driftnet/" style="font-size: 0.14rem; color: #4682b4">driftnet</a> <a href="/tags/内网渗透/" style="font-size: 0.18rem; color: #409f8c">内网渗透</a> <a href="/tags/airolib-ng/" style="font-size: 0.14rem; color: #4682b4">airolib-ng</a> <a href="/tags/渗透/" style="font-size: 0.2rem; color: #3cb371">渗透</a> <a href="/tags/nmap/" style="font-size: 0.14rem; color: #4682b4">nmap</a> <a href="/tags/CDP/" style="font-size: 0.14rem; color: #4682b4">CDP</a> <a href="/tags/Yersinia/" style="font-size: 0.14rem; color: #4682b4">Yersinia</a> <a href="/tags/macof/" style="font-size: 0.14rem; color: #4682b4">macof</a> <a href="/tags/lanmitm/" style="font-size: 0.14rem; color: #4682b4">lanmitm</a> <a href="/tags/幻影PIN/" style="font-size: 0.14rem; color: #4682b4">幻影PIN</a> <a href="/tags/zanti/" style="font-size: 0.14rem; color: #4682b4">zanti</a> <a href="/tags/安卓渗透/" style="font-size: 0.14rem; color: #4682b4">安卓渗透</a> <a href="/tags/mdk3/" style="font-size: 0.16rem; color: #429699">mdk3</a> <a href="/tags/干扰通讯/" style="font-size: 0.18rem; color: #409f8c">干扰通讯</a> <a href="/tags/airdrop-ng/" style="font-size: 0.14rem; color: #4682b4">airdrop-ng</a> <a href="/tags/airdecap-ng/" style="font-size: 0.14rem; color: #4682b4">airdecap-ng</a> <a href="/tags/报文处理/" style="font-size: 0.18rem; color: #409f8c">报文处理</a> <a href="/tags/wireshark/" style="font-size: 0.14rem; color: #4682b4">wireshark</a> <a href="/tags/Cain/" style="font-size: 0.14rem; color: #4682b4">Cain</a> <a href="/tags/ivstool/" style="font-size: 0.14rem; color: #4682b4">ivstool</a> <a href="/tags/deauth/" style="font-size: 0.14rem; color: #4682b4">deauth</a> <a href="/tags/机制突破/" style="font-size: 0.15rem; color: #448ca7">机制突破</a> <a href="/tags/hydra/" style="font-size: 0.15rem; color: #448ca7">hydra</a> <a href="/tags/medusa/" style="font-size: 0.14rem; color: #4682b4">medusa</a> <a href="/tags/权限提升/" style="font-size: 0.16rem; color: #429699">权限提升</a> <a href="/tags/kismet/" style="font-size: 0.14rem; color: #4682b4">kismet</a> <a href="/tags/airodump-ng/" style="font-size: 0.14rem; color: #4682b4">airodump-ng</a> <a href="/tags/维持访问/" style="font-size: 0.14rem; color: #4682b4">维持访问</a>
+  </div>
+</li>
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">友链</h3><br/>
+
+    
+        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题作者</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="不可或缺的DNS协议">
+                
+                不可或缺的DNS协议
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>协议篇</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            null
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/03/28</span>
+    </span>
+    
+    <span  class=" fa-wrap">
+        <i class="fa fa-comment-o"></i>
+        <span id="comments-count" class="comments-meta disqus-comment-count ds-thread-count comments" data-disqus-url="https://517736522.github.io/2017/03/28/不可或缺的DNS协议/" data-thread-key="/2017/03/28/不可或缺的DNS协议/"
+           data-count-type="comments"></span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="不可或缺的DNS协议"
+              data-leadcloud-url="/2017/03/28/不可或缺的DNS协议/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <p>##DNS解析的过程<br>DNS的服务采用服务器/客户端（C/S）的方式工作。当客户端程序要通过一个主机名称访问网络中的一台主机时，它首先需要得到这个主机名称所对应的IP地址。因为IP数据包中允许放置的是目标主机的IP地址，而不是主机的名称。可以从本机的hosts文件中得到主机名称所对应的IP地址，但如果hosts文件不能够解析该主机的名称，则只能通过向客户机所设定的DNS服务器进行查询了。不过本机的hosts文件可能会被造假，从而为黑客打开方便之门。对此有兴趣的朋友可以学习“i春秋”的《病毒木马查杀实战》系列的课程。下面以www.ichunqiu.com域名为例讲解DNS解析的过程：<br><img src="/2017/03/28/不可或缺的DNS协议/1.jpg" alt="1"><br>由上图可知DNS名称解析的过程为</p>
+<p>1、客户计算机向本地域名服务器发送了一个查询请求，请求查询域名为www.ichunqiu.com的IP地址。</p>
+<p>2、本地域名服务器查找自己保存的记录，看能否找到这个被请求的IP地址。如果本地域名服务器有这个地址，就会把这个地址返回给客户计算机。如果本地域名服务器没有这个地址，则会发起查找地址的过程。本地域名服务器发送请求给根域名服务器，询问www.ichunqiu.com的IP地址。</p>
+<p>3、根域名服务器无法提供这个地址，但是会将com的名称服务器的地址返回给本地域名服务器。</p>
+<p>4、本地域名服务器再向com域服务器发送查询地址的请求。</p>
+<p>5、com域服务器无法提供这个地址，就将ichunqiu.com域名服务器的地址发送给本地域名服务器。</p>
+<p>6、本地域名服务器再向ichunqiu.com域名服务器发送地址查询的请求。</p>
+<p>7、ichunqiu.com域名服务器找到了www.ichunqiu.com的IP地址，就将这个地址发给本地域名服务器。</p>
+<p>8、本地域名服务器会将这个地址发给客户计算机，并将这个IP地址保存到缓存中。那么接下来，客户计算机就可以访问www.ichunqiu.com了。</p>
+<p>以上就是DNS域名解析的过程，在这个过程中通常会用到两种查询方式，分别是递归查询和迭代查询：<br>1、递归查询</p>
+<p>客户计算机向本地域名服务器的查询一般采用的是递归查询。如果客户机所询问的本地域名服务器无法提供被查询域名的IP地址，那么本地域名服务器就会以DNS客户的身份，向其它根域名服务器继续发出查询请求的报文。<br>2、迭代查询</p>
+<p>本地域名服务器向根域名服务器的查询通常采用的是迭代查询。当根域名服务器收到本地域名服务器的迭代查询请求的报文时，要么给出所要查询的IP地址，要么告诉本地域名服务器“下一步应该向哪个域名服务器进行查询”。然后本地域名服务器就进行后续的查询。<br>DNS查询数据包分析</p>
+<p>这里我们结合Lab13-1.pcap文件来分析一下DNS的查询：<br><img src="/2017/03/28/不可或缺的DNS协议/2.jpg" alt="2"><br>首先看一下第一个数据包。它是由IP地址为192.168.0.114发往205.152.37.23的53号端口的。53号端口也正是系统默认的DNS查询的端口。并且我们还可以知道，DNS其实是基于UDP协议的。</p>
+<p>这里我们看一下DNS头部的Flags区段。可以发现这个数据包是一个典型的DNS请求。再展开查询区段，从Name的值可以知道客户端其实是想查询wireshark.org的网络地址。接下来的Type:A表示域名类型为A，也就是主机地址。并且地址的类型是IN，也就是互联网地址。那么其实这个数据包就是在向本地域名服务器询问wireshark.org的IP地址是什么。下面看一下第二个数据包：  </p>
+<p><img src="/2017/03/28/不可或缺的DNS协议/3.jpg" alt="3"><br>这个数据包是对第一个数据包的回应，从标识码的值也可以知道它与第一个数据包是对应的。在 Flags区段可以看到这是一个响应数据包，并且允许必要的递归。接下来的Questions以及Answer RRs的值都是1，说明接下来的区段会包含一个询问和一个回答。询问的内容与上一个数据包一致，回答的内容就是对询问的问题做一个回应。也就是回复了wireshark.org的IP地址是128.121.50.122。客户计算机获取了这个回应信息，就可以开始构建IP数据包，并与wireshark.org进行通信了。  </p>
+<p>##DNS递归数据包分析<br>这里我们研究一下DNS的递归数据包。实验文件Lab13-2.pcap是从客户端捕获的两个DNS数据包：<br><img src="/2017/03/28/不可或缺的DNS协议/4.jpg" alt="4"><br>首先，第一个数据包是从客户端172.16.0.8发往DNS服务器172.16.0.102的初始查询。展开这个数据包的DNS区段，可以发现这是一条用于查找域名为www.nostarch.com的标准查询，并且在Flags区段中还看到了期望递归的标志。</p>
+<p>第二个数据包是我们所期望看到的对于初始数据包的响应：<br><img src="/2017/03/28/不可或缺的DNS协议/5.jpg" alt="5"><br>这个数据包的事务ID和我们前一个数据包相匹配，并且在Answers区段得到了www.nostarch.com所对应IP地址。</p>
+<p>仅仅在客户计算机进行抓包分析，我们只能知道成功获取了IP地址，并不知道这个IP地址的查询过程是否进行了递归的操作。因此这里我们需要研究一下在服务器端获取的实验文件Lab13-3.pcap。这个文件包含有在查询开始时，在本地DNS服务器上捕获到的数据包。这里的第一个数据包和我们之前捕获文件中的初始查询相同。</p>
+<p>此时，DNS服务器接收到了这个查询数据包，检索本地数据库之后，发现自己并不知道关于所查询域名的IP地址。由于这个数据包被设置了期望递归，那么我们在第二个数据包中就可以看到这个DNS服务器为了获取IP地址，于是就向其它的DNS服务器进行查询：<br><img src="/2017/03/28/不可或缺的DNS协议/6.jpg" alt="6"><br>在这个数据包中，位于172.16.0.102的DNS服务器向位于4.2.2.1的DNS服务器发起了查询请求，这个服务器就是本地DNS服务器所设定的要转发上行请求的服务器。这个请求其实是原始请求的镜像，此时其自身相当于一个DNS客户端。 由于这个事务ID与之前捕获文件中的事务ID不同，所以我们可以将这个DNS查询作为一个新的查询。这个数据包被4.2.2.1服务器接收以后，本地DNS服务器就收到了回应，也就是第三个数据包的内容：<br><img src="/2017/03/28/不可或缺的DNS协议/7.jpg" alt="7"><br>接收到了这个响应之后，本地DNS服务器就将IP地址传递给了发起DNS请求的客户端。虽然这里只展示了一层递归，但事实上，对于一个DNS请求来说，可能会出现多次递归的情况。在这个例子中，我们是从4.2.2.1服务器中获取IP地址的，但是那个服务器可能为了寻求答案也向其它的服务器执行了递归查询的操作。一个简单的查询在得到最终结果之前，可能会游历全世界。  </p>
+<p>##DNS区域传送分析<br>DNS区域是一个DNS服务器所授权管理的名字空间（或是一组DNS名称）。举个例子来说，ichunqiu这个网站可能由一个DNS服务器对ichunqiu.com负责。这样，不论是ichunqiu内部还是外部的设备，如果希望将ichunqiu.com解析成IP地址，都需要和这个域的DNS服务器联系。现在ichunqiu又多了一个社区功能，那么它可能会增加一个DNS服务器，专门用来处理其名字空间中的bbs部分，比如bbs.ichunqiu.com。那么这个服务器，就成为了这个社区子区域的权威。如果有必要的话，还可以为子域名添加更多的DNS服务器，如下图所示：<br><img src="/2017/03/28/不可或缺的DNS协议/8.jpg" alt="8"><br>区域传送指的是出于冗余备份的需要，在两台设备之间传送区域数据。比如在拥有多个DNS服务器的组织中，管理员通常都会配置一台备用DNS服务器，用于维护一份主服务器的DNS信息拷贝，以防止主DNS服务器不可用的情况出现。但如果配置不当，就会导致任何匿名用户都可以获取DNS服务器某一域的所有记录，将整个企业的基础业务以及网络架构对外暴露，从而造成严重的信息泄露，甚至导致企业网络被渗透。区域传送主要包含有两种形式：</p>
+<p>1、完整区域传送（AXFR）</p>
+<p>这个类型的传送将整个区域在设备间进行传送。</p>
+<p>2、增量区域传送（IXFR）</p>
+<p>这个类型的传送仅仅传送区域信息的一部分。</p>
+<p>实验文件Lab13-4.pcap就包含有一个区域传送的例子。首先我们会发现，数据包的类型是TCP而不是UDP。而我们之前也说了，DNS是基于UDP协议的，但事实上，DNS在如同区域传送这样的一些任务中，会使用TCP协议，因为TCP对于规模化的数据传输更为有效。那么很明显，这个捕获文件中的前三个数据包其实就是TCP的三次握手。</p>
+<p>接下来的第四个数据包就开始在172.16.16.164和172.16.16.139之间进行实际的区域传送了。需要注意的是，这个数据包里面并不包含任何DNS信息。而这个数据包被标记为“TCP segment of a reassembled PUD”，即“重组PUD的TCP分片”。第五个数据包是对于第四个数据包成功接收的确认。而第六个数据包则可以作为完整的DNS区域传送请求的参考：<br><img src="/2017/03/28/不可或缺的DNS协议/9.jpg" alt="9"><br>在这里可以看到，区域传送是典型的查询，并且请求的是AXFR类型，也就是完整区域传送，意味着它希望从服务器接收全部DNS区域。接下来服务器在第七个数据包中回复了区域记录：</p>
+<p>可见，区域传送包含了相当多的数据。如果是复杂的网络情况，还会包含有更多的数据，这就彰显了保证区域传送安全的重要性。在传送完毕之后，捕获文件以TCP的连接终止作为结束。  </p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>作者:
+                    
+                    <a href="/about.html">Parker</a>
+                </li>
+                <li>发表日期: <span>2017-03-28  03:48:54</span></li>
+                
+                <li>最后编辑日期: <span>2017-03-30  12:16:35</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                    <a href="/categories/网络数据包分析实战/">网络数据包分析实战</a>
+                    
+                    <a href="/categories/网络数据包分析实战/协议篇/">协议篇</a>
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="支付宝付款" class="donate-img">
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2017/03/28/一道有趣的网络工程师面试题/" class="pre-post fa fa-caret-left">一道有趣的网络工程师面试题</a>
+        
+        
+        <a href="/2017/03/28/为安全而生的HTTPS协议/" class="next-post fa">为安全而生的HTTPS协议</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<section id="duoshuo_comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="/2017/03/28/不可或缺的DNS协议/" data-title="不可或缺的DNS协议" data-url="https://517736522.github.io/2017/03/28/不可或缺的DNS协议/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'517736522'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Parker</a>&copy;2015 - 2017.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_pv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
+    
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-spin"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+    <script src="/js/highsong.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '欢迎转载 © Parker';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?260f22cfac85b1bf261e9e152a9ac8f8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body>
+</html>

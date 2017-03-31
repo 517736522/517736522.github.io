@@ -1,0 +1,451 @@
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
+
+<meta name="description" content=发了特里投入到法国！/>
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>E-mail数据包的分析 | Parker&#39;s Blog |信息安全与管理</title>
+
+<link rel="alternate" href="/atom.xml" title="Parker&#39;s Blog |信息安全与管理" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+    <!--script-->
+
+
+
+<script src="http://cdn1.lncld.net/static/js/2.1.0/av-min.js"></script>
+<script>
+    var appId = "uFijq1grJ17m6g9mxXustFdl-gzGzoHsz";
+    var appKey = "LbAV7dXpr848HV6uFeNK87CI";
+    var region = 'null';
+    AV.init({
+        appId: appId,
+        appKey: appKey,
+        region: region
+    });
+</script>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+    
+</head>
+
+<body>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">Parker&#39;s Blog |信息安全与管理</h1>
+        </a>
+        
+        <h2 class="subtitle">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>信息安全与管理的一枚学渣</p>
+    </div>
+</li>
+
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">分类</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Metasploit系列教程/"><i class="fa" aria-hidden="true">Metasploit系列教程</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/"><i class="fa" aria-hidden="true">python开发</i></a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python入门/"><i class="fa" aria-hidden="true">python入门</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python安全/"><i class="fa" aria-hidden="true">python安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python爬虫/"><i class="fa" aria-hidden="true">python爬虫</i></a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/"><i class="fa" aria-hidden="true">web开发</i></a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/NodeJS/"><i class="fa" aria-hidden="true">NodeJS</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/"><i class="fa" aria-hidden="true">信息安全</i></a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/asp安全/"><i class="fa" aria-hidden="true">asp安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/burpsuite/"><i class="fa" aria-hidden="true">burpsuite</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/sqlmap/"><i class="fa" aria-hidden="true">sqlmap</i></a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/"><i class="fa" aria-hidden="true">无线渗透</i></a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WEP破解/"><i class="fa" aria-hidden="true">WEP破解</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPA破解/"><i class="fa" aria-hidden="true">WPA破解</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPS破解/"><i class="fa" aria-hidden="true">WPS破解</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/内网渗透/"><i class="fa" aria-hidden="true">内网渗透</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/安卓渗透/"><i class="fa" aria-hidden="true">安卓渗透</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/干扰通讯/"><i class="fa" aria-hidden="true">干扰通讯</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/报文处理/"><i class="fa" aria-hidden="true">报文处理</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/机制突破/"><i class="fa" aria-hidden="true">机制突破</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/权限提升/"><i class="fa" aria-hidden="true">权限提升</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/环境初探/"><i class="fa" aria-hidden="true">环境初探</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/维持访问/"><i class="fa" aria-hidden="true">维持访问</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/"><i class="fa" aria-hidden="true">网络数据包分析实战</i></a><span class="category-list-count">40</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/协议篇/"><i class="fa" aria-hidden="true">协议篇</i></a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/基础篇/"><i class="fa" aria-hidden="true">基础篇</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/安全篇/"><i class="fa" aria-hidden="true">安全篇</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/排错篇/"><i class="fa" aria-hidden="true">排错篇</i></a><span class="category-list-count">6</span></li></ul></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">March 2017</i></a><span class="archive-list-count">68</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">February 2017</i></a><span class="archive-list-count">33</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">January 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">标签云</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/跑包建议/" style="font-size: 0.14rem; color: #4682b4">跑包建议</a> <a href="/tags/无线/" style="font-size: 0.2rem; color: #3cb371">无线</a> <a href="/tags/Hirte/" style="font-size: 0.14rem; color: #4682b4">Hirte</a> <a href="/tags/macchanger/" style="font-size: 0.15rem; color: #448ca7">macchanger</a> <a href="/tags/WEP/" style="font-size: 0.18rem; color: #409f8c">WEP</a> <a href="/tags/wifite/" style="font-size: 0.15rem; color: #448ca7">wifite</a> <a href="/tags/aircrack-ng/" style="font-size: 0.15rem; color: #448ca7">aircrack-ng</a> <a href="/tags/cowpatty/" style="font-size: 0.14rem; color: #4682b4">cowpatty</a> <a href="/tags/WPA/" style="font-size: 0.19rem; color: #3ea97e">WPA</a> <a href="/tags/hashcat/" style="font-size: 0.14rem; color: #4682b4">hashcat</a> <a href="/tags/Gerix/" style="font-size: 0.14rem; color: #4682b4">Gerix</a> <a href="/tags/NodeJS/" style="font-size: 0.15rem; color: #448ca7">NodeJS</a> <a href="/tags/单线程/" style="font-size: 0.15rem; color: #448ca7">单线程</a> <a href="/tags/异步IO/" style="font-size: 0.15rem; color: #448ca7">异步IO</a> <a href="/tags/pyrit/" style="font-size: 0.14rem; color: #4682b4">pyrit</a> <a href="/tags/ewsa/" style="font-size: 0.14rem; color: #4682b4">ewsa</a> <a href="/tags/reaver/" style="font-size: 0.14rem; color: #4682b4">reaver</a> <a href="/tags/WPS/" style="font-size: 0.14rem; color: #4682b4">WPS</a> <a href="/tags/pixiewps/" style="font-size: 0.14rem; color: #4682b4">pixiewps</a> <a href="/tags/arpspoof/" style="font-size: 0.14rem; color: #4682b4">arpspoof</a> <a href="/tags/ettercap/" style="font-size: 0.15rem; color: #448ca7">ettercap</a> <a href="/tags/driftnet/" style="font-size: 0.14rem; color: #4682b4">driftnet</a> <a href="/tags/内网渗透/" style="font-size: 0.18rem; color: #409f8c">内网渗透</a> <a href="/tags/airolib-ng/" style="font-size: 0.14rem; color: #4682b4">airolib-ng</a> <a href="/tags/渗透/" style="font-size: 0.2rem; color: #3cb371">渗透</a> <a href="/tags/nmap/" style="font-size: 0.14rem; color: #4682b4">nmap</a> <a href="/tags/CDP/" style="font-size: 0.14rem; color: #4682b4">CDP</a> <a href="/tags/Yersinia/" style="font-size: 0.14rem; color: #4682b4">Yersinia</a> <a href="/tags/macof/" style="font-size: 0.14rem; color: #4682b4">macof</a> <a href="/tags/lanmitm/" style="font-size: 0.14rem; color: #4682b4">lanmitm</a> <a href="/tags/幻影PIN/" style="font-size: 0.14rem; color: #4682b4">幻影PIN</a> <a href="/tags/zanti/" style="font-size: 0.14rem; color: #4682b4">zanti</a> <a href="/tags/安卓渗透/" style="font-size: 0.14rem; color: #4682b4">安卓渗透</a> <a href="/tags/mdk3/" style="font-size: 0.16rem; color: #429699">mdk3</a> <a href="/tags/干扰通讯/" style="font-size: 0.18rem; color: #409f8c">干扰通讯</a> <a href="/tags/airdrop-ng/" style="font-size: 0.14rem; color: #4682b4">airdrop-ng</a> <a href="/tags/airdecap-ng/" style="font-size: 0.14rem; color: #4682b4">airdecap-ng</a> <a href="/tags/报文处理/" style="font-size: 0.18rem; color: #409f8c">报文处理</a> <a href="/tags/wireshark/" style="font-size: 0.14rem; color: #4682b4">wireshark</a> <a href="/tags/Cain/" style="font-size: 0.14rem; color: #4682b4">Cain</a> <a href="/tags/ivstool/" style="font-size: 0.14rem; color: #4682b4">ivstool</a> <a href="/tags/deauth/" style="font-size: 0.14rem; color: #4682b4">deauth</a> <a href="/tags/机制突破/" style="font-size: 0.15rem; color: #448ca7">机制突破</a> <a href="/tags/hydra/" style="font-size: 0.15rem; color: #448ca7">hydra</a> <a href="/tags/medusa/" style="font-size: 0.14rem; color: #4682b4">medusa</a> <a href="/tags/权限提升/" style="font-size: 0.16rem; color: #429699">权限提升</a> <a href="/tags/kismet/" style="font-size: 0.14rem; color: #4682b4">kismet</a> <a href="/tags/airodump-ng/" style="font-size: 0.14rem; color: #4682b4">airodump-ng</a> <a href="/tags/维持访问/" style="font-size: 0.14rem; color: #4682b4">维持访问</a>
+  </div>
+</li>
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">友链</h3><br/>
+
+    
+        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题作者</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="E-mail数据包的分析">
+                
+                E-mail数据包的分析
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>协议篇</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            null
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/03/28</span>
+    </span>
+    
+    <span  class=" fa-wrap">
+        <i class="fa fa-comment-o"></i>
+        <span id="comments-count" class="comments-meta disqus-comment-count ds-thread-count comments" data-disqus-url="https://517736522.github.io/2017/03/28/E-mail数据包的分析/" data-thread-key="/2017/03/28/E-mail数据包的分析/"
+           data-count-type="comments"></span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="E-mail数据包的分析"
+              data-leadcloud-url="/2017/03/28/E-mail数据包的分析/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <p>##电子邮件的传输机制<br>电子邮件系统是基于客户端/服务器模式的（C/S），但是邮件从发件人的客户端发送到收件人的客户端的过程中，还需要邮件服务器之间的相互传输。因此，与其它单纯的客户端/服务器的工作模式（如FTP、Web等）相比，电子邮件系统相对要复杂。其示意图如下：<br><img src="/2017/03/28/E-mail数据包的分析/1.jpg" alt="1"><br>从上图中可以看到，整个电子邮件的传输过程是由多个软件程序组成的。包括有：</p>
+<p>1、MUA（Mail User Agent，邮件用户代理）：一般也被称为邮件客户端软件。MUA软件的功能是为用户提供发送、接收和管理电子邮件的界面。比如我们这次的实验所使用的Foxmail就属于MUA。</p>
+<p>2、MTA（Mail Transfer Agent，邮件传输代理）：一般也被称为邮件服务器端软件。MTA软件负责接收客户端软件发送的邮件，并将邮件传输给其它的MTA程序，是电子邮件系统中的核心部分。</p>
+<p>3、MDA（Mail Delivery Agent，邮件分发代理）：MDA软件负责在服务器中将邮件分发到用户邮箱目录。MDA软件比较特殊，它并不直接面向邮件用户，而是在后台默默地工作。有时候MDA的功能可以直接集成在MTA软件中，因此常常被忽略。</p>
+<p>上图所示的详细过程如下：</p>
+<p>1、MUA使用SMTP协议将邮件发送给MTA。</p>
+<p>2、MTA收到邮件后，要根据收件人的信息决定下一步的动作。如果收件人是自己系统上的用户，则直接投递。反之则需要把邮件传递给对方网络系统的MTA。此时可能需要经过多个MTA的转发才会真正到达目的地。如果邮件无法投递给本地用户，也无法转交给其它的MTA处理，则需要把邮件退还给发件人，或者发通知邮件给管理员。</p>
+<p>3、邮件最终到达了收件人所在网络的MTA，于是该MTA发现收件人是本地系统的用户，就交给了MDA处理，MDA再把邮件投递到收件人的信箱里。信箱的形式可以是普通的目录，也可以是专用的数据库。不论是哪种形式，这些邮件都需要有一种长期保存的机制。</p>
+<p>4、邮件被放入信箱后，就会一直保存下来，直到收件人来取。收件人也是通过MUA来读取邮件的，但是此时MUA要联系的并不是发邮件时所联系的MTA，而是另一个提供POP/IMAP服务的软件。而且读取邮件时所采用的协议也不是SMTP，而是POP3或者IMAP。</p>
+<p>上图中的两个MTA分别承担了发邮件和收邮件的功能。实际上，任何MTA都可以同时承担收邮件和发邮件的功能。也就是除了接受MUA的委托，将邮件投递到收件人所在的邮件系统以外，还可以接收另一个MTA发来的邮件，然后根据收件人信息决定投递给本地用户还是转发给其它的MTA。  </p>
+<p>##SMTP协议概述<br>SMTP（Simple Mail Transfer Protocol）即简单邮件传输协议，它是一种用于由源地址到目的地址传送邮件的规则，由它来控制信件的中转方式。SMTP协议属于TCP/IP协议族，使用的默认端口号为25。它帮助每台计算机在发送或中转信件时找到下一个目的地。通过SMTP协议所指定的服务器，就可以把E-mail寄到收信人的服务器上了。SMTP服务器是遵循SMTP协议的发送邮件服务器，用来发送或中转发出的电子邮件。它使用由TCP提供的可靠的数据传输服务把邮件消息从发信人的邮件服务器传送到收信人的邮件服务器。跟大多数应用层协议一样，SMTP也存在两个端：在发信人的邮件服务器上执行的客户端和在收信人的邮件服务器上执行的服务器端。SMTP的客户端和服务器端同时运行在每个邮件服务器上。当一个邮件服务器在向其他邮件服务器发送邮件消息时，它是作为SMTP客户在运行。SMTP的工作模型如下图所示：<br><img src="/2017/03/28/E-mail数据包的分析/2.jpg" alt="2"><br>1、发送方首先向对方的25号端口发起TCP的连接请求，接收方收到请求之后，就建立了TCP连接。</p>
+<p>2、连接建立之后，发送方就可以向接收方发送SMTP命令了。</p>
+<p>3、接收方收到命令之后，根据具体的情况决定是否执行，然后给发送方返回相应的应答。  </p>
+<p>##POP协议概述<br>POP（Post Office Protocol，邮局协议）主要用于从邮件服务器收取邮件。目前POP协议的最新版本为POP3。大多数的MUA软件都支持使用POP协议，因此应用得最为广泛。POP3协议使用的TCP端口为110。其工作模型与SMTP类似，主要分为以下几个步骤：</p>
+<p>1、客户端首先向POP3服务器的110号端口发起TCP连接请求，服务器接受了请求之后就建立了TCP连接。</p>
+<p>2、建立连接之后，客户端就可以向服务器发送POP3命令了。</p>
+<p>3、服务器收到命令之后，根据具体的情况决定是否执行，然后给客户端回复相应的应答。  </p>
+<p>##IMAP协议概述<br>IMAP（Internet Mail Access Protocol，Internet邮件访问协议）以前称作交互邮件访问协议（Interactive Mail Access Protocol）。IMAP是斯坦福大学在1986年开发的一种邮件获取协议。它的主要作用是邮件客户端可以通过这种协议从邮件服务器上获取邮件的信息，下载邮件等。IMAP协议运行在TCP/IP协议之上，使用的端口是143。它与POP3协议的主要区别是用户可以不用把所有的邮件全部下载，可以通过客户端直接对服务器上的邮件进行操作。</p>
+<p>IMAP和POP是最常见的读取邮件的Internet协议标准，目前在使用的绝大部分的邮件客户端和服务器都支持这两种协议。  </p>
+<p>##E-Mail数据包的捕获<br>我们这次的实验需要使用Foxmail客户端来收发邮件，并利用Wireshark将收发邮件过程中的数据包捕获下来进行分析。我在我的虚拟机中安装了Foxmail的7.2版本，然后将我的电子邮箱ioio_jy@sohu.com配置到Foxmail中，那么接下来就可以利用Foxmail客户端开始收发邮件的操作了。</p>
+<p>这里可以首先打开Wireshark，在捕获选项中添加进tcp的筛选条件。然后在Foxmail中给我自己的邮箱发一封电子邮件，并附上我的一张照片作为附件（照片的具体内容，我这里先卖一个关子，下次课我会通过解密手段给大家看），如下图所示：<br><img src="/2017/03/28/E-mail数据包的分析/3.jpg" alt="3"><br>在发送之前，先开启Wireshark进行监控，之后再回到Foxmail客户端进行发送，成功后就可以捕获到非常多的数据包了。由于是给我自己的邮箱发送邮件，所以我很快就能收到，那么我在收到并打开邮件后，Wireshark也会捕获到收取邮件的数据包，也就是我们这次的实验文件Lab20-1.pcapng。  </p>
+<p>##发送邮件数据包分析<br>打开实验文件以后，我们首先可以看到TCP的三次握手，毕竟SMTP是基于TCP协议的。下面我们把关注的重心放到SMTP的数据包上，使用筛选器只保留SMTP的数据包，如下图所示：<br><img src="/2017/03/28/E-mail数据包的分析/4.jpg" alt="4"><br>发送邮件的详细过程如下：</p>
+<p>5：客户端向服务器发送的EHLO指令，用于向服务器表明自己的身份。从这个数据包的信息中，可以看到客户端的主机名称为jiang-1a3c6c581。</p>
+<p>8：客户端发送的AUTH LOGIN指令，请求登录认证。</p>
+<p>11：这里的User指令表示邮箱登录的用户名。可以看到这里是经过了加密的。SMTP不接收明文，必须要通过64位的编码后再发送。从后面的两个等于号基本可以确定，它采用的是Base64的加密形式，因为等于号在Base64中就是用于填充的。如果大家想要深入了解这方面的相关知识的实际应用，可以参考我所主讲的《恶意代码分析实战》课程的相关章节。</p>
+<p>14：这里的Pass表示登录密码，同样采用了Base64进行加密。关于解密的方式，我会在下次课程中详细讲解。</p>
+<p>16：这个数据包表示邮箱登陆成功：<br><img src="/2017/03/28/E-mail数据包的分析/5.jpg" alt="5"><br>17：发送邮件的账户，这里是ioio_jy@sohu.com。</p>
+<p>20：接收邮件的账户，由于是给我自己写信，所以同样是ioio_jy@sohu.com。</p>
+<p>23：DATA表示客户端发送的内容。</p>
+<p>25：服务器端使用了<cr><lf>接收了文本的内容。因为SMTP属于请求/应答的模式，请求和应答都是基于ASCII文本，并以CR和LF（回车换行）为结束符。</lf></cr></p>
+<p>26：所发送的数据，由于这个邮件包含的数据比较多，因此会分为多个数据包进行发送，也就是从26到140号数据包。</p>
+<p>143：发送邮件的账户及主题等信息。</p>
+<p>149：表示断开与邮件服务器的连接。</p>
+<p>以上就是发送邮件的整个过程。如果想要查看发送邮件的详细信息，可以在任意一个数据包上单击鼠标右键，并选择Follow TCP Stream命令进行查看：<br><img src="/2017/03/28/E-mail数据包的分析/6.jpg" alt="6"><br>在这个对话框中就可以清晰的显示出邮件的信息，其中红色的部分是客户端发送的信息，蓝色部分是服务器响应的信息。并且还可以看到客户端的主机名、邮件账户、使用的邮件客户端、邮件内容类型和传输格式等。更重要的是，还可以看到邮件的内容以及附件的名称：<br><img src="/2017/03/28/E-mail数据包的分析/7.jpg" alt="7"><br>接下来的乱码是我们的附件经过加密后所得到的十六进制编码信息。这里同样是使用Base64进行加密的。关于这段代码的解密工作，我们在下次的课程中再进行论述。  </p>
+<p>##接收邮件数据包分析<br>为了能够方便地查看与接收邮件相关的数据包，这里我们需要使用筛选条件pop：<br><img src="/2017/03/28/E-mail数据包的分析/8.jpg" alt="8"><br>POP协议也是基于TCP协议的，所以在使用POP接收数据包之前同样会经过TCP的三次握手操作，只不过这里被过滤掉了。</p>
+<p>159：这里的USER表示的是用户名，这里显示的是ioio_jy@sohu.com。</p>
+<p>162：这里的PASS表示的是客户端输入的密码，这里的密码为jiangye。由于POP允许明文传输，所以这里输入的用户名和密码等信息都是以明文提供的。</p>
+<p>164：说明用户名和密码验证成功。</p>
+<p>165：是客户端向服务器发送的STAT命令，用于统计邮件信息。</p>
+<p>168：发送了LIST命令，用于列出邮件的大小。</p>
+<p>169：是对于上一个数据包的回应，回复了每个邮件的大小：<br><img src="/2017/03/28/E-mail数据包的分析/9.jpg" alt="9"><br>在Packet Details面板中，可以看到服务器响应客户端的邮件大小的情况。如“1 77337\r\n”，表示这是第一封邮件，大小为77337字节，“\r\n”是结束符。</p>
+<p>174：客户端向服务器发送UIDL命令，请求邮件的唯一标识符。</p>
+<p>176：服务器对于客户端的响应信息：<br><img src="/2017/03/28/E-mail数据包的分析/10.jpg" alt="10"><br>在上图中可以看到每封邮件的唯一标识符。</p>
+<p>184：客户端向服务器发送的RETR命令，请求邮件的内容。</p>
+<p>187：服务器响应客户端的请求，返回邮件的大小。一直到193号数据包都是邮件的大小。</p>
+<p>194：显示了邮件的发送方是ioio_jy@sohu.com，主题为WiresharkTest，接下来的数据包就是邮件中的具体内容。</p>
+<p>262：表示终止客户端与POP3服务器之间的连接。</p>
+<p>经过上述分析，我们可以知道接收邮件的整个过程，接下来我们同样可以利用TCP Stream来查看邮件的信息。我们可以看到接收邮件的用户名、密码、邮件大小、邮件的唯一标识符及邮件的全部文本内容等信息。</p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>作者:
+                    
+                    <a href="/about.html">Parker</a>
+                </li>
+                <li>发表日期: <span>2017-03-28  03:48:54</span></li>
+                
+                <li>最后编辑日期: <span>2017-03-30  12:20:55</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                    <a href="/categories/网络数据包分析实战/">网络数据包分析实战</a>
+                    
+                    <a href="/categories/网络数据包分析实战/协议篇/">协议篇</a>
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="支付宝付款" class="donate-img">
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2017/03/28/ARP协议的数据包分析/" class="pre-post fa fa-caret-left">ARP协议的数据包分析</a>
+        
+        
+        <a href="/2017/03/28/E-mail数据包的解密/" class="next-post fa">E-mail数据包的解密</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<section id="duoshuo_comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="/2017/03/28/E-mail数据包的分析/" data-title="E-mail数据包的分析" data-url="https://517736522.github.io/2017/03/28/E-mail数据包的分析/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'517736522'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Parker</a>&copy;2015 - 2017.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_pv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
+    
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-spin"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+    <script src="/js/highsong.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '欢迎转载 © Parker';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?260f22cfac85b1bf261e9e152a9ac8f8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body>
+</html>

